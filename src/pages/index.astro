@@ -5,32 +5,31 @@ import Card from '../components/Card.astro';
 
 <Layout title="Aplicación Kotek Virtual">
 	<main>
-		<h1>App <span class="text-gradient">Kotek Virtual</span></h1>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-		</ul>
+		<section>
+			
+		</section>
 	</main>
 </Layout>
 
 <style>
 	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background-color: white;
 	}
 	h1 {
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
-		margin-bottom: 1em;
+		margin: 0;
+		padding: 0;
+	}
+	section{
+		background-color: #F2F2F2;
+		height: calc(100vh - 48px);
+		margin: 24px;
+		border-radius: 12px;
 	}
 </style>
