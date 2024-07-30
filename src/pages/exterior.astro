@@ -6,6 +6,11 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Renders de Exterior">
     <main>
         <section>
+			<svg class="image-container">
+				
+				<image href="/exterior-1.jpg" class="masked-image"/>
+				<path class="test-path" d="m 496.552 299.646 l 49.903 4.238 l 0.161 60.767 l -50.357 -3.264 z m 77.912 7.626 l 120.074 10.823 l 0.004 57.504 l -120.195 -8.295 z m 145.488 12.459 l 44.573 4.659 l 0.173 57.423 l -44.726 -3.066 z m 69.629 6.613 l 43.908 3.378 l -0.52 56.899 l -43.648 -2.858 z m 66.252 6.236 l 117.176 9.873 l 0.52 55.34 l -117.696 -9.873 z"></path>
+			</svg>
         </section>
     </main>
 </Layout>
@@ -33,6 +38,25 @@ import Layout from "../layouts/Layout.astro";
 		margin: 24px;
 		border-radius: 12px;
 		background-position: 50% 70%;
-		background-image: url("/public/exterior1.jpg");
+		overflow: hidden;
 	}
+
+	.image-container {
+  width: 100%;
+  height: 100%;
+}
+.masked-image {
+  width: 100%;
+  height: 100%;
+}
+.test-path{
+	opacity: 0;
+	opacity: 0.2;
+	fill: red;
+}
+.ventana:hover .test-path{
+	opacity: 0.2;
+	fill: red;
+}
+
 </style>
