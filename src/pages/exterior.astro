@@ -10,8 +10,10 @@ import Layout from "../layouts/Layout.astro";
 				<!-- fill with SVG areas -->
 				<svg viewBox="0 0 100 100" class='image-area image-area--orange-1'>
 
-				  <path d="m 496.552 299.646 l 49.903 4.238 l 0.161 60.767 l -50.357 -3.264 z" /><path d="m 77.912 7.626 l 120.074 10.823 l 0.004 57.504 l -120.195 -8.295 Z" /><path d="m 145.488 12.459 l 44.573 4.659 l 0.173 57.423 l -44.726 -3.066 z"/><path d="m 69.629 6.613 l 43.908 3.378 l -0.52 56.899 l -43.648 -2.858 z" /><path d="m 66.252 6.236 l 117.176 9.873 l 0.52 55.34 l -117.696 -9.873 z" />
-				</svg>
+				  <g class="toprow"><path d="M.1104-.0708 10.091.7768 10.1232 12.9302.0518 12.2774ZM15.6928 1.4544 39.7076 3.619 39.7084 15.1198 15.6694 13.4608ZM44.7904 3.9462 53.705 4.878 53.7396 16.3626 44.7944 15.7494ZM58.7162 5.2688 67.4978 5.9444 67.3938 17.3242 58.6642 16.7526ZM71.9666 6.516 95.4018 8.4906 95.5058 19.5586 71.9666 17.584Z" /></g>
+
+				<g class="secondrow"><path d="M0 17 10 19 10 29 0 28Z" /></g>
+			</svg>
 				<!-- -->
 				
 				<img src="/exterior-1.jpg"/>
@@ -39,14 +41,14 @@ import Layout from "../layouts/Layout.astro";
 		padding: 0;
 	}
 	section{
-		background-color: #F2F2F2;
+		background-color: white;
 		height: calc(100vh - 48px);
 		margin: 24px;
 		border-radius: 12px;
 		background-position: 50% 70%;
 		overflow: hidden;
 	}
-	.imageWrapper {
+.imageWrapper {
   width: 100%;
   position: relative;
 
@@ -55,28 +57,35 @@ import Layout from "../layouts/Layout.astro";
 .imageWrapper img {
   width:100%; height:100%;
   object-fit: contain;
+  border-radius: 12px;
 }
 
 .image-area{
   position: absolute;
-  top: 28%; /* position should be in percentages */
-  left: 20%; /* position should be in percentages */
-  
-  transition: .4s;
-  mix-blend-mode: lighten; /* work the best with the default black fill of svg shapes */
-  cursor: pointer;
-  fill: red;
+  left: -6%;
+    top: -32.5%;
+    transform: scale(0.3);
 }
 
+.toprow{
+	fill: #75A93A;
+    fill-opacity: 0.3;
+    cursor: pointer;
 
-.image-area:hover {
-  filter: drop-shadow(0 0 20px gold);
+}
+.secondrow{
+	fill: #a93a3a;
+    fill-opacity: 0.4;
+    cursor: pointer;
+}
+.toprow :hover{
+	fill-opacity: 0.8;
+
+
+}
+.secondrow :hover{
+	fill-opacity: 0.8;
 }
 
-.image-area--orange-1 {
-  /* sizes should be in percentages */
-  width: 21%;
-  height: 18%;
-}
 
 </style>
