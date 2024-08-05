@@ -10,7 +10,7 @@ import Layout from "../layouts/Layout.astro";
 				<!-- fill with SVG areas -->
 				<svg viewBox="0 0 100 100" class='image-area image-area--orange-1'>
 
-				  <g class="toprow"><path d="M.1104-.0708 10.091.7768 10.1232 12.9302.0518 12.2774ZM15.6928 1.4544 39.7076 3.619 39.7084 15.1198 15.6694 13.4608ZM44.7904 3.9462 53.705 4.878 53.7396 16.3626 44.7944 15.7494ZM58.7162 5.2688 67.4978 5.9444 67.3938 17.3242 58.6642 16.7526ZM71.9666 6.516 95.4018 8.4906 95.5058 19.5586 71.9666 17.584Z" /></g>
+					<g class="toprow" id="botonModal"><path d="M.1104-.0708 10.091.7768 10.1232 12.9302.0518 12.2774ZM15.6928 1.4544 39.7076 3.619 39.7084 15.1198 15.6694 13.4608ZM44.7904 3.9462 53.705 4.878 53.7396 16.3626 44.7944 15.7494ZM58.7162 5.2688 67.4978 5.9444 67.3938 17.3242 58.6642 16.7526ZM71.9666 6.516 95.4018 8.4906 95.5058 19.5586 71.9666 17.584Z" /></g>
 
 				<g class="secondrow"><path d="M0 17 10 19 10 29 0 28Z" /></g>
 			</svg>
@@ -18,11 +18,34 @@ import Layout from "../layouts/Layout.astro";
 				
 				<img src="/exterior-1.jpg"/>
 			  </div>
+
+			  <div>
+				<dialog id="fichaModal">
+					<img src="ficha1.webp" alt="ficha comercial" class="modalImage">
+				</dialog>
+			  </div>
 			
         </section>
     </main>
 </Layout>
 
+<script>
+	const botonModal = document.getElementById("botonModal")
+	const dialog = document.getElementById("fichaModal")
+
+	botonModal.addEventListener("click", ()=>{
+		dialog.showModal()
+			})
+	dialog.addEventListener('click', function(event) {
+  var rect = dialog.getBoundingClientRect();
+  var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+    rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+  if (!isInDialog) {
+    dialog.close();
+  }
+});
+	
+</script>
 
 
 <style>
@@ -86,6 +109,20 @@ import Layout from "../layouts/Layout.astro";
 .secondrow :hover{
 	fill-opacity: 0.8;
 }
+.modal-ficha{
 
+}
+dialog{
+	height: calc(100vh - 16px);
+	border: none;
+}
+dialog::backdrop{
+	background-color: #26263399;
+}
+.modalImage{
+	height: 99%;
+	margin: 0px;
+	border: none;
+}
 
 </style>
