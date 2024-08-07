@@ -27,25 +27,25 @@ import Layout from "../layouts/Layout.astro";
 			
         </section>
     </main>
+	<script type="module">
+		document.getElementById("botonModal").addEventListener("click", ()=>{
+			
+				document.getElementById("fichaModal").showModal()
+					})
+		
+			document.getElementById("fichaModal").addEventListener('click', (event)=> {
+				  let rect = document.getElementById("fichaModal").getBoundingClientRect();
+				  let isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+				rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+				  if (!isInDialog) {
+					document.getElementById("fichaModal").close();
+				  }
+			});
+			
+		</script>
 </Layout>
 
-<script>
-	const botonModal = document.getElementById("botonModal")
-	const dialog = document.getElementById("fichaModal")
 
-	botonModal.addEventListener("click", ()=>{
-		dialog.showModal()
-			})
-	dialog.addEventListener('click', function(event) {
-  var rect = dialog.getBoundingClientRect();
-  var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
-    rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
-  if (!isInDialog) {
-    dialog.close();
-  }
-});
-	
-</script>
 
 
 <style>
