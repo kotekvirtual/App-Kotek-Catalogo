@@ -7,7 +7,20 @@ import Layout from "../layouts/Layout.astro";
     <main>
         <section>
             <h1>Fichas Comerciales</h1>
+			<section class="grid-fichas">
+				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+			</section>
         </section>
+		<div>
+			<dialog id="fichaModal2">
+				<img src="ficha1.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+		  </div>
     </main>
 </Layout>
 
@@ -34,5 +47,50 @@ import Layout from "../layouts/Layout.astro";
 		margin: 24px;
 		border-radius: 12px;
 		background-position: 50% 70%;
+		overflow: scroll;
 	}
+	.grid-fichas{
+		padding-top: 24px;
+		display: grid;
+		grid-template-columns: 50% 50%;
+		justify-items: center;
+		gap: 24px;
+	}
+	.boton-ficha{
+		width: 300px;
+		border: 1px solid #262633;
+	}
+	dialog{
+	height: calc(100vh - 16px);
+	border: none;
+}
+dialog::backdrop{
+	background-color: #26263399;
+}
+.modalImage{
+	height: 99%;
+	margin: 0px;
+	border: none;
+}
 </style>
+
+<script type="module">
+	let cbox = document.querySelectorAll(".boton-ficha")
+
+	for (let i = 0; i < cbox.length; i++) {
+     cbox[i].addEventListener("click", ()=>{
+		
+		document.getElementById("fichaModal2").showModal()})
+
+ }
+	
+		document.getElementById("fichaModal2").addEventListener('click', (event)=> {
+			  let rect = document.getElementById("fichaModal2").getBoundingClientRect();
+			  let isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+			rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+			  if (!isInDialog) {
+				document.getElementById("fichaModal2").close();
+			  }
+		});
+		
+	</script>
