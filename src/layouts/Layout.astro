@@ -1,6 +1,5 @@
 ---
 import ViewTransitions from 'astro/components/ViewTransitions.astro';
-
 interface Props {
 	title: string;
 }
@@ -24,6 +23,13 @@ const { title } = Astro.props;
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
 		<meta name="generator" content={Astro.generator} />
+		<link
+    		rel="preload"
+   			href="/fonts/Poppins-Regular.ttf"
+    		as="font"
+    		type="font/truetype"
+    		crossorigin
+  		/>
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
