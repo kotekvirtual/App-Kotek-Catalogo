@@ -6,12 +6,12 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Renders de Interior">
     <main>
         <section>
-            <a href="/interior">
-				← 
+            <a class="arrow" href="/interior">
+				&lt 
 		   </a>
 		   <img src="/exterior-1.jpg" alt="render de cocina">
-		   <a href="/interior">
-			   →
+		   <a class="arrow" href="/interior">
+			   &gt
 		   </a>
         </section>
     </main>
@@ -42,10 +42,15 @@ import Layout from "../layouts/Layout.astro";
 		background-position: 50% 70%;
 		display: flex;
 		align-items: center;
-		gap: 8px;
+		justify-content: space-between;
 	}
 	img{
-		width: 100%;
+		width: 90%;
 		border-radius: 12px;
+	}
+	.arrow{
+		font-size: 3rem;
+		text-decoration: none;
+		color: #262633;
 	}
 </style>

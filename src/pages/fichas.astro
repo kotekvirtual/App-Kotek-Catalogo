@@ -5,17 +5,14 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Fichas Comerciales">
     <main>
-        <section>
-            <h1>Fichas Comerciales</h1>
-			<section class="grid-fichas">
-				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
-				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
-				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
-				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
-				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
-				<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
-			</section>
-        </section>
+		<section class="grid-fichas">
+			<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+			<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+			<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+			<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+			<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+			<img src="ficha1.webp" class="boton-ficha" alt="ficha comercial">
+		</section>
 		<div>
 			<dialog id="fichaModal2">
 				<img src="ficha1.webp" alt="ficha comercial" class="modalImage">
@@ -34,7 +31,7 @@ import Layout from "../layouts/Layout.astro";
 		background-color: white;
 	}
 	h1 {
-		font-size: 4rem;
+		font-size: 3rem;
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
@@ -48,13 +45,13 @@ import Layout from "../layouts/Layout.astro";
 		border-radius: 12px;
 		background-position: 50% 70%;
 		overflow: scroll;
+		overflow-x: hidden;
 	}
 	.grid-fichas{
 		padding-top: 24px;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		justify-items: center;
-		gap: 24px;
 	}
 	.boton-ficha{
 		width: 300px;
