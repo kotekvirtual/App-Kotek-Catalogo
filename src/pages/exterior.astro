@@ -1,0 +1,128 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<Layout title="Renders de Exterior">
+    <main>
+        <section>
+			<div class='imageWrapper'>
+				<!-- fill with SVG areas -->
+				<svg viewBox="0 0 192 144" class='image-area image-area--orange-1'>
+
+					<g class="toprow" id="botonModal"><path d="M 26 63 L 89 62 L 90 71 L 26 71 Z" /></g>
+					
+					<g class="secondrow"><path d="M 27 75 L 90 75 L 90 84 L 27 84 Z" /></g>
+					<g class="thirdrow"><path d="M 27 87 L 90 87 L 90 96 L 27 96 Z" /></g>
+			</svg>
+				<!-- -->
+				
+				<img src="gavilan.jpg"/>
+			  </div>
+
+			  <div>
+				<dialog id="fichaModal">
+					<img src="ficha1.webp" alt="ficha comercial" class="modalImage">
+				</dialog>
+			  </div>
+			
+        </section>
+    </main>
+	<script type="module">
+		document.getElementById("botonModal").addEventListener("click", ()=>{
+			
+				document.getElementById("fichaModal").showModal()
+					})
+		
+			document.getElementById("fichaModal").addEventListener('click', (event)=> {
+				  let rect = document.getElementById("fichaModal").getBoundingClientRect();
+				  let isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+				rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+				  if (!isInDialog) {
+					document.getElementById("fichaModal").close();
+				  }
+			});
+			
+		</script>
+</Layout>
+
+
+
+
+<style>
+	main {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background-color: white;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+	section{
+		background-color: white;
+		height: calc(100vh - 48px);
+		margin: 24px;
+		border-radius: 12px;
+		background-position: 50% 70%;
+		overflow: hidden;
+	}
+.imageWrapper {
+  width: 100%;
+  position: relative;
+
+}
+
+.imageWrapper img {
+  width:100%; height:100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.image-area{
+  	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.toprow{
+	fill: #75A93A;
+    fill-opacity: 0.3;
+    cursor: pointer;
+
+}
+.secondrow{
+	fill: #a93a3a;
+    fill-opacity: 0.4;
+    cursor: pointer;
+}
+.toprow :hover{
+	fill-opacity: 0.8;
+
+
+}
+.secondrow :hover{
+	fill-opacity: 0.8;
+}
+.modal-ficha{
+
+}
+dialog{
+	height: calc(100vh - 16px);
+	border: none;
+}
+dialog::backdrop{
+	background-color: #26263399;
+}
+.modalImage{
+	height: 99%;
+	margin: 0px;
+	border: none;
+}
+
+</style>
