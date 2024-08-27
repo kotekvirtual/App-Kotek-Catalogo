@@ -1,0 +1,126 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+
+<Layout title="Plano 3D">
+    <main>
+        <section>
+			<div class='imageWrapper'>
+				<!-- fill with SVG areas -->
+				<svg viewBox="0 0 90 90" class='image-area image-area--orange-1'>
+					
+						
+
+					<text x="19" y="20" class="svg-text">+</text>
+					<a href="layama/" class="toprow"><path d="M 9.3,2.9 32.4,3.1 30.9,33.9 5.9,33.2 Z" />
+					</a>
+
+
+			</svg>
+				<!-- -->
+				
+				<img src="/magnolia.png"/>
+			  </div>
+
+			 
+			
+        </section>
+    </main>
+</Layout>
+
+
+
+
+<style>
+	main {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background-color: white;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+	section{
+		background-color: rgb(238, 238, 238);
+		height: calc(100vh - 48px);
+		margin: 24px;
+		border-radius: 12px;
+		background-position: 50% 70%;
+		overflow: hidden;
+	}
+.imageWrapper {
+	width: 100%;
+
+  position: relative;
+  display: flex;
+
+}
+
+.imageWrapper img {
+  width:100%; 
+  height:100%;
+  border-radius: 12px;
+  object-position: top;
+
+}
+
+.image-area{
+  	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.toprow{
+	fill: #75A93A;
+    fill-opacity: 0.3;
+    cursor: pointer;
+	stroke: white;
+	stroke-width: .2;
+
+}
+.secondrow{
+	fill: #a93a3a;
+    fill-opacity: 0.4;
+    cursor: pointer;
+}
+.toprow :hover{
+	fill-opacity: 0.8;
+
+
+}
+.secondrow :hover{
+	fill-opacity: 0.8;
+}
+.modal-ficha{
+
+}
+dialog{
+	height: calc(100vh - 16px);
+	border: none;
+}
+dialog::backdrop{
+	background-color: #26263399;
+}
+.modalImage{
+	height: 99%;
+	margin: 0px;
+	border: none;
+}
+.outline{
+	fill: none;
+	stroke: white;
+	stroke-width: .2;
+}
+.svg-text{
+	fill: #a93a75;
+	font: bold 3px "Poppins",sans-serif;
+}
+
+</style>
