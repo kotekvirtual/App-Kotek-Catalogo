@@ -6,11 +6,11 @@ import Layout from "../../layouts/Layout.astro";
 <Layout title="Renders de Interior">
     <main>
         <section>
-            <a class="arrow" href="/galeria/cocina">
+            <a class="arrow left" href="/galeria/cocina">
 				&lt 
 		   </a>
 		   <img src="/exterior-1.jpg" alt="render de exterior">
-		   <a class="arrow" href="/galeria/cocina">
+		   <a class="arrow right" href="/galeria/cocina">
 			   &gt
 		   </a>
         </section>
@@ -43,14 +43,30 @@ import Layout from "../../layouts/Layout.astro";
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		position: relative;
 	}
 	img{
-		width: 90%;
+		width: 100%;
 		border-radius: 12px;
 	}
 	.arrow{
-		font-size: 3rem;
+		font-size: 2rem;
 		text-decoration: none;
 		color: #262633;
+		position: absolute;
+		background-color: hsl(240, 15%, 87%);
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+		font-weight: 200;
+	}
+	.right{
+		right: 4px;
+	}
+	.left{
+		left: 4px;
 	}
 </style>
