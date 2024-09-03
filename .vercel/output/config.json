@@ -1,0 +1,71 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^\\/_image$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/documentacion\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/exterior-old\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/fichas\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/galeria\\/cocina\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/galeria\\/exterior\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/index-old\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/interior\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/plano3d\\/layama\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/plano3d\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/ubicacion\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/video\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/visitavirtual\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/$",
+			"dest": "_render"
+		}
+	]
+}

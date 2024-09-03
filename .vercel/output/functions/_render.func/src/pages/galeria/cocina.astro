@@ -1,0 +1,65 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+
+<Layout title="Renders de Interior">
+    <main>
+        <section>
+			<a class="arrow left" href="/galeria/exterior">
+				&lt 
+		   </a>
+		   <img src="/cocina.png" alt="render de cocina">
+		   <a class="arrow right" href="/galeria/exterior">
+			   &gt
+		   </a>
+        </section>
+    </main>
+</Layout>
+
+
+
+<style>
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+	section{
+		height: calc(100vh - 48px);
+		margin: 48px;
+		border-radius: 12px;
+		background-position: 50% 70%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+	}
+	img{
+		width: 100%;
+		border-radius: 12px;
+	}
+	.arrow{
+		font-size: 2rem;
+		text-decoration: none;
+		color: #262633;
+		position: absolute;
+		background-color: hsl(240, 15%, 87%);
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+		font-weight: 200;
+	}
+	.right{
+		right: 4px;
+	}
+	.left{
+		left: 4px;
+	}
+</style>
