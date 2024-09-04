@@ -11,7 +11,10 @@ import Layout from "../layouts/Layout.astro";
 			<img src="/viviendaC.webp" id="botonC" class="boton-ficha" alt="ficha comercial C">
 			<img src="/viviendaD.webp" id="botonD" class="boton-ficha" alt="ficha comercial D">
 			<img src="/viviendaE.webp" id="botonE" class="boton-ficha" alt="ficha comercial E">
-			<img src="/viviendaF.webp" id="botonF" class="boton-ficha" alt="ficha comercial F">
+			<img src="/viviendaF.webp" id="botonF" class="boton-ficha" alt="ficha comercial F">	
+			<img src="/viviendaD.webp" id="botonD2" class="boton-ficha" alt="ficha comercial D">
+			<img src="/viviendaE.webp" id="botonE2" class="boton-ficha" alt="ficha comercial E">
+			<img src="/viviendaF.webp" id="botonF2" class="boton-ficha" alt="ficha comercial F">
 		</section>
 		<div>
 			<dialog id="fichaModalA">
@@ -40,6 +43,9 @@ import Layout from "../layouts/Layout.astro";
 
 
 <style>
+
+
+
 	main {
 		margin: 0;
 		padding: 0;
@@ -58,7 +64,7 @@ import Layout from "../layouts/Layout.astro";
 		margin: 24px;
 		border-radius: 12px;
 		background-position: 50% 70%;
-		overflow: scroll;
+		overflow: visible;
 		overflow-x: hidden;
 	}
 	.grid-fichas{
@@ -76,6 +82,7 @@ import Layout from "../layouts/Layout.astro";
 	dialog{
 	height: calc(100vh - 16px);
 	border: none;
+	
 }
 dialog::backdrop{
 	background-color: #26263399;
