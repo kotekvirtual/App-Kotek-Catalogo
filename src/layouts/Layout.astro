@@ -197,7 +197,7 @@ const { title } = Astro.props;
 		gap: 64px;
 		align-items: center;
 		font-size: 12pt;
-		height: 100%;
+		border-right: hsla(228, 100%, 99%, 0.1) solid 1px;
 		
 		}
 	.navlink{
@@ -218,26 +218,29 @@ const { title } = Astro.props;
 		flex-direction: column;
 		gap: 32px;
 		width: 250px;
-		
-		height: 300px;
+
 		
 	}
 	.logo{
 		pointer-events: none;
 		
 		& span{
-			color: #637cff;
+			color: hsl(230, 100%, 69%);
 		}
 	}
 	.navlink:hover{
 		outline-offset: -1px;
 
-		outline: solid 1px #637cff;
+		outline: solid 1px hsl(230, 100%, 89%);
 
 
 		}
 	.active{
-		background-color: #637cff;
+		background-color: hsl(230, 100%, 89%);
+		color:  hsl(240, 15%, 17%);
+		& svg{
+			fill:  hsl(240, 15%, 17%);
+		}
 		
 	}
 	.poppins-bold {
