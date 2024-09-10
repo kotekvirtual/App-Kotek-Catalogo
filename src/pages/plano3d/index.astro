@@ -172,9 +172,6 @@ document.querySelector("#room4").addEventListener("click",()=>{
 .secondrow :hover{
 	fill-opacity: 0.8;
 }
-.modal-ficha{
-
-}
 dialog{
 	height: calc(100vh - 16px);
 	border: none;
@@ -182,11 +179,7 @@ dialog{
 dialog::backdrop{
 	background-color: #26263399;
 }
-.modalImage{
-	height: 99%;
-	margin: 0px;
-	border: none;
-}
+
 .outline{
 	fill: none;
 	stroke: white;
@@ -197,21 +190,24 @@ dialog::backdrop{
 	font: bold 3px "Poppins",sans-serif;
 }
 .modal{
-	height: 80vh;
+	width: fit-content;
+	height: fit-content;
 	border-radius: 12px;
 	overflow: hidden;
 	outline: none;
-	& img{
-		border-radius: 8px;
-		height: 100%;
-	}
-	
-
-	
 	
 }
+.modalImage{
+	border-radius: 8px;
+	max-width: 80vw;
+	max-height: 80vh;
+}
 #modal1{
-	width: 80vw;
+	width: auto;
+	height: 80vh;
+	aspect-ratio: auto;
+	max-width: 80vw;
+
 }
 .closeButton{
 	position: fixed;
