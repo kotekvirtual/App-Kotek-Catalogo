@@ -1,88 +1,14 @@
+--- 
+import Gallery from "../../layouts/Gallery.astro";
+const values = {
+	imageSource:"/exterior1.webp",
+	imageAlt:"imagen del exterior",
+	exterior:"current",
+	prev:"dormitorio",
+	next:"exterior2"
+
+}
 ---
-import Layout from "../../layouts/Layout.astro";
----
 
+<Gallery {values} />
 
-<Layout title="Renders de Interior">
-    <main>
-        <section>
-            <a class="arrow left" href="/galeria/salon">
-				&lt 
-		   </a>
-		   <img src="/exterior1.webp" alt="render de exterior">
-		   <a class="arrow right" href="/galeria/dormitorio">
-			   &gt
-		   </a>
-		   <footer class="dots-footer">
-			<ul class="dotstyle dotstyle-fillup">
-				<li><a href="/galeria/cocina">Cocina</a></li>
-				<li ><a href="/galeria/aseo">Aseo</a></li>
-				<li><a href="/galeria/exterior3">Exterior3</a></li>
-				<li><a href="/galeria/salon">Salón</a></li>
-				<li class="current"><a href="/galeria/exterior">Exterior</a></li>
-				<li><a href="/galeria/dormitorio">Dormitorio</a></li>
-				<li><a href="/galeria/exterior2">Exterior2</a></li>
-			</ul>
-		</footer>
-        </section>
-    </main>
-</Layout>
-
-
-
-<style>
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin: 0;
-		padding: 0;
-	}
-	section{
-		height: calc(100vh - 48px);
-		margin: 24px;
-		border-radius: 12px;
-		background-position: 50% 70%;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		position: relative;
-		overflow: hidden;
-
-	}
-	img{
-		width: 100%;
-		border-radius: 12px;
-		-webkit-touch-callout : none;     /* iOS Safari */
-  		-webkit-user-select   : none;     /* Chrome/Safari/Opera */
- 		-khtml-user-select    : none;     /* Konqueror */
- 		-moz-user-select      : none;     /* Firefox */
-  		-ms-user-select       : none;     /* Internet Explorer/Edge */
-	}
-	.arrow{
-		font-size: 3rem;
-		text-decoration: none;
-		color: #262633;
-		position: absolute;
-		background-color: hsl(240, 15%, 87%);
-		border-radius: 12px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 3rem;
-		height: 3rem;
-		font-weight: 200;
-		-webkit-touch-callout : none;     /* iOS Safari */
-  		-webkit-user-select   : none;     /* Chrome/Safari/Opera */
- 		-khtml-user-select    : none;     /* Konqueror */
- 		-moz-user-select      : none;     /* Firefox */
-  		-ms-user-select       : none;     /* Internet Explorer/Edge */
-	}
-	.right{
-		right: 8px;
-	}
-	.left{
-		left: 8px;
-	}
-</style>
