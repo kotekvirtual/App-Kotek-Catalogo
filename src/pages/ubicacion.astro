@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Ubicación">
     <main>
         <section>
-			<img src="/mapa.webp" alt="mapa de la ubicación de la vivienda">
+			<img src="/ubicacion.webp" alt="mapa de la ubicación de la vivienda">
 
 			
 
@@ -35,10 +35,16 @@ import Layout from "../layouts/Layout.astro";
 		margin: 24px;
 		border-radius: 12px;
 		background-position: 50% 70%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		overflow: hidden;
 	}
 	img{
-		height: 100%;
+		height: auto;
 		border-radius: 12px;
+		width: 100%;
 	}
 
 
