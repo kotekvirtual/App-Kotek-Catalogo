@@ -31,7 +31,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<nav transition:animate="none" class="fixed-navbar">
-			<h1 class="logo poppins-bold">tu logo<span class="dot">.</span></h1>
+			<a href="/" class="logo poppins-bold">tu logo<span class="dot">.</span></a>
 			<ul class="icon-list">
 				<li class="navlist">
 					
@@ -193,6 +193,7 @@ const { title } = Astro.props;
 		font-size: 1rem;
 		border-right: hsla(228, 100%, 99%, 0.1) solid 0px;
 		height: 100vh;
+		align-items: flex-start;
 
 		
 		}
@@ -220,7 +221,10 @@ const { title } = Astro.props;
 		
 	}
 	.logo{
-		pointer-events: none;
+		font-size: 2rem;
+		color: white;
+		text-decoration: none;
+		padding-left: 8px;
 		
 		& span{
 			color: hsl(230, 100%, 69%);
