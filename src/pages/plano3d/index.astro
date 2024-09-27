@@ -38,11 +38,11 @@ import Layout from "../../layouts/Layout.astro";
 		<div>
 			<dialog id="modal1" class="modal">
 				<button class="closeButton">X</button>
-				<iframe src="https://kotekvirtual.es/high-2/" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe src="https://kotekvirtual.es/dormitorio-principal/" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal2" class="modal">
 				<button class="closeButton">X</button>
-				<img src="/salon.webp" alt="ficha comercial" class="modalImage">
+				<iframe src="https://kotekvirtual.es/salon-comedor/" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal3" class="modal">
 				<button class="closeButton">X</button>
@@ -206,6 +206,13 @@ dialog::backdrop{
 	max-height: 80vh;
 }
 #modal1{
+	width: auto;
+	height: 80vh;
+	aspect-ratio: auto;
+	max-width: 80vw;
+
+}
+#modal2{
 	width: auto;
 	height: 80vh;
 	aspect-ratio: auto;
