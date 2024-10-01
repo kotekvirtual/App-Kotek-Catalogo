@@ -8,28 +8,45 @@ import Layout from "../../layouts/Layout.astro";
         <section>
 			<div class='imageWrapper3D'>
 				<!-- fill with SVG areas -->
-				<svg viewBox="0 0 90 90" class='image-area image-area--orange-1'>
+				<svg viewBox="0 0 1920 1080" class='image-area image-area--orange-1'>
 					
 						
 
-					<text x="19" y="20" class="svg-text">+</text>
-					<text x="45" y="20" class="svg-text">+</text>
-					<text x="70" y="20" class="svg-text">+</text>
-					<text x="45" y="45" class="svg-text">+</text>
-					<g class="toprow" id="room1" ><path d="M 30.8 33.8 H 4.8 L 8.8 2.6 H 33.1 Z" />
+					<text x="670" y="400" class="svg-text">+</text>
+					<text x="1050" y="250" class="svg-text">+</text>
+					<text x="1250" y="250" class="svg-text">+</text>
+					<text x="1470" y="170" class="svg-text">+</text>
+					<text x="1560" y="370" class="svg-text">+</text>
+					<text x="1560" y="640" class="svg-text">+</text>
+					<text x="1300" y="640" class="svg-text">+</text>
+					<text x="450" y="710" class="svg-text">+</text>
+					<text x="750" y="760" class="svg-text">+</text>
+					<g class="secondrow" id="room10" ><path d="M 174.3,837.7 243,521.7 H 392.2 l 50.3,-302 523.5,-1.2 0.6,-145.5 629.7,0.6 79.2,365.8 45.4,0.6 62.6,273.1 -562.2,3.1 8.6,122.7 z" />
+					<g class="toprow" id="room1" ><path d="M 963.5,500.5 H 396.1 l 47.4,-280.3 520.4,-0.4 z" />
 					</g>
-					<g class="toprow" id="room2" ><path d="M 33.3 2.6 L 31 33.8 H 60.1 L 58.9 2.6 Z" />
+					<g class="toprow" id="room2" ><path d="m 1182.8,356.1 -78.8,0.1 -2,-49.2 H 968.5 L 967.7,75.1 1163.6,74.8 Z" />
 					</g>
-					<g class="toprow" id="room3" ><path d="M 80.8 2.6 L 84.7 33.8 H 60.4 L 59.1 2.6 Z" />
+					<g class="toprow" id="room3" ><path d="m 1404,355 -78.1,0.1 -6.1,-48.2 -135.9,0.5 -16.3,-232.8 197.3,0.2 z" />
 					</g>
-					<g class="toprow" id="room4" ><path d="M 4.8 34.1 H 84.7 L 87.1 55.8 H 61.7 L 61.5 51.2 H 29.7 L 29.7 55.8 H 2.6 Z" />
+					<g class="toprow" id="room4" ><path d="m 1627.6,228.7 h -111.4 l -5.7,-35.4 -124.1,1 -16.8,-120 225.2,0.4 z" />
 					</g>
-
-
+					<g class="toprow" id="room5" ><path d="m 1673.1,437.7 -43.7,-205 -112.6,0.3 37.2,206.2 z" />
+					</g>
+					<g class="toprow" id="room6" ><path d="m 1781.6,710.7 -295.7,0.7 -39.1,-268.5 98.3,0.2 8.6,49.6 178.6,-0.2 z" />
+					</g>
+					<g class="toprow" id="room7" ><path d="m 1480.7,710.7 -296.4,1.2 -14,-218.7 178.6,0.5 -6.1,-50.8 h 99 z" />
+					</g>
+					<g class="toprow" id="room8" ><path d="m 837.3,837.8 -144.1,0.5 16.3,-219.8 135.7,-0.5 z" />
+					</g>
+					<g class="toprow" id="room9" ><path d="M 241.2,520.7 H 714.3 L 690.5,839.6 172.9,838.6 Z" />
+					</g>
+					</g>
+					
+					<img src="/raul-orbit.webp"/>
 			</svg>
 				<!-- -->
 				
-				<img src="/magnolia.webp"/>
+				
 			  </div>
 
 			 
@@ -52,6 +69,30 @@ import Layout from "../../layouts/Layout.astro";
 				<button class="closeButton">X</button>
 				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
+			<dialog id="modal5" class="modal">
+				<button class="closeButton">X</button>
+				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="modal6" class="modal">
+				<button class="closeButton">X</button>
+				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="modal7" class="modal">
+				<button class="closeButton">X</button>
+				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="modal8" class="modal">
+				<button class="closeButton">X</button>
+				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="modal9" class="modal">
+				<button class="closeButton">X</button>
+				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="modal10" class="modal">
+				<button class="closeButton">X</button>
+				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
 			
 		  </div>
     </main>
@@ -70,6 +111,24 @@ document.querySelector("#room3").addEventListener("click",()=>{
 document.querySelector("#room4").addEventListener("click",()=>{
 	document.getElementById("modal4").showModal()
 })
+document.querySelector("#room5").addEventListener("click",()=>{
+	document.getElementById("modal5").showModal()
+})
+document.querySelector("#room6").addEventListener("click",()=>{
+	document.getElementById("modal6").showModal()
+})
+document.querySelector("#room7").addEventListener("click",()=>{
+	document.getElementById("modal7").showModal()
+})
+document.querySelector("#room8").addEventListener("click",()=>{
+	document.getElementById("modal8").showModal()
+})
+document.querySelector("#room9").addEventListener("click",()=>{
+	document.getElementById("modal9").showModal()
+})
+// document.querySelector("#room10").addEventListener("click",()=>{
+// 	document.getElementById("modal10").showModal()
+// })
 
 
 
@@ -105,6 +164,54 @@ document.querySelector("#room4").addEventListener("click",()=>{
 			document.getElementById("modal4").close();
 		  }
 	});
+	document.getElementById("modal5").addEventListener('click', (event)=> {
+		  let rectD = document.getElementById("modal5").getBoundingClientRect();
+		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
+		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
+		  if (!isInDialogD) {
+			document.getElementById("modal5").close();
+		  }
+	});
+	document.getElementById("modal6").addEventListener('click', (event)=> {
+		  let rectD = document.getElementById("modal6").getBoundingClientRect();
+		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
+		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
+		  if (!isInDialogD) {
+			document.getElementById("modal6").close();
+		  }
+	});
+	document.getElementById("modal7").addEventListener('click', (event)=> {
+		  let rectD = document.getElementById("modal7").getBoundingClientRect();
+		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
+		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
+		  if (!isInDialogD) {
+			document.getElementById("modal7").close();
+		  }
+	});
+	document.getElementById("modal8").addEventListener('click', (event)=> {
+		  let rectD = document.getElementById("modal8").getBoundingClientRect();
+		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
+		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
+		  if (!isInDialogD) {
+			document.getElementById("modal8").close();
+		  }
+	});
+	document.getElementById("modal9").addEventListener('click', (event)=> {
+		  let rectD = document.getElementById("modal9").getBoundingClientRect();
+		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
+		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
+		  if (!isInDialogD) {
+			document.getElementById("modal9").close();
+		  }
+	});
+	document.getElementById("modal10").addEventListener('click', (event)=> {
+		  let rectD = document.getElementById("modal10").getBoundingClientRect();
+		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
+		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
+		  if (!isInDialogD) {
+			document.getElementById("modal10").close();
+		  }
+	});
 	
 	</script>
 
@@ -134,7 +241,7 @@ document.querySelector("#room4").addEventListener("click",()=>{
 
   position: relative;
   max-height: calc(100vh - 48px);
-  aspect-ratio: 1.50058616647;
+  aspect-ratio: 16 / 9;
 
 
 
@@ -144,7 +251,7 @@ document.querySelector("#room4").addEventListener("click",()=>{
 	width:100%; 
   height:100%;
   border-radius: 12px;
-  aspect-ratio: 1.50058616647;
+  aspect-ratio: 16 / 9;
 
 }
 
@@ -156,24 +263,25 @@ document.querySelector("#room4").addEventListener("click",()=>{
 
 .toprow{
 	fill: #75A93A;
-    fill-opacity: 0.3;
     cursor: pointer;
 	stroke: white;
-	stroke-width: .2;
+	stroke-width: 4;
+	z-index: 9;
+	fill-opacity: 0;
 
 }
 .secondrow{
-	fill: #a93a3a;
+	fill: #75A93A;
     fill-opacity: 0.4;
     cursor: pointer;
 }
 .toprow :hover{
-	fill-opacity: 0.8;
+	fill-opacity: 0.4;
 
 
 }
 .secondrow :hover{
-	fill-opacity: 0.8;
+	fill-opacity: 0.6;
 }
 dialog{
 	height: calc(100vh - 16px);
@@ -190,7 +298,8 @@ dialog::backdrop{
 }
 .svg-text{
 	fill: #a93a75;
-	font: bold 3px "Poppins",sans-serif;
+	font: bold 5rem "Poppins",sans-serif;
+	z-index: 9;
 }
 .modal{
 	width: fit-content;
