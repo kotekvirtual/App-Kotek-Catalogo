@@ -53,45 +53,45 @@ import Layout from "../../layouts/Layout.astro";
 			
         </section>
 		<div>
-			<dialog id="modal1" class="modal">
-				<button class="closeButton">X</button>
-				<iframe src="https://kotekvirtual.es/dormitorio-principal/" height="100%" width="100%" frameborder="0"></iframe>
-			</dialog>
-			<dialog id="modal2" class="modal">
+			<dialog id="modal1" class="modal layama">
 				<button class="closeButton">X</button>
 				<iframe src="https://kotekvirtual.es/salon-comedor/" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
-			<dialog id="modal3" class="modal">
+			<dialog id="modal2" class="modal">
 				<button class="closeButton">X</button>
-				<img src="/dormitorio1.webp" alt="ficha comercial" class="modalImage">
+				<img src="/despacho.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="modal3" class="modal layama">
+				<button class="closeButton">X</button>
+				<iframe src="https://kotekvirtual.es/dormitorio-principal/" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal4" class="modal">
 				<button class="closeButton">X</button>
-				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+				<img src="/bano.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="modal5" class="modal">
 				<button class="closeButton">X</button>
-				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+				<img src="/aseo.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="modal6" class="modal">
 				<button class="closeButton">X</button>
-				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+				<img src="/dormitorio-2.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="modal7" class="modal">
 				<button class="closeButton">X</button>
-				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+				<img src="/dormitorio3.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="modal8" class="modal">
 				<button class="closeButton">X</button>
-				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+				<img src="/aseo.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="modal9" class="modal">
 				<button class="closeButton">X</button>
 				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
-			<dialog id="modal10" class="modal">
+			<dialog id="modal10" class="modal layama">
 				<button class="closeButton">X</button>
-				<img src="/cocina.webp" alt="ficha comercial" class="modalImage">
+				<iframe src="https://kotekvirtual.es/salon-comedor/" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			
 		  </div>
@@ -204,14 +204,14 @@ document.querySelector("#room9").addEventListener("click",()=>{
 			document.getElementById("modal9").close();
 		  }
 	});
-	document.getElementById("modal10").addEventListener('click', (event)=> {
-		  let rectD = document.getElementById("modal10").getBoundingClientRect();
-		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
-		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
-		  if (!isInDialogD) {
-			document.getElementById("modal10").close();
-		  }
-	});
+	// document.getElementById("modal10").addEventListener('click', (event)=> {
+	// 	  let rectD = document.getElementById("modal10").getBoundingClientRect();
+	// 	  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
+	// 	rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
+	// 	  if (!isInDialogD) {
+	// 		document.getElementById("modal10").close();
+	// 	  }
+	// });
 	
 	</script>
 
@@ -314,14 +314,7 @@ dialog::backdrop{
 	max-width: 80vw;
 	max-height: 80vh;
 }
-#modal1{
-	width: auto;
-	height: 80vh;
-	aspect-ratio: auto;
-	max-width: 80vw;
-
-}
-#modal2{
+.layama{
 	width: auto;
 	height: 80vh;
 	aspect-ratio: auto;
