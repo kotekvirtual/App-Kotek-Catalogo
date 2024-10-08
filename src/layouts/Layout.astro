@@ -98,6 +98,9 @@ const { title } = Astro.props;
 						Documentación</a>
 				</li>
 			</ul>
+			<svg width="48px" height="64px" viewBox="0 0 50 50" class="hamburger-icon">
+				<path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
+				</svg>
 		</nav>
 		<slot />
 	</body>
@@ -256,30 +259,7 @@ const { title } = Astro.props;
   font-style: normal;
 }
 
-@media (max-width: 968px) {
-	body{
-		flex-direction: column;
-	}
-  .fixed-navbar{
-	height: 80px;
-	flex-direction: row;
-	width: 100vw;
-	align-items: center;
-	padding: 0;
-	border-bottom: solid 1px   hsl(240, 15%, 37%);
-  }
-  .icon-list{
-	display: none;
-  }
- 
-}
-  
 
-@media (max-width: 1200px){
-	.long-nav{
-		display: none;
-	}
-}
 /* Dot navigation for image gallery */
 .dots-footer{
 		position: absolute;
@@ -351,6 +331,43 @@ const { title } = Astro.props;
 
 .dotstyle-fillup li.current a::after {
 	height: 100%;
+}
+.hamburger-icon{
+	fill: white;
+	display: none;
+}
+
+@media (max-width: 968px) {
+	body{
+		flex-direction: column;
+	}
+  .fixed-navbar{
+	height: 80px;
+	flex-direction: row;
+	width: 100vw;
+	align-items: center;
+	padding: 0;
+	border-bottom: solid 1px   hsl(240, 15%, 37%);
+	justify-content: space-between;
+  }
+  .icon-list{
+	display: none;
+  }
+  .hamburger-icon{
+	display: initial;
+	padding-right: 16px;
+  }
+  .logo{
+	padding-left: 16px;
+  }
+ 
+}
+  
+
+@media (max-width: 1200px){
+	.long-nav{
+		display: none;
+	}
 }
 	
 </style>
