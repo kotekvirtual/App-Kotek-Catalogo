@@ -98,10 +98,81 @@ const { title } = Astro.props;
 						Documentación</a>
 				</li>
 			</ul>
-			<svg width="48px" height="64px" viewBox="0 0 50 50" class="hamburger-icon">
+			<svg width="48px" height="64px" viewBox="0 0 50 50" class="hamburger-icon" id="iconClick">
 				<path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
-				</svg>
+			</svg>
+			
+			
 		</nav>
+		<div class="hamburger-dialog" id="hamburger-dialog">
+			<ul class="hamburger-icons">
+				<li class="hamburger-list">
+					
+					<a href="/" class="navlink">
+						<svg width="16px" height="16px" viewBox="0 0 24 24" fill="#FFF" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11,15h-2v-2h2v2Zm4-2h-2v2h2v-2Zm-4,4h-2v2h2v-2Zm4,0h-2v2h2v-2ZM11,5h-2v2h2v-2Zm4,0h-2v2h2v-2Zm-4,4h-2v2h2v-2Zm4,0h-2v2h2v-2Zm9-1c0-1.654-1.346-3-3-3h-2V3c0-1.654-1.346-3-3-3H8c-1.654,0-3,1.346-3,3v6H3c-1.654,0-3,1.346-3,3v12H24V8ZM2,12c0-.552,.449-1,1-1H7V3c0-.552,.449-1,1-1h8c.551,0,1,.448,1,1V7h4c.551,0,1,.448,1,1v14H2V12Zm18,1h-2v2h2v-2Zm0,4h-2v2h2v-2ZM6,13h-2v2h2v-2Zm0,4h-2v2h2v-2Zm14-8h-2v2h2v-2Z"/>
+						</svg>
+						Vista exterior</a>
+				</li>
+				<li class="hamburger-list">
+					
+					<a href="/plano3d/"  class="navlink">
+						<svg width="16px" height="16px" viewBox="0 0 24 24" fill="#FFF" xmlns="http://www.w3.org/2000/svg">
+							<path d="m7,4V0h-3.5C1.57,0,0,1.57,0,3.5v17c0,1.93,1.57,3.5,3.5,3.5h20.5V4H7Zm-5-.5c0-.827.673-1.5,1.5-1.5h1.5v15h-1.5c-.536,0-1.045.122-1.5.338V3.5Zm20,18.5H3.5c-.827,0-1.5-.673-1.5-1.5s.673-1.5,1.5-1.5h3.5V6h15v16Zm-2-3h-11v-11h2v9h3v-4h2v4h2v-7h-4v-2h6v11Z"/>
+						</svg>
+						Plano 3D</a>
+				</li>
+				<li class="hamburger-list">
+					
+					<a href="/visitavirtual/"  class="navlink">
+						<svg width="16px" height="16px" viewBox="0 0 24 24" fill="#FFF" xmlns="http://www.w3.org/2000/svg">
+							<path d="m12,0C5.047,0,0,2.523,0,6v12c0,2.001,1.689,3.813,4.634,4.972l1.366.537v-14.149l-.634-.249c-2.108-.829-3.366-1.992-3.366-3.11,0-1.932,4.018-4,10-4s10,2.068,10,4c0,1.118-1.258,2.281-3.366,3.11l-.634.249v14.149l1.366-.537c2.945-1.158,4.634-2.971,4.634-4.972V6c0-3.477-5.047-6-12-6ZM4,10.703v9.758c-1.273-.735-2-1.611-2-2.461v-8.482c.56.438,1.229.836,2,1.186Zm18,7.297c0,.85-.727,1.726-2,2.461v-9.758c.771-.35,1.44-.748,2-1.186v8.482Zm-10-8c-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5,2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5Zm1,1h-2c-1.654,0-3,1.346-3,3v6h1v4h2v-4h2v4h2v-4h1v-6c0-1.654-1.346-3-3-3Zm-3,3c0-.552.449-1,1-1h2c.551,0,1,.448,1,1v4h-4v-4Z"/>
+						</svg>
+						Visita Virtual</a>
+				</li>
+				<li class="hamburger-list">
+					
+					<a href="/galeria/cocina/"  class="navlink">
+						<svg width="16px" height="16px" viewBox="0 0 24 24" fill="#FFF" xmlns="http://www.w3.org/2000/svg">
+							<g id="_01_align_center" data-name="01 align center"><path d="M21,0H3A3,3,0,0,0,0,3V24H24V3A3,3,0,0,0,21,0ZM3,2H21a1,1,0,0,1,1,1V20.586L11.121,9.707a3,3,0,0,0-4.242,0L2,14.586V3A1,1,0,0,1,3,2ZM2,17.414l6.293-6.293a1,1,0,0,1,1.414,0L20.586,22H2Z"/><path d="M16,10a3,3,0,1,0-3-3A3,3,0,0,0,16,10Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,16,6Z"/></g>
+						</svg>
+						<span class="long-nav">Galería de </span>Imágenes</a>
+				</li>
+				<li class="hamburger-list">
+					
+					<a href="/fichas/"  class="navlink">
+						<svg width="16px" height="16px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+							<path d="m14,5.478l6-1.15v2.037l-6,1.15v-2.037Zm0,10.085l6-1.15v-2.037l-6,1.15v2.037Zm0-4l6-1.15v-2.037l-6,1.15v2.037ZM24,2.909v19.017l-12.675,2.104-5.298-2.878-4.705,2.848H.043l-.043-1V4.365c0-1.149.641-2.18,1.671-2.689L4.229.413C5.337-.134,6.663-.134,7.771.413l3.047,1.505L20.57.047c.85-.151,1.721.075,2.385.63.664.554,1.045,1.368,1.045,2.232Zm-17-.647v17.143l3,1.629V3.744l-3-1.482ZM2,21.252l3-1.816V2.262l-2.443,1.206c-.338.167-.557.52-.557.896v16.887ZM22,2.909c0-.369-.204-.596-.326-.697s-.383-.264-.742-.197l-8.932,1.712v18.164l10-1.66V2.909Zm-8,16.654l4-.767v-2.037l-4,.767v2.037Z"/>
+						</svg>
+						Fichas<span class="long-nav"> Comerciales</span></a>
+				</li>
+				<li class="hamburger-list">
+					
+					<a href="/video/"  class="navlink">
+						<svg width="16px" height="16px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+							<path d="m24 24h-24v-21a3 3 0 0 1 3-3h18a3 3 0 0 1 3 3zm-22-2h20v-19a1 1 0 0 0 -1-1h-18a1 1 0 0 0 -1 1zm6-4.277v-11.446l10.016 5.723zm2-8v4.554l3.984-2.277z"/>
+							</svg>
+						Vídeo<span class="long-nav"> Comercial</span></a>
+				</li>
+				<li class="hamburger-list">
+					
+					<a href="/ubicacion/"  class="navlink">
+						<svg width="16px" height="16px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+							<path d="m16.242,1.757c-1.134-1.133-2.641-1.757-4.242-1.757s-3.11.624-4.242,1.757c-1.134,1.133-1.758,2.64-1.758,4.243s.624,3.11,1.77,4.254l4.23,4.138,4.242-4.149c1.134-1.133,1.758-2.64,1.758-4.243s-.624-3.11-1.758-4.243Zm-4.242,6.243c-1.105,0-2-.895-2-2s.895-2,2-2,2,.895,2,2-.895,2-2,2Zm12,7.701v1.099l-12,7.2L0,16.8v-1.099l6.494-3.897,2.217,2.169-3.796,2.277,7.084,4.25,7.084-4.25-3.796-2.277,2.217-2.168,6.494,3.896Z"/>
+							</svg>
+						Ubicación</a>
+				</li>
+				<li class="hamburger-list">
+					
+					<a href="/documentacion/"  class="navlink">
+						<svg width="16px" height="16px" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14.414,0H5c-1.654,0-3,1.346-3,3V24H22V7.586L14.414,0Zm.586,3.414l3.586,3.586h-3.586V3.414Zm5,18.586H4V3c0-.551,.449-1,1-1H13v7h7v13Zm-14-2h12v-7H6v7Zm2-5h8v3H8v-3Zm3-4H6v-2h5v2Zm0-4H6v-2h5v2Z"/>
+							</svg>
+						Documentación</a>
+				</li>
+			</ul>
+
+		</div>
 		<slot />
 	</body>
 </html>
@@ -336,6 +407,27 @@ const { title } = Astro.props;
 	fill: white;
 	display: none;
 }
+.hamburger-icons{
+	list-style-type: none;
+	padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.hamburger-dialog{
+	height: 0px;
+	top: 80px;
+	width: 100vw;
+	position: absolute;
+	z-index: 99;
+	background-color: hsl(240, 15%, 17%);
+	display: none;
+	
+}
+.hamburger-list{
+	font-size: 1.5rem;
+}
+	
 
 @media (max-width: 968px) {
 	body{
@@ -360,6 +452,10 @@ const { title } = Astro.props;
   .logo{
 	padding-left: 16px;
   }
+  .hamburger-open{
+	height: calc( 100vh - 80px );
+	display: flex;
+  }
  
 }
   
@@ -369,5 +465,17 @@ const { title } = Astro.props;
 		display: none;
 	}
 }
-	
 </style>
+<script type="module">
+const hamburgerMenu = document.querySelector(".hamburger-dialog")
+const hamburgerIcon = document.querySelector(".hamburger-icon")
+
+hamburgerIcon.addEventListener("click",()=>{
+	if (hamburgerMenu.classList.contains("hamburger-open")){
+		hamburgerMenu.classList.remove("hamburger-open")
+	}
+	else{
+		hamburgerMenu.classList.add("hamburger-open")
+	}
+})
+</script>
