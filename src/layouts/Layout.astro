@@ -31,7 +31,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<nav transition:animate="none" class="fixed-navbar">
-			<a href="/plano3d/" class="logo poppins-bold">tu logo<span class="dot">.</span></a>
+			<a href="/" class="logo poppins-bold">tu logo<span class="dot">.</span></a>
 			<ul class="icon-list">
 				<li class="navlist">
 					
@@ -98,7 +98,7 @@ const { title } = Astro.props;
 						Documentación</a>
 				</li>
 			</ul>
-			<svg width="48px" height="64px" viewBox="0 0 50 50" class="hamburger-icon" id="iconClick">
+			<svg viewBox="0 0 50 50" class="hamburger-icon">
 				<path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
 			</svg>
 			
@@ -448,6 +448,10 @@ const { title } = Astro.props;
   .hamburger-icon{
 	display: initial;
 	padding-right: 16px;
+	height: 32px;
+  }
+  .hamburger-icon-rotated{
+	transform: rotate(90deg);
   }
   .logo{
 	padding-left: 16px;
@@ -473,9 +477,12 @@ const hamburgerIcon = document.querySelector(".hamburger-icon")
 hamburgerIcon.addEventListener("click",()=>{
 	if (hamburgerMenu.classList.contains("hamburger-open")){
 		hamburgerMenu.classList.remove("hamburger-open")
+		hamburgerIcon.classList.remove("hamburger-icon-rotated")
+
 	}
 	else{
 		hamburgerMenu.classList.add("hamburger-open")
+		hamburgerIcon.classList.add("hamburger-icon-rotated")
 	}
 })
 </script>
