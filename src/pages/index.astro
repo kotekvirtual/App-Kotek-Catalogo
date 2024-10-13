@@ -57,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
 			<div class='imageWrapperHero'>
 				<!-- fill with SVG areas -->
 				<svg viewBox="0 0 192 144" class='image-area image-area--orange-1'>
-
+					
 					<g class="toprow" id="ventanaA"><path d="M 26.625 62.449 L 37.205 62.449 L 37.23 70.526 L 26.649 70.55 Z M 40.624 62.495 L 49.37 62.495 L 49.479 70.406 L 40.624 70.406 Z M 53.195 62.444 L 62.793 62.444 L 62.849 70.563 L 53.121 70.507 Z M 64.726 62.377 L 74.298 62.415 L 74.336 70.543 L 64.707 70.543 Z M 80.707 62.427 L 89.65 62.447 L 89.67 70.564 L 80.628 70.564 Z" /></g>
 					
 					<g class="secondrow" id="ventanaB" ><path d="M 103.5 62.334 L 112.485 62.397 L 112.485 70.596 L 103.5 70.628 Z M 118.737 62.428 L 127.847 62.459 L 127.894 70.638 L 118.776 70.615 Z M 129.484 62.371 L 139.111 62.451 L 139.191 70.593 L 129.59 70.566 Z M 145.449 62.371 L 154.426 62.406 L 154.478 66.643 L 145.467 66.591 Z M 156.398 62.4 L 165.938 62.427 L 165.965 66.679 L 156.398 66.638 Z" /></g>
@@ -73,6 +73,12 @@ import Layout from "../layouts/Layout.astro";
 						M 95.5 74.6 L 95.5 83.3 L 170.3 83.3 L 170.3 74.6 Z
 						M 23.2 87 L 23.2 96.3 L 95 96.3 L 95 87 Z 
 						M 95.5 87 L 95.5 96.3 L 170.3 96.3 L 170.3 87 Z" /></g>
+						<text x="50" y="70" class="svg-number">1</text>
+						<text x="120" y="70" class="svg-number">2</text>
+						<text x="50" y="83" class="svg-number">3</text>
+						<text x="120" y="83" class="svg-number">4</text>
+						<text x="50" y="96" class="svg-number">5</text>
+						<text x="120" y="96" class="svg-number">6</text>
 
 
 			</svg>
@@ -103,6 +109,16 @@ import Layout from "../layouts/Layout.astro";
 				</dialog>
 				
 			  </div>
+			  <div class="mobile-text">
+				<ul>
+					<li>1. Planta 3 - A - 3 dormitorios <span class="room1">Ver Ficha</span></li>
+					<li>2. Planta 3 - B - 3 dormitorios <span class="room2">Ver Ficha</span></li>
+					<li>3. Planta 2 - A - 2 dormitorios <span class="room3">Ver Ficha</span></li>
+					<li>4. Planta 2 - B - 3 dormitorios <span class="room4">Ver Ficha</span></li>
+					<li>5. Planta 1 - A - 2 dormitorios <span class="room5">Ver Ficha</span></li>
+					<li>6. Planta 1 - B - 2 dormitorios <span class="room6">Ver Ficha</span></li>
+				</ul>
+			</div>
 			
         </section>
     </main>
@@ -210,7 +226,7 @@ import Layout from "../layouts/Layout.astro";
 		height: calc(100vh - 48px);
 		margin: 24px;
 		border-radius: 12px;
-		overflow: hidden;
+		overflow: visible;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -296,6 +312,36 @@ dialog::backdrop{
   .section-mobile{
 	display: initial;
 }
+  }
+
+.mobile-text{
+	color: white;
+	width: 100vw;
+	padding: 0;
+	& ul{
+		width: 100%;
+		padding-inline: 16px;
+	}
+	& li{
+		display: flex;
+		justify-content: space-between;
+		& span{
+			cursor: pointer;
+		}
+	}
+}
+.svg-number{
+	fill: #a93a75 black;
+	stroke: white;
+	stroke-width: 0.4px;
+	font: bold 0.8rem "Poppins",sans-serif;
+}
+@media (max-width: 968px) {
+  .mobile-text{
+	display: flex;
+  }
+  section{
+	height: auto;
   }
 }
 </style>

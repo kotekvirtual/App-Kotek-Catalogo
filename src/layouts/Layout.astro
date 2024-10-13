@@ -219,7 +219,7 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
-		overflow: hidden;
+		overflow: visible;
 	}
 	html {
 		background-color: white;
@@ -449,9 +449,11 @@ const { title } = Astro.props;
 	display: initial;
 	padding-right: 16px;
 	height: 32px;
+	transition: 0.4s;
   }
   .hamburger-icon-rotated{
-	transform: rotate(90deg);
+	transform: rotate(90deg) translateX(7px) translateY(8px);
+	transition: 0.4s;
   }
   .logo{
 	padding-left: 16px;
