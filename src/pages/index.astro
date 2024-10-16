@@ -409,7 +409,9 @@ dialog::backdrop{
 	display: none;
   }
   .section-mobile{
-	display: initial;
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - 80px);
 }
   }
 
@@ -438,9 +440,6 @@ dialog::backdrop{
 @media (max-width: 968px) {
   .mobile-text{
 	display: flex;
-  }
-  section{
-	height: 80vh;
   }
 }
 </style>
