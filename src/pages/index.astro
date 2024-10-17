@@ -90,21 +90,27 @@ import Layout from "../layouts/Layout.astro";
 
 			  <div>
 				<dialog class="fichaMovil" id="fichaventanaMovilA">
+					<button class="closeButton">X</button>
 					<img src="/viviendaA.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilB">
+					<button class="closeButton">X</button>
 					<img src="/viviendaB.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilC">
+					<button class="closeButton">X</button>
 					<img src="/viviendaC.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilD">
+					<button class="closeButton">X</button>
 					<img src="/viviendaD.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilE">
+					<button class="closeButton">X</button>
 					<img src="/viviendaE.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilF">
+					<button class="closeButton">X</button>
 					<img src="/viviendaF.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				
@@ -400,6 +406,21 @@ dialog::backdrop{
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+}
+.closeButton{
+	position: fixed;
+	top: 8px;
+	right: 8px;
+	height: 64px;
+	width: 64px;
+	outline: none;
+	background-color: #262633;
+	cursor: pointer;
+	border: none;
+	font-size: 2rem;
+	color: white;
+	border: 2px white solid;
+	border-radius: 12px;
 }
 @media (max-width: 700px) {
   section{
