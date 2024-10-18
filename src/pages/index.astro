@@ -118,11 +118,11 @@ import Layout from "../layouts/Layout.astro";
 			  <div class="mobile-text">
 				<ul class="mobile-ul">
 					<li>1. Planta 3 - A | 3 dormitorios <br> &nbsp; &nbsp; 220.000€ | 75m²<span class="ventanaMovilA">Ver Ficha</span></li>
-					<li>2. Planta 3 - B - 3 dormitorios <br> &nbsp; &nbsp; 220.000€ | 75m²<span class="ventanaMovilB">Ver Ficha</span></li>
+					<li class="detalle-par">2. Planta 3 - B - 3 dormitorios <br> &nbsp; &nbsp; 220.000€ | 75m²<span class="ventanaMovilB">Ver Ficha</span></li>
 					<li>3. Planta 2 - A - 2 dormitorios <br> &nbsp; &nbsp; 220.000€ | 75m²<span class="ventanaMovilC">Ver Ficha</span></li>
-					<li>4. Planta 2 - B - 3 dormitorios <br> &nbsp; &nbsp; 220.000€ | 75m²<span class="ventanaMovilD">Ver Ficha</span></li>
+					<li class="detalle-par">4. Planta 2 - B - 3 dormitorios <br> &nbsp; &nbsp; 220.000€ | 75m²<span class="ventanaMovilD">Ver Ficha</span></li>
 					<li>5. Planta 1 - A - 2 dormitorios <br> &nbsp; &nbsp; 220.000€ | 75m²<span class="ventanaMovilE">Ver Ficha</span></li>
-					<li>6. Planta 1 - B - 2 dormitorios <br> &nbsp; &nbsp; 220.000€ | 75m²<span class="ventanaMovilF">Ver Ficha</span></li>
+					<li class="detalle-par">6. Planta 1 - B - 2 dormitorios <br> &nbsp; &nbsp; 220.000€ | 75m²<span class="ventanaMovilF">Ver Ficha</span></li>
 				</ul>
 			</div>
 			
@@ -421,6 +421,11 @@ dialog::backdrop{
 	color: white;
 	border: 2px white solid;
 	border-radius: 12px;
+	text-align: center;
+}
+.detalle-par{
+	background-color: hsl(240, 15%, 37%);
+	padding-block: 8px;
 }
 @media (max-width: 700px) {
   section{
@@ -442,11 +447,14 @@ dialog::backdrop{
 	padding: 0;
 	& ul{
 		width: 100%;
-		padding-inline: 16px;
+		padding-inline: 0;
+		gap: 0;
 	}
 	& li{
 		display: flex;
 		justify-content: space-between;
+		padding-inline: 16px;
+		padding-block: 8px;
 		& span{
 			cursor: pointer;
 		}

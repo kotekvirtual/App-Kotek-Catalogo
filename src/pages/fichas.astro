@@ -70,6 +70,7 @@ import Layout from "../layouts/Layout.astro";
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		grid-row-gap: 24px;
 		justify-items: center;
+		justify-content: center;
 	}
 	.boton-ficha{
 		width: 300px;
@@ -92,6 +93,15 @@ dialog::backdrop{
 @media (max-width: 968px) {
 		section{
 			height: 80vh;
+		}
+		dialog{
+			width: fit-content;
+			height: fit-content;
+		}
+		.modalImage{
+			width: 90vw;
+			aspect-ratio: 2481 / 3509;
+			height: auto;
 		}
 	}
 </style>
