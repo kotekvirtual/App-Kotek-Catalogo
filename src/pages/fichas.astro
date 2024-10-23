@@ -15,21 +15,27 @@ import Layout from "../layouts/Layout.astro";
 		</section>
 		<div>
 			<dialog id="fichaModalA">
+				<button class="closeButton"> &#9587;</button>
 				<img src="/viviendaA.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="fichaModalB">
+				<button class="closeButton"> &#9587;</button>
 				<img src="/viviendaB.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="fichaModalC">
+				<button class="closeButton"> &#9587;</button>
 				<img src="/viviendaC.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="fichaModalD">
+				<button class="closeButton"> &#9587;</button>
 				<img src="/viviendaD.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="fichaModalE">
+				<button class="closeButton"> &#9587;</button>
 				<img src="/viviendaE.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="fichaModalF">
+				<button class="closeButton"> &#9587;</button>
 				<img src="/viviendaF.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			
@@ -42,7 +48,9 @@ import Layout from "../layouts/Layout.astro";
 <style>
 
 
-
+	body{
+		overflow: hidden;
+	}
 	main {
 		margin: 0;
 		padding: 0;
@@ -90,9 +98,26 @@ dialog::backdrop{
 	margin: 0px;
 	border: none;
 }
-@media (max-width: 968px) {
-		section{
-			height: 80vh;
+.closeButton{
+	position: fixed;
+	top: 8px;
+	right: 8px;
+	height: 48px;
+	width: 48px;
+	outline: none;
+	background-color: hsl(240, 15%, 27%);
+	color: hsl(240, 15%, 97%);
+	cursor: pointer;
+	font-size: 16pt;
+	border: 2px  hsl(240, 15%, 27%) solid;
+	border-radius: 250px;
+	text-align: center;
+	padding: 0;
+}
+@media (orientation: portrait) {
+		main{
+			height: calc(100dvh - 80px);
+			
 		}
 		dialog{
 			width: fit-content;
@@ -102,6 +127,13 @@ dialog::backdrop{
 			width: 90vw;
 			aspect-ratio: 2481 / 3509;
 			height: auto;
+		}
+		section{
+			padding: 0;
+			margin: 0;
+			& :last-child{
+				margin-bottom: 280px;
+			}
 		}
 	}
 </style>

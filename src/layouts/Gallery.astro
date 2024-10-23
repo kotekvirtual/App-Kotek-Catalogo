@@ -7,7 +7,7 @@ const {imageSource, imageAlt, cocina, aseo, salon, exterior, cocina2, bodega2, b
 
 <Layout title="Renders de Interior">
     <main>
-        <section>
+        <section class="gallery">
             <a class="arrow left" href=`/galeria/${prev}`>
 				&lt 
 		   </a>
@@ -31,12 +31,18 @@ const {imageSource, imageAlt, cocina, aseo, salon, exterior, cocina2, bodega2, b
 				</ul>
 			</footer>
         </section>
+		<section class="mobile-gallery">
+			<img src="/cocina.webp" alt="Render de la cocina"><img src="/aseo.webp" alt="Render del aseo"><img src="/salon.webp" alt="Render del salón"><img src="/exterior1.webp" alt="Render del exterior"><img src="/cocina-2.webp" alt="Render de la cocina"><img src="/bodega-2.webp" alt="Render de la bodega"><img src="/bodega.webp" alt="Render de la bodega"><img src="/despacho.webp" alt="Render del despacho"><img src="/dormitorio-2.webp" alt="Render del dormitorio 2"><img src="/dormitorio1.webp" alt="Render del dormitorio 1">
+		</section>
     </main>
 </Layout>
 
 
 
 <style>
+	body{
+		overflow: hidden;
+	}
 	h1 {
 		font-size: 4rem;
 		font-weight: 700;
@@ -45,7 +51,7 @@ const {imageSource, imageAlt, cocina, aseo, salon, exterior, cocina2, bodega2, b
 		margin: 0;
 		padding: 0;
 	}
-	section{
+	.gallery{
 		height: calc(100vh - 48px);
 		margin: 24px;
 		border-radius: 12px;
@@ -55,6 +61,9 @@ const {imageSource, imageAlt, cocina, aseo, salon, exterior, cocina2, bodega2, b
 		justify-content: space-between;
 		position: relative;
 		overflow: hidden;
+	}
+	.mobile-gallery{
+		display: none;
 	}
 	img{
 		width: 100%;
@@ -90,9 +99,17 @@ const {imageSource, imageAlt, cocina, aseo, salon, exterior, cocina2, bodega2, b
 	.left{
 		left: 8px;
 	}
-	@media (max-width: 968px) {
-		section{
-			height: 80vh;
+	@media (orientation: portrait) {
+		.gallery{
+			display: none;
+		}
+		.mobile-gallery{
+			padding-top: 32px;
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+			overflow: scroll;
+			height: calc(100dvh - 80px);
 		}
 	}
 

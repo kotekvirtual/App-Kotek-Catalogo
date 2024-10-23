@@ -32,21 +32,27 @@ import Layout from "../layouts/Layout.astro";
 
 			  <div>
 				<dialog id="fichaVentanaA">
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaA.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog id="fichaVentanaB">
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaB.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog id="fichaVentanaC">
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaC.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog id="fichaVentanaD">
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaD.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog id="fichaVentanaE">
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaE.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog id="fichaVentanaF">
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaF.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				
@@ -90,27 +96,27 @@ import Layout from "../layouts/Layout.astro";
 
 			  <div>
 				<dialog class="fichaMovil" id="fichaventanaMovilA">
-					<button class="closeButton">X</button>
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaA.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilB">
-					<button class="closeButton">X</button>
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaB.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilC">
-					<button class="closeButton">X</button>
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaC.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilD">
-					<button class="closeButton">X</button>
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaD.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilE">
-					<button class="closeButton">X</button>
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaE.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				<dialog class="fichaMovil" id="fichaventanaMovilF">
-					<button class="closeButton">X</button>
+					<button class="closeButton"> &#9587;</button>
 					<img src="/viviendaF.webp" alt="ficha comercial" class="modalImage">
 				</dialog>
 				
@@ -301,7 +307,9 @@ import Layout from "../layouts/Layout.astro";
 
 
 <style>
-	
+	body{
+		overflow: hidden;
+	}
 	h1 {
 		font-size: 4rem;
 		font-weight: 700;
@@ -411,15 +419,15 @@ dialog::backdrop{
 	position: fixed;
 	top: 8px;
 	right: 8px;
-	height: 64px;
-	width: 64px;
+	height: 48px;
+	width: 48px;
 	outline: none;
-	background-color: #262633;
+	background-color: hsl(240, 15%, 27%);
+	color: hsl(240, 15%, 97%);
 	cursor: pointer;
-	font-size: 2rem;
-	color: white;
-	border: 2px white solid;
-	border-radius: 12px;
+	font-size: 16pt;
+	border: 2px  hsl(240, 15%, 27%) solid;
+	border-radius: 250px;
 	text-align: center;
 	padding: 0;
 }
@@ -427,22 +435,27 @@ dialog::backdrop{
 	background-color: hsl(240, 15%, 37%);
 	padding-block: 8px;
 }
-@media (max-width: 700px) {
-  section{
-	margin: 4px;
-	height: 80vh;
-  }
+
+/* CSS Móvil*/
+
+@media (orientation: portrait) {
+
   .section-pc{
 	display: none;
   }
   .section-mobile{
 	display: flex;
 	flex-direction: column;
-	height: auto;
+  }
+main{
+	height: calc(100dvh - 80px);
+	overflow: scroll;
 }
+
   }
 
 .mobile-text{
+	display: flex;
 	color: white;
 	width: 100vw;
 	padding: 0;
@@ -467,9 +480,5 @@ dialog::backdrop{
 	stroke-width: 0.4px;
 	font: bold 0.8rem "Poppins",sans-serif;
 }
-@media (max-width: 968px) {
-  .mobile-text{
-	display: flex;
-  }
-}
+
 </style>

@@ -18,6 +18,9 @@ import Layout from "../layouts/Layout.astro";
 
 
 <style>
+	body{
+		overflow: hidden;
+	}
 	main {
 		margin: 0;
 		padding: 0;
@@ -47,9 +50,16 @@ import Layout from "../layouts/Layout.astro";
 		border-radius: 12px;
 		width: 100%;
 	}
-	@media (max-width: 968px) {
+	@media (orientation: portrait) {
+		main{
+			height: calc(100dvh - 80px);
+			overflow: hidden;
+			padding: 0;
+		}
 		section{
-			height: 80vh;
+			height: 100%;
+			margin: 0;
+
 		}
 	}
 
