@@ -8,28 +8,7 @@ const {imageSource, imageAlt, cocina, aseo, salon, exterior, cocina2, bodega2, b
 <Layout title="Renders de Interior">
     <main>
         <section class="gallery">
-            <a class="arrow left" href=`/galeria/${prev}`>
-				&lt 
-		   </a>
-		   <img src={imageSource} alt={imageAlt}>
-		   <a class="arrow right" href=`/galeria/${next}`>
-			   &gt
-		   </a>
-		   <footer class="dots-footer">
-				<ul class="dotstyle dotstyle-fillup">
-					<li class = {aseo}><a href="/galeria/aseo">Aseo</a></li>
-					<li class = {bodega2}><a href="/galeria/bodega-2">Bodega</a></li>
-					<li class = {bodega}><a href="/galeria/bodega">Bodega</a></li>
-					<li class = {cocina2}><a href="/galeria/cocina-2">Cocina</a></li>
-					<li class = {cocina}><a href="/galeria/cocina">Cocina</a></li>
-					<li class = {despacho}><a href="/galeria/despacho">Despacho</a></li>
-					<li class = {dormitorio2}><a href="/galeria/dormitorio-2">Dormitorio 2</a></li>
-					<li class = {dormitorio}><a href="/galeria/dormitorio">Dormitorio</a></li>
-					<li class = {exterior}><a href="/galeria/exterior">Exterior</a></li>
-					<li class = {salon}><a href="/galeria/salon">Salon</a></li>
-
-				</ul>
-			</footer>
+            <img src="/cocina.webp" alt="Render de la cocina"><img src="/aseo.webp" alt="Render del aseo"><img src="/salon.webp" alt="Render del salón"><img src="/exterior1.webp" alt="Render del exterior"><img src="/cocina-2.webp" alt="Render de la cocina"><img src="/bodega-2.webp" alt="Render de la bodega"><img src="/bodega.webp" alt="Render de la bodega"><img src="/despacho.webp" alt="Render del despacho"><img src="/dormitorio-2.webp" alt="Render del dormitorio 2"><img src="/dormitorio1.webp" alt="Render del dormitorio 1">
         </section>
 		<section class="mobile-gallery">
 			<img src="/cocina.webp" alt="Render de la cocina"><img src="/aseo.webp" alt="Render del aseo"><img src="/salon.webp" alt="Render del salón"><img src="/exterior1.webp" alt="Render del exterior"><img src="/cocina-2.webp" alt="Render de la cocina"><img src="/bodega-2.webp" alt="Render de la bodega"><img src="/bodega.webp" alt="Render de la bodega"><img src="/despacho.webp" alt="Render del despacho"><img src="/dormitorio-2.webp" alt="Render del dormitorio 2"><img src="/dormitorio1.webp" alt="Render del dormitorio 1">
@@ -52,15 +31,19 @@ const {imageSource, imageAlt, cocina, aseo, salon, exterior, cocina2, bodega2, b
 		padding: 0;
 	}
 	.gallery{
-		height: calc(100vh - 48px);
+		height: fit-content;
 		margin: 24px;
 		border-radius: 12px;
 		background-position: 50% 70%;
 		display: flex;
+		flex-direction: column;
+		gap: 24px;
 		align-items: center;
 		justify-content: space-between;
 		position: relative;
-		overflow: hidden;
+	}
+	main{
+		overflow: scroll;
 	}
 	.mobile-gallery{
 		display: none;
