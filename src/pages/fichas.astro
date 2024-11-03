@@ -46,97 +46,96 @@ import Layout from "../layouts/Layout.astro";
 
 
 <style>
-
-
-	body{
-		overflow: hidden;
+    body {
+        overflow: hidden;
+    }
+    main {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        height: calc(100vh - 48px);
+        margin: 24px;
+        border-radius: 12px;
+        background-position: 50% 70%;
+        overflow: visible;
+        overflow-x: hidden;
+    }
+    .grid-fichas {
+        padding-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-row-gap: 24px;
+        justify-items: center;
+        justify-content: center;
+    }
+    .boton-ficha {
+        width: 300px;
+        border: 1px solid hsl(240, 15%, 97%);
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    dialog {
+        height: 90vh;
+        border: none;
+    }
+    dialog::backdrop {
+        background-color: #26263399;
+    }
+    .modalImage {
+        height: 99%;
+        margin: 0px;
+        border: none;
+    }
+	#botonF{
+		margin-bottom: 180px;
 	}
-	main {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin: 0;
-		padding: 0;
-	}
-	section{
-		height: calc(100vh - 48px);
-		margin: 24px;
-		border-radius: 12px;
-		background-position: 50% 70%;
-		overflow: visible;
-		overflow-x: hidden;
-	}
-	.grid-fichas{
-		padding-top: 24px;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		grid-row-gap: 24px;
-		justify-items: center;
-		justify-content: center;
-	}
-	.boton-ficha{
-		width: 300px;
-		border: 1px solid hsl(240, 15%, 97%);
-		border-radius: 12px;
-		cursor: pointer;
-	}
-	dialog{
-	height: calc(100vh - 16px);
-	border: none;
-	
-}
-dialog::backdrop{
-	background-color: #26263399;
-}
-.modalImage{
-	height: 99%;
-	margin: 0px;
-	border: none;
-}
-.closeButton{
-	position: fixed;
-	top: 8px;
-	right: 8px;
-	height: 48px;
-	width: 48px;
-	outline: none;
-	background-color: hsl(240, 15%, 27%);
-	color: hsl(240, 15%, 97%);
-	cursor: pointer;
-	font-size: 16pt;
-	border: 2px  hsl(240, 15%, 27%) solid;
-	border-radius: 250px;
-	text-align: center;
-	padding: 0;
-}
-@media (orientation: portrait) {
-		main{
-			height: calc(100dvh - 80px);
-			
-		}
-		dialog{
-			width: fit-content;
-			height: fit-content;
-		}
-		.modalImage{
-			width: 90vw;
-			aspect-ratio: 2481 / 3509;
-			height: auto;
-		}
-		section{
-			padding: 0;
-			margin: 0;
-			& :last-child{
-				margin-bottom: 280px;
-			}
-		}
-	}
+    .closeButton {
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        height: 48px;
+        width: 48px;
+        outline: none;
+        background-color: hsl(240, 15%, 27%);
+        color: hsl(240, 15%, 97%);
+        cursor: pointer;
+        font-size: 16pt;
+        border: 2px hsl(240, 15%, 27%) solid;
+        border-radius: 250px;
+        text-align: center;
+        padding: 0;
+    }
+    @media (orientation: portrait) {
+        main {
+            height: calc(100dvh - 80px);
+        }
+        dialog {
+            width: fit-content;
+            height: fit-content;
+        }
+        .modalImage {
+            width: 90vw;
+            aspect-ratio: 2481 / 3509;
+            height: auto;
+        }
+        section {
+            padding: 0;
+            margin: 0;
+        }
+        section :last-child {
+            margin-bottom: 280px;
+        }
+    }
 </style>
 
 <script type="module">

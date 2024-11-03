@@ -18,50 +18,47 @@ import Layout from "../layouts/Layout.astro";
 
 
 <style>
-	body{
-		overflow: hidden;
-	}
-	main {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin: 0;
-		padding: 0;
-	}
-	section{
-		height: calc(100vh - 48px);
-		margin: 24px;
-		border-radius: 12px;
-		background-position: 50% 70%;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		position: relative;
-		overflow: hidden;
-	}
-	img{
-		height: auto;
-		border-radius: 12px;
-		width: 100%;
-	}
-	@media (orientation: portrait) {
-		main{
-			height: calc(100dvh - 80px);
-			overflow: hidden;
-			padding: 0;
-		}
-		section{
-			height: 100%;
-			margin: 0;
-
-		}
-	}
-
-
+    body {
+        overflow: hidden;
+    }
+    main {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        height: calc(100vh - 48px);
+        margin: 24px;
+        border-radius: 12px;
+        background-position: 50% 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+    }
+    img {
+        height: auto;
+        border-radius: 12px;
+        width: 100%;
+    }
+    @media (orientation: portrait) {
+        main {
+            height: calc(100dvh - 80px);
+            overflow: hidden;
+            padding: 0;
+        }
+        section {
+            height: 100%;
+            margin: 0;
+        }
+    }
 </style>
