@@ -186,7 +186,7 @@ const { title } = Astro.props;
 				<button class="closeButton">&#9587;</button>
 				<h3>Pregúntanos más</h3>
 				<p>Email: contacto@ejemplo.com</p>
-				<p>Teléfono: +34 123 456 789</p>
+				<p class="telefono">Teléfono: +34 123 456 789</p>
 			</form>
 		</dialog>
 	</body>
@@ -498,7 +498,10 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
 }
-
+.telefono {
+    text-decoration: none;
+    color: hsl(240, 15%, 97%);
+}
 @media (orientation: portrait) {
     body {
         flex-direction: column;
