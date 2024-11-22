@@ -1,0 +1,89 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout>
+    <style>
+        .landing-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hero {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .hero img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .hero-text {
+            max-width: 50%;
+            padding: 20px;
+        }
+
+        .features {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+        }
+
+        .feature {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cta {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            padding: 50px 0;
+        }
+
+        .cta button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+        }
+    </style>
+
+    <div class="landing-page">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Welcome to Our App</h1>
+                <p>Discover the best features and functionalities designed to make your life easier.</p>
+            </div>
+            <img src="/path/to/hero-image.jpg" alt="Hero Image">
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h2>Feature 1</h2>
+                <p>Detail about feature 1.</p>
+            </div>
+            <div class="feature">
+                <h2>Feature 2</h2>
+                <p>Detail about feature 2.</p>
+            </div>
+            <div class="feature">
+                <h2>Feature 3</h2>
+                <p>Detail about feature 3.</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <button>Get Started</button>
+        </div>
+    </div>
+</Layout>
