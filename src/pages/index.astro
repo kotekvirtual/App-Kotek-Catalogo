@@ -21,6 +21,16 @@ import Layout from "../layouts/Layout.astro";
 					<g class="secondrow" id="ventanaH" ><path d="M 95.5 98.5 L 95.5 109 L 170.3 109 L 170.3 98.5 Z" /></g>
 					<g class="toprow" id="ventanaI" ><path d="M 23.2 111.2 L 23.2 122 L 95 122 L 95 111.2 Z " /></g>
 					<g class="toprow" id="ventanaJ" ><path d="M 95.5 111.2 L 95.5 122 L 170.3 122 L 170.3 111.2 Z" /></g>
+					<text x="50" y="68" class="svg-text">Disponible</text>
+					<text x="120" y="68" class="svg-text">Vendido</text>
+					<text x="50" y="80.5" class="svg-text">Disponible</text>
+					<text x="120" y="80.5" class="svg-text">Disponible</text>
+					<text x="50" y="93" class="svg-text">Vendido</text>
+					<text x="120" y="93" class="svg-text">Disponible</text>
+					<text x="50" y="105.5" class="svg-text">Disponible</text>
+					<text x="120" y="105.5" class="svg-text">Vendido</text>
+					<text x="50" y="118" class="svg-text">Disponible</text>
+					<text x="120" y="118" class="svg-text">Disponible</text>
 
 
 
@@ -63,33 +73,6 @@ import Layout from "../layouts/Layout.astro";
 			<div class='imageWrapperHero'>
 				<img src="/exterior1.webp"/>
 			  </div>
-
-
-			  <div>
-				<dialog class="fichaMovil" id="fichaventanaMovilA">
-					<button class="closeButton"> &#9587;</button>
-					<img src="/viviendaA.webp" alt="ficha comercial" class="modalImage">
-				</dialog>
-				<dialog class="fichaMovil" id="fichaventanaMovilB">
-					<button class="closeButton"> &#9587;</button>
-					<img src="/viviendaB.webp" alt="ficha comercial" class="modalImage">
-				</dialog>
-				<dialog class="fichaMovil" id="fichaventanaMovilC">
-					<button class="closeButton"> &#9587;</button>
-					<img src="/viviendaC.webp" alt="ficha comercial" class="modalImage">
-				</dialog>
-				<dialog class="fichaMovil" id="fichaventanaMovilD">
-					<button class="closeButton"> &#9587;</button>
-					<img src="/viviendaD.webp" alt="ficha comercial" class="modalImage">
-				</dialog>
-				<dialog class="fichaMovil" id="fichaventanaMovilE">
-					<button class="closeButton"> &#9587;</button>
-					<img src="/viviendaE.webp" alt="ficha comercial" class="modalImage">
-				</dialog>
-				<dialog class="fichaMovil" id="fichaventanaMovilF">
-					<button class="closeButton"> &#9587;</button>
-					<img src="/viviendaF.webp" alt="ficha comercial" class="modalImage">
-				</dialog>
 				
 			  </div>
 			  <div class="mobile-text">
@@ -357,8 +340,13 @@ section {
     fill-opacity: 0.8;
 }
 
-.modal-ficha {}
-
+.svg-text {
+        fill: #a93a75;
+		fill: white;
+        font:  0.3rem "Poppins", sans-serif;
+        pointer-events: none;
+        display: block;
+    }
 dialog {
     height: calc(100vh - 16px);
     border: none;
@@ -424,7 +412,7 @@ dialog::backdrop {
 }
 
 main {
-    overflow: scroll;
+    overflow: auto;
 }
 
 /* CSS Móvil */
