@@ -171,94 +171,14 @@ import Layout from "../layouts/Layout.astro";
 			  }
 		});
 
-		/*parte movil*/
-	document.querySelectorAll(".ventanaMovilA").forEach(v=>{
-		v.addEventListener("click",()=>{
-		document.getElementById("fichaventanaMovilA").showModal()
-		})
-	})
-	document.querySelectorAll(".ventanaMovilB").forEach(v=>{
-		v.addEventListener("click",()=>{
-		document.getElementById("fichaventanaMovilB").showModal()
-		})
-	})
-	document.querySelectorAll(".ventanaMovilC").forEach(v=>{
-		v.addEventListener("click",()=>{
-		document.getElementById("fichaventanaMovilC").showModal()
-		})
-	})
-	document.querySelectorAll(".ventanaMovilD").forEach(v=>{
-		v.addEventListener("click",()=>{
-		document.getElementById("fichaventanaMovilD").showModal()
-		})
-	})
-	document.querySelectorAll(".ventanaMovilE").forEach(v=>{
-		v.addEventListener("click",()=>{
-		document.getElementById("fichaventanaMovilE").showModal()
-		})
-	})
-	document.querySelectorAll(".ventanaMovilF").forEach(v=>{
-		v.addEventListener("click",()=>{
-		document.getElementById("fichaventanaMovilF").showModal()
-		})
-	})
 	
-
-	
-		document.getElementById("fichaventanaMovilA").addEventListener('click', (event)=> {
-			  let rect = document.getElementById("fichaventanaMovilA").getBoundingClientRect();
-			  let isInDialogA = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
-			rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
-			  if (!isInDialogA) {
-				document.getElementById("fichaventanaMovilA").close();
-			  }
-		});
-		document.getElementById("fichaventanaMovilB").addEventListener('click', (event)=> {
-			  let rectB = document.getElementById("fichaventanaMovilB").getBoundingClientRect();
-			  let isInDialogB = (rectB.top <= event.clientY && event.clientY <= rectB.top + rectB.height &&
-			rectB.left <= event.clientX && event.clientX <= rectB.left + rectB.width);
-			  if (!isInDialogB) {
-				document.getElementById("fichaventanaMovilB").close();
-			  }
-		});
-		document.getElementById("fichaventanaMovilC").addEventListener('click', (event)=> {
-			  let rectC = document.getElementById("fichaventanaMovilC").getBoundingClientRect();
-			  let isInDialogC = (rectC.top <= event.clientY && event.clientY <= rectC.top + rectC.height &&
-			rectC.left <= event.clientX && event.clientX <= rectC.left + rectC.width);
-			  if (!isInDialogC) {
-				document.getElementById("fichaventanaMovilC").close();
-			  }
-		});
-		document.getElementById("fichaventanaMovilD").addEventListener('click', (event)=> {
-			  let rectD = document.getElementById("fichaventanaMovilD").getBoundingClientRect();
-			  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
-			rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
-			  if (!isInDialogD) {
-				document.getElementById("fichaventanaMovilD").close();
-			  }
-		});
-		document.getElementById("fichaventanaMovilE").addEventListener('click', (event)=> {
-			  let rectE = document.getElementById("fichaventanaMovilE").getBoundingClientRect();
-			  let isInDialogE = (rectE.top <= event.clientY && event.clientY <= rectE.top + rectE.height &&
-			rectE.left <= event.clientX && event.clientX <= rectE.left + rectE.width);
-			  if (!isInDialogE) {
-				document.getElementById("fichaventanaMovilE").close();
-			  }
-		});
-		document.getElementById("fichaventanaMovilF").addEventListener('click', (event)=> {
-			  let rectF = document.getElementById("fichaventanaMovilF").getBoundingClientRect();
-			  let isInDialogF = (rectF.top <= event.clientY && event.clientY <= rectF.top + rectF.height &&
-			rectF.left <= event.clientX && event.clientX <= rectF.left + rectF.width);
-			  if (!isInDialogF) {
-				document.getElementById("fichaventanaMovilF").close();
-			  }
-		});
 
 		const hamburgerMenu2 = document.querySelector(".hamburger-dialog")
 		const hamburgerIcon2 = document.querySelector(".hamburger-icon")
 		const clickAqui = document.querySelector("#click-aqui")
 
 clickAqui.addEventListener("click",()=>{
+	console.log("HOLA")
 	if (hamburgerMenu2.classList.contains("hamburger-open")){
 		hamburgerMenu2.classList.remove("hamburger-open")
 		hamburgerIcon2.classList.remove("hamburger-icon-rotated")
