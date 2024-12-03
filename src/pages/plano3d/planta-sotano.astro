@@ -21,8 +21,8 @@ import Layout from "../../layouts/Layout.astro";
 					</g>
 					<text x="250" y="150" class="svg-text">+</text>
 					<text x="180" y="410" class="svg-text">+</text>
-					<text x="670" y="400" class="svg-number">1</text>
-					<text x="1050" y="250" class="svg-number">2</text>
+					<text x="250" y="150" class="svg-number">1</text>
+					<text x="180" y="410" class="svg-number">2</text>
 					
 					<img src="/sotano.webp"/>
 					
@@ -34,8 +34,8 @@ import Layout from "../../layouts/Layout.astro";
 
 			  <aside class="mobile-text">
 				<ul class="mobile-text-list">
-					<li>1. Salón Comedor <span class="room1">Ver Estancia 360º</span></li>
-					<li class="texto-3d-impar">2. Despacho <span class="room2">Ver Imagen</span></li>
+					<li class="room2">1. Lavandería <span>Ver Imagen</span></li>
+					<li class="texto-3d-impar room1">2. Bodega <span>Ver Imagen</span></li>
 				</ul>
 			</aside>
 			
@@ -204,7 +204,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
     .svg-number {
         display: none;
         fill: #a93a75;
-        font: bold 7rem "Poppins", sans-serif;
+        font: bold 4rem "Poppins", sans-serif;
         z-index: 9;
     }
     .modal {
