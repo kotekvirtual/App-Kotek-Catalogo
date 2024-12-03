@@ -42,11 +42,11 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 		
 		<div>
-			<dialog id="modal1" class="modal">
+			<dialog id="modalSotano1" class="modal">
 				<button class="closeButton"> &#9587;</button>
 				<img src="/bodega-2.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
-			<dialog id="modal2" class="modal">
+			<dialog id="modalSotano2" class="modal">
 				<button class="closeButton"> &#9587;</button>
 				<img src="/lavanderia.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
@@ -61,32 +61,12 @@ import Layout from "../../layouts/Layout.astro";
 	//Make all modal open with their corresponding button
 
 	document.querySelectorAll(".room1").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modal1").showModal()
+	document.getElementById("modalSotano1").showModal()
 }))
 document.querySelectorAll(".room2").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modal2").showModal()
+	document.getElementById("modalSotano2").showModal()
 }))
-document.querySelectorAll(".room3").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modal3").showModal()
-}))
-document.querySelectorAll(".room4").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modal4").showModal()
-}))
-document.querySelectorAll(".room5").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modal5").showModal()
-}))
-document.querySelectorAll(".room6").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modal6").showModal()
-}))
-document.querySelectorAll(".room7").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modal7").showModal()
-}))
-document.querySelectorAll(".room8").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modal8").showModal()
-}))
-document.querySelectorAll(".room9").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modal9").showModal()
-}))
+
 
 
 // Close all modals when you click on any X button
@@ -100,76 +80,20 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 //Close Modal when you click anywhere on the backdrop
 
 
-	document.getElementById("modal1").addEventListener('click', (event)=> {
-		  let rect = document.getElementById("modal1").getBoundingClientRect();
+	document.getElementById("modalSotano1").addEventListener('click', (event)=> {
+		  let rect = document.getElementById("modalSotano1").getBoundingClientRect();
 		  let isInDialogA = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
 		rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
 		  if (!isInDialogA) {
-			document.getElementById("modal1").close();
+			document.getElementById("modalSotano1").close();
 		  }
 	});
-	document.getElementById("modal2").addEventListener('click', (event)=> {
-		  let rectB = document.getElementById("modal2").getBoundingClientRect();
+	document.getElementById("modalSotano2").addEventListener('click', (event)=> {
+		  let rectB = document.getElementById("modalSotano2").getBoundingClientRect();
 		  let isInDialogB = (rectB.top <= event.clientY && event.clientY <= rectB.top + rectB.height &&
 		rectB.left <= event.clientX && event.clientX <= rectB.left + rectB.width);
 		  if (!isInDialogB) {
-			document.getElementById("modal2").close();
-		  }
-	});
-	document.getElementById("modal3").addEventListener('click', (event)=> {
-		  let rectC = document.getElementById("modal3").getBoundingClientRect();
-		  let isInDialogC = (rectC.top <= event.clientY && event.clientY <= rectC.top + rectC.height &&
-		rectC.left <= event.clientX && event.clientX <= rectC.left + rectC.width);
-		  if (!isInDialogC) {
-			document.getElementById("modal3").close();
-		  }
-	});
-	document.getElementById("modal4").addEventListener('click', (event)=> {
-		  let rectD = document.getElementById("modal4").getBoundingClientRect();
-		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
-		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
-		  if (!isInDialogD) {
-			document.getElementById("modal4").close();
-		  }
-	});
-	document.getElementById("modal5").addEventListener('click', (event)=> {
-		  let rectD = document.getElementById("modal5").getBoundingClientRect();
-		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
-		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
-		  if (!isInDialogD) {
-			document.getElementById("modal5").close();
-		  }
-	});
-	document.getElementById("modal6").addEventListener('click', (event)=> {
-		  let rectD = document.getElementById("modal6").getBoundingClientRect();
-		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
-		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
-		  if (!isInDialogD) {
-			document.getElementById("modal6").close();
-		  }
-	});
-	document.getElementById("modal7").addEventListener('click', (event)=> {
-		  let rectD = document.getElementById("modal7").getBoundingClientRect();
-		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
-		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
-		  if (!isInDialogD) {
-			document.getElementById("modal7").close();
-		  }
-	});
-	document.getElementById("modal8").addEventListener('click', (event)=> {
-		  let rectD = document.getElementById("modal8").getBoundingClientRect();
-		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
-		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
-		  if (!isInDialogD) {
-			document.getElementById("modal8").close();
-		  }
-	});
-	document.getElementById("modal9").addEventListener('click', (event)=> {
-		  let rectD = document.getElementById("modal9").getBoundingClientRect();
-		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
-		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
-		  if (!isInDialogD) {
-			document.getElementById("modal9").close();
+			document.getElementById("modalSotano2").close();
 		  }
 	});
 	</script>
