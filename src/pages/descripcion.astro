@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Descripción">
+    <main>
+        <section class="description-section">
+            <div class='imageWrapperHero'>
+                <img src="/exterior1.webp" alt="Imagen de la planta baja"/>
+            </div>
+            <div class="description-text">
+                <h2>Residencial Mirarríos</h2>
+                <p>Disfruta de tu nuevo hogar en este residencial de 10 viviendas con acabados de lujo en pleno centro de la ciudad.</p>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+    .description-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 48px);
+        padding: 24px;
+        background-color: hsl(240, 15%, 17%);
+        color: white;
+    }
+    .imageWrapperHero {
+        position: relative;
+        max-width: 70vw; /* Ajustar la altura máxima */
+        aspect-ratio: 16 / 9;
+    }
+    .imageWrapperHero img {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+    }
+    .description-text {
+        text-align: center;
+        margin-top: 16px;
+    }
+    .description-text h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .description-text p {
+        font-size: 1rem;
+        margin: 8px 0 0;
+    }
+</style>
