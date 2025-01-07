@@ -10,17 +10,17 @@ import Layout from "../layouts/Layout.astro";
 				<!-- fill with SVG areas -->
 				<svg viewBox="0 0 192 144" class='image-area image-area--orange-1'>
 
-					<g class="toprow" id="ventanaA"><path d="M 23.3 62.1 L 95 62.1 L 95 70.5 L 23.3 70.5 Z" /></g>
+					<g class="toprow" id="ventanaA"><path d="M 0 62.1 L 95 62.1 L 95 70.5 L 0 70.5 Z" /></g>
 					
-					<g class="secondrow" id="ventanaB" ><path d="M 95.5 62.1 L 170.3 62.1 L 170.3 70.5 L 95.5 70.5 Z " /></g>
-					<g class="toprow" id="ventanaC" ><path d="M 23.2 74.6 L 95 74.6 L 95 83.3 L 23.2 83.3 Z" /></g>
-					<g class="toprow" id="ventanaD" ><path d="M 95.5 74.6 L 95.5 83.3 L 170.3 83.3 L 170.3 74.6 Z" /></g>
-					<g class="secondrow" id="ventanaE" ><path d="M 23.2 87 L 23.2 96.3 L 95 96.3 L 95 87 Z " /></g>
-					<g class="toprow" id="ventanaF" ><path d="M 95.5 87 L 95.5 96.3 L 170.3 96.3 L 170.3 87 Z" /></g>
-					<g class="toprow" id="ventanaG" ><path d="M 23.2 98.5 L 23.2 109 L 95 109 L 95 98.5 Z " /></g>
-					<g class="secondrow" id="ventanaH" ><path d="M 95.5 98.5 L 95.5 109 L 170.3 109 L 170.3 98.5 Z" /></g>
-					<g class="toprow" id="ventanaI" ><path d="M 23.2 111.2 L 23.2 122 L 95 122 L 95 111.2 Z " /></g>
-					<g class="toprow" id="ventanaJ" ><path d="M 95.5 111.2 L 95.5 122 L 170.3 122 L 170.3 111.2 Z" /></g>
+					<g class="secondrow" id="ventanaB" ><path d="M 95.5 62.1 L 194.3 62.1 L 194.3 70.5 L 95.5 70.5 Z " /></g>
+					<g class="toprow" id="ventanaC" ><path d="M 0 74.6 L 95 74.6 L 95 83.3 L 0 83.3 Z" /></g>
+					<g class="toprow" id="ventanaD" ><path d="M 95.5 74.6 L 95.5 83.3 L 194.3 83.3 L 194.3 74.6 Z" /></g>
+					<g class="secondrow" id="ventanaE" ><path d="M 0 87 L 0 96.3 L 95 96.3 L 95 87 Z " /></g>
+					<g class="toprow" id="ventanaF" ><path d="M 95.5 87 L 95.5 96.3 L 194.3 96.3 L 194.3 87 Z" /></g>
+					<g class="toprow" id="ventanaG" ><path d="M 0 98.5 L 0 109 L 95 109 L 95 98.5 Z " /></g>
+					<g class="secondrow" id="ventanaH" ><path d="M 95.5 98.5 L 95.5 109 L 194.3 109 L 194.3 98.5 Z" /></g>
+					<g class="toprow" id="ventanaI" ><path d="M 0 111.2 L 0 122 L 95 122 L 95 111.2 Z " /></g>
+					<g class="toprow" id="ventanaJ" ><path d="M 95.5 111.2 L 95.5 122 L 194.3 122 L 194.3 111.2 Z" /></g>
 					<text x="50" y="68" class="svg-text">Disponible</text>
 					<text x="120" y="68" class="svg-text">Vendido</text>
 					<text x="50" y="80.5" class="svg-text">Disponible</text>
@@ -39,6 +39,10 @@ import Layout from "../layouts/Layout.astro";
 				
 				<img class="hero" src="exterior1.webp"/>
 			  </div>
+			  <div class="description-text">
+                <h2>Residencial Mirarríos</h2>
+                <p>Disfruta de tu nuevo hogar en este residencial de 10 viviendas con acabados de lujo en pleno centro de la ciudad.</p>
+            </div>
 
 			  <div>
 				<dialog id="fichaVentanaA">
@@ -219,19 +223,19 @@ section {
 }
 
 .imageWrapperHero {
-    position: relative;
-    max-height: calc(100vh - 48px);
-    aspect-ratio: 4 / 3;
-}
+        position: relative;
+        max-width: 70vw; /* Ajustar la altura máxima */
+        aspect-ratio: 16 / 9;
+    }
 
 .imageWrapperHero img {
     width: 100%;
-    height: 80%;
+	height: 100%;
     border-radius: 12px;
 }
 .imageWrapperHero svg {
     width: 100%;
-    height: 80%;
+	height: 100%;
     border-radius: 12px;
 }
 
@@ -340,6 +344,25 @@ dialog::backdrop {
 main {
     overflow: auto;
 }
+.section-pc{
+	display: flex;
+	flex-direction: column;
+	max-height: calc(100vh - 48px);
+}
+.description-text {
+        text-align: center;
+        margin-top: 16px;
+		color: white;
+    }
+    .description-text h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .description-text p {
+        font-size: 1rem;
+        margin: 8px 0 0;
+    }
 
 /* CSS Móvil */
 @media (orientation: portrait) {
