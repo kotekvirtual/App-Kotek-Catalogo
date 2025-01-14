@@ -84,7 +84,7 @@ import Layout from "../../layouts/Layout.astro";
 		<div class="modals-div">
 			<dialog id="modal1" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita1" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/salon" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita1" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/salon" height="100%" width="100%" frameborder="0">test</iframe>
 			</dialog>
 			<dialog id="modal2" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
@@ -388,6 +388,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         border-radius: 12px;
         overflow: hidden;
         outline: none;
+        background-color: white;
     }
     .modalImage {
         border-radius: 8px;
@@ -471,7 +472,6 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         .modal {
             padding: 0;
             max-height: calc(100vh - 80px);
-            background-color: transparent;
         }
         .modalImage {
             margin: 0;
