@@ -84,43 +84,43 @@ import Layout from "../../layouts/Layout.astro";
 		<div class="modals-div">
 			<dialog id="modal1" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita1" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/salon" height="100%" width="100%" frameborder="0">test</iframe>
+				<iframe class="iframe-visita" id="visita1" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/salon" height="100%" width="100%" frameborder="0">Cargando</iframe>
 			</dialog>
 			<dialog id="modal2" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita2" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/despacho" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita2" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/despacho" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal3" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita3" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/dorm-ppal" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita3" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/dorm-ppal" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal4" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita4" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/aseo-ppal" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita4" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/aseo-ppal" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal5" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita5" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/aseo2" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita5" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/aseo2" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal6" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita6" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/dorm2" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita6" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/dorm2" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal7" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita7" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/dorm3" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita7" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/dorm3" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal8" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita8" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/aseo1" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita8" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/aseo1" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal9" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita9" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/cocina" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita9" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/cocina" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			<dialog id="modal10" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita10" allow="fullscreen" src="" data-src="https://kotekvirtual.es/demo/salon" height="100%" width="100%" frameborder="0"></iframe>
+				<iframe class="iframe-visita" id="visita10" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/salon" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
 			
 		  </div>
@@ -173,7 +173,7 @@ document.querySelectorAll(".room9").forEach(room=>room.addEventListener("click",
 
 document.querySelectorAll(".closeButton").forEach((button)=>{
 	button.addEventListener('click',()=>{
-        document.querySelectorAll(".iframe-visita").forEach((i)=>i.src="")
+        document.querySelectorAll(".iframe-visita").forEach((i)=>i.src="/loading")
 		document.querySelectorAll(".modal").forEach((m)=>m.close())}
 	)
 })
@@ -186,7 +186,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogA = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
 		rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
 		  if (!isInDialogA) {
-            document.getElementById("visita1").src = ""
+            document.getElementById("visita1").src = "/loading"
 			document.getElementById("modal1").close();
 		  }
 	});
@@ -195,7 +195,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogB = (rectB.top <= event.clientY && event.clientY <= rectB.top + rectB.height &&
 		rectB.left <= event.clientX && event.clientX <= rectB.left + rectB.width);
 		  if (!isInDialogB) {
-            document.getElementById("visita2").src = ""
+            document.getElementById("visita2").src = "/loading"
 			document.getElementById("modal2").close();
 		  }
 	});
@@ -204,7 +204,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogC = (rectC.top <= event.clientY && event.clientY <= rectC.top + rectC.height &&
 		rectC.left <= event.clientX && event.clientX <= rectC.left + rectC.width);
 		  if (!isInDialogC) {
-            document.getElementById("visita3").src = ""
+            document.getElementById("visita3").src = "/loading"
 			document.getElementById("modal3").close();
 		  }
 	});
@@ -213,7 +213,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
 		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
 		  if (!isInDialogD) {
-            document.getElementById("visita4").src = ""
+            document.getElementById("visita4").src = "/loading"
 			document.getElementById("modal4").close();
 		  }
 	});
@@ -222,7 +222,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
 		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
 		  if (!isInDialogD) {
-            document.getElementById("visita5").src = ""
+            document.getElementById("visita5").src = "/loading"
 			document.getElementById("modal5").close();
 		  }
 	});
@@ -231,7 +231,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
 		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
 		  if (!isInDialogD) {
-            document.getElementById("visita6").src = ""
+            document.getElementById("visita6").src = "/loading"
 			document.getElementById("modal6").close();
 		  }
 	});
@@ -240,7 +240,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
 		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
 		  if (!isInDialogD) {
-            document.getElementById("visita7").src = ""
+            document.getElementById("visita7").src = "/loading"
 			document.getElementById("modal7").close();
 		  }
 	});
@@ -249,7 +249,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
 		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
 		  if (!isInDialogD) {
-            document.getElementById("visita8").src = ""
+            document.getElementById("visita8").src = "/loading"
 			document.getElementById("modal8").close();
 		  }
 	});
@@ -258,7 +258,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
 		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
 		  if (!isInDialogD) {
-            document.getElementById("visita9").src = ""
+            document.getElementById("visita9").src = "/loading"
 			document.getElementById("modal9").close();
 		  }
 	});
