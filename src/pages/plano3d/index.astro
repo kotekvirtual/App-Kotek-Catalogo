@@ -86,9 +86,9 @@ import Layout from "../../layouts/Layout.astro";
 				<button class="closeButton"> &#9587;</button>
 				<iframe class="iframe-visita" id="visita1" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/salon" height="100%" width="100%" frameborder="0">Cargando</iframe>
 			</dialog>
-			<dialog id="modal2" class="modal layama">
+			<dialog id="modal2" class="modal">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita2" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/despacho" height="100%" width="100%" frameborder="0"></iframe>
+				<img src="/despacho.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="modal3" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
@@ -98,9 +98,9 @@ import Layout from "../../layouts/Layout.astro";
 				<button class="closeButton"> &#9587;</button>
 				<iframe class="iframe-visita" id="visita4" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/aseo-ppal" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
-			<dialog id="modal5" class="modal layama">
+			<dialog id="modal5" class="modal">
 				<button class="closeButton"> &#9587;</button>
-				<iframe class="iframe-visita" id="visita5" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/aseo2" height="100%" width="100%" frameborder="0"></iframe>
+				<img src="/aseo.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="modal6" class="modal layama">
 				<button class="closeButton"> &#9587;</button>
@@ -110,7 +110,7 @@ import Layout from "../../layouts/Layout.astro";
 				<button class="closeButton"> &#9587;</button>
 				<iframe class="iframe-visita" id="visita7" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/dorm3" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
-			<dialog id="modal8" class="modal layama">
+			<dialog id="modal8" class="modal">
 				<button class="closeButton"> &#9587;</button>
 				<iframe class="iframe-visita" id="visita8" allow="fullscreen" src="/loading" data-src="https://kotekvirtual.es/demo/aseo1" height="100%" width="100%" frameborder="0"></iframe>
 			</dialog>
@@ -136,7 +136,7 @@ import Layout from "../../layouts/Layout.astro";
 	document.getElementById("modal1").showModal()
 }))
 document.querySelectorAll(".room2").forEach(room=>room.addEventListener("click",()=>{
-    document.querySelector("#visita2").src = document.querySelector("#visita2").getAttribute("data-src")
+    
 	document.getElementById("modal2").showModal()
 }))
 document.querySelectorAll(".room3").forEach(room=>room.addEventListener("click",()=>{
@@ -148,7 +148,6 @@ document.querySelectorAll(".room4").forEach(room=>room.addEventListener("click",
 	document.getElementById("modal4").showModal()
 }))
 document.querySelectorAll(".room5").forEach(room=>room.addEventListener("click",()=>{
-    document.querySelector("#visita5").src = document.querySelector("#visita5").getAttribute("data-src")
 	document.getElementById("modal5").showModal()
 }))
 document.querySelectorAll(".room6").forEach(room=>room.addEventListener("click",()=>{
@@ -195,7 +194,6 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogB = (rectB.top <= event.clientY && event.clientY <= rectB.top + rectB.height &&
 		rectB.left <= event.clientX && event.clientX <= rectB.left + rectB.width);
 		  if (!isInDialogB) {
-            document.getElementById("visita2").src = "/loading"
 			document.getElementById("modal2").close();
 		  }
 	});
@@ -222,7 +220,6 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 		  let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
 		rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
 		  if (!isInDialogD) {
-            document.getElementById("visita5").src = "/loading"
 			document.getElementById("modal5").close();
 		  }
 	});
