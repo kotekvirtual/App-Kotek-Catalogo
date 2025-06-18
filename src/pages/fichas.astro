@@ -11,7 +11,12 @@ import Layout from "../layouts/Layout.astro";
 			<img src="/viviendaC.webp" id="botonC" class="boton-ficha" alt="ficha comercial C">
 			<img src="/viviendaD.webp" id="botonD" class="boton-ficha" alt="ficha comercial D">
 			<img src="/viviendaE.webp" id="botonE" class="boton-ficha" alt="ficha comercial E">
-			<img src="/viviendaF.webp" id="botonF" class="boton-ficha" alt="ficha comercial F">	
+			<img src="/viviendaF.webp" id="botonF" class="boton-ficha" alt="ficha comercial F">
+			<img src="/viviendaG.webp" id="botonG" class="boton-ficha" alt="ficha comercial G">
+			<img src="/viviendaH.webp" id="botonH" class="boton-ficha" alt="ficha comercial H">
+			<img src="/viviendaI.webp" id="botonI" class="boton-ficha" alt="ficha comercial I">
+			<img src="/viviendaJ.webp" id="botonJ" class="boton-ficha" alt="ficha comercial J">
+			<img src="/viviendaK.webp" id="botonK" class="boton-ficha" alt="ficha comercial K">	
 		</section>
 		<div>
 			<dialog id="fichaModalA">
@@ -37,6 +42,26 @@ import Layout from "../layouts/Layout.astro";
 			<dialog id="fichaModalF">
 				<button class="closeButton"> &#9587;</button>
 				<img src="/viviendaF.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="fichaModalG">
+				<button class="closeButton"> &#9587;</button>
+				<img src="/viviendaG.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="fichaModalH">
+				<button class="closeButton"> &#9587;</button>
+				<img src="/viviendaH.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="fichaModalI">
+				<button class="closeButton"> &#9587;</button>
+				<img src="/viviendaI.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="fichaModalJ">
+				<button class="closeButton"> &#9587;</button>
+				<img src="/viviendaJ.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
+			<dialog id="fichaModalK">
+				<button class="closeButton"> &#9587;</button>
+				<img src="/viviendaK.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			
 		  </div>
@@ -96,7 +121,7 @@ import Layout from "../layouts/Layout.astro";
         margin: 0px;
         border: none;
     }
-	#botonF{
+	#botonK{
 		margin-bottom: 180px;
 	}
     .closeButton {
@@ -158,6 +183,22 @@ import Layout from "../layouts/Layout.astro";
 	document.querySelector("#botonF").addEventListener("click",()=>{
 		document.getElementById("fichaModalF").showModal()
 	})
+	document.querySelector("#botonG").addEventListener("click",()=>{
+		document.getElementById("fichaModalG").showModal()
+	})
+	document.querySelector("#botonH").addEventListener("click",()=>{
+		document.getElementById("fichaModalH").showModal()
+	})
+	document.querySelector("#botonI").addEventListener("click",()=>{
+		document.getElementById("fichaModalI").showModal()
+	})
+	document.querySelector("#botonJ").addEventListener("click",()=>{
+		document.getElementById("fichaModalJ").showModal()
+	})
+	document.querySelector("#botonK").addEventListener("click",()=>{
+		document.getElementById("fichaModalK").showModal()
+	})
+
 
 
 	
@@ -207,6 +248,46 @@ import Layout from "../layouts/Layout.astro";
 			rectF.left <= event.clientX && event.clientX <= rectF.left + rectF.width);
 			  if (!isInDialogF) {
 				document.getElementById("fichaModalF").close();
+			  }
+		});
+		document.getElementById("fichaModalG").addEventListener('click', (event)=> {
+			  let rectG = document.getElementById("fichaModalG").getBoundingClientRect();
+			  let isInDialogG = (rectG.top <= event.clientY && event.clientY <= rectG.top + rectG.height &&
+			rectG.left <= event.clientX && event.clientX <= rectG.left + rectG.width);
+			  if (!isInDialogG) {
+				document.getElementById("fichaModalG").close();
+			  }	
+		});
+		document.getElementById("fichaModalH").addEventListener('click', (event)=> {
+			  let rectH = document.getElementById("fichaModalH").getBoundingClientRect();
+			  let isInDialogH = (rectH.top <= event.clientY && event.clientY <= rectH.top + rectH.height &&
+			rectH.left <= event.clientX && event.clientX <= rectH.left + rectH.width);
+			  if (!isInDialogH) {
+				document.getElementById("fichaModalH").close();
+			  }
+		});
+		document.getElementById("fichaModalI").addEventListener('click', (event)=> {
+			  let rectI = document.getElementById("fichaModalI").getBoundingClientRect();
+			  let isInDialogI = (rectI.top <= event.clientY && event.clientY <= rectI.top + rectI.height &&
+			rectI.left <= event.clientX && event.clientX <= rectI.left + rectI.width);
+			  if (!isInDialogI) {
+				document.getElementById("fichaModalI").close();
+			  }
+		});
+		document.getElementById("fichaModalJ").addEventListener('click', (event)=> {
+			  let rectJ = document.getElementById("fichaModalJ").getBoundingClientRect();
+			  let isInDialogJ = (rectJ.top <= event.clientY && event.clientY <= rectJ.top + rectJ.height &&
+			rectJ.left <= event.clientX && event.clientX <= rectJ.left + rectJ.width);
+			  if (!isInDialogJ) {
+				document.getElementById("fichaModalJ").close();
+			  }
+		});
+		document.getElementById("fichaModalK").addEventListener('click', (event)=> {
+			  let rectK = document.getElementById("fichaModalK").getBoundingClientRect();
+			  let isInDialogK = (rectK.top <= event.clientY && event.clientY <= rectK.top + rectK.height &&
+			rectK.left <= event.clientX && event.clientX <= rectK.left + rectK.width);
+			  if (!isInDialogK) {
+				document.getElementById("fichaModalK").close();
 			  }
 		});
 		

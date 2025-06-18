@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+---
+
+
+<Layout title="Renders de la vivienda">
+    <main>
+        <section class="gallery">
+            <img src="/lateralD.webp" alt="Render del exterior"><img src="/salon1.webp" alt="Render del salón"><img src="/cocina1.webp" alt="Render de la cocina"><img src="/dormitorio1.webp" alt="Render del dormitorio"><img src="/salon2.webp" alt="Render del salón"><img src="/salon3.webp" alt="Render del salón"><img src="/dormitorio2.webp" alt="Render del dormitorio"><img src="/comedor1.webp" alt="Render del comedor"><img src="/aseo2.webp" alt="Render del aseop 2">
+        </section>
+		<section class="mobile-gallery">
+			<img src="/lateralD.webp" alt="Render del exterior"><img src="/salon1.webp" alt="Render del salón"><img src="/cocina1.webp" alt="Render de la cocina"><img src="/dormitorio1.webp" alt="Render del dormitorio"><img src="/salon2.webp" alt="Render del salón"><img src="/salon3.webp" alt="Render del salón"><img src="/dormitorio2.webp" alt="Render del dormitorio"><img src="/comedor1.webp" alt="Render del comedor"><img src="/aseo2.webp" alt="Render del aseop 2">
+		</section>
+    </main>
+</Layout>
+
+
+
+<style>
+body {
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    height: fit-content;
+    margin: 24px;
+    border-radius: 12px;
+    background-position: 50% 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+main {
+    overflow: scroll;
+}
+
+.mobile-gallery {
+    display: none;
+}
+
+img {
+    width: 100%;
+    border-radius: 12px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.arrow {
+    font-size: 3rem;
+    text-decoration: none;
+    color: #262633;
+    position: absolute;
+    background-color: hsl(240, 15%, 87%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-weight: 200;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.right {
+    right: 8px;
+}
+
+.left {
+    left: 8px;
+}
+
+@media (orientation: portrait) {
+    .gallery {
+        display: none;
+    }
+
+    .mobile-gallery {
+        padding-top: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        overflow: scroll;
+        height: calc(100dvh - 80px);
+        padding-bottom: 80px; /* Añadir margen inferior para la última imagen */
+    }
+}
+</style>
