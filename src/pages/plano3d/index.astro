@@ -7,7 +7,7 @@ import Layout from "../../layouts/Layout.astro";
     <main>
         <div class="tabs">
             <button class="tab-button selected">Vivienda C</button>
-            <button class="tab-button" onclick="window.location.href='/plano3d/planta-sotano'">Vivienda F</button>
+            <button class="tab-button" onclick="window.location.href='/plano3d/vivienda-f'">Vivienda F</button>
 
         </div>
         <section>
@@ -38,16 +38,16 @@ import Layout from "../../layouts/Layout.astro";
 					<text x="960" y="1050" class="svg-text">+</text>
 					<text x="1270" y="900" class="svg-text">+</text>
 
-                    <text x="670" y="400" class="svg-number">1</text>
-					<text x="600" y="650" class="svg-number">2</text>
-					<text x="680" y="1050" class="svg-number">3</text>
-					<text x="960" y="1050" class="svg-number">4</text>
-					<text x="1270" y="900" class="svg-number">5</text>
+                    <text x="670" y="400" class="svg-number">5</text>
+					<text x="600" y="650" class="svg-number">4</text>
+					<text x="680" y="1050" class="svg-number">2</text>
+					<text x="960" y="1050" class="svg-number">3</text>
+					<text x="1270" y="900" class="svg-number">1</text>
 
 				
 					
 					
-					<img src="/planoC.png"/>
+					<img src="/planoC.webp"/>
 					
 			</svg>
 				<!-- -->
@@ -55,19 +55,15 @@ import Layout from "../../layouts/Layout.astro";
 				
 			  </div>
 
-			  <aside class="mobile-text">
-				<ul class="mobile-text-list">
-					<li class="room1">1. Salón Comedor <span >Ver Estancia 360º</span></li>
-					<li class="texto-3d-impar room2">2. Despacho <span>Ver Estancia 360º</span></li>
-					<li class="room3">3. Dormitorio Principal <span >Ver Estancia 360º</span></li>
-					<li class="texto-3d-impar room4">4. Baño Dormitorio <span>Ver Estancia 360º</span></li>
-					<li class="room5">5. Aseo 2 <span >Ver Estancia 360º</span></li>
-					<li class="texto-3d-impar room6">6. Dormitorio 2 <span>Ver Estancia 360º</span></li>
-					<li class="room7">7. Dormitorio 3 <span >Ver Estancia 360º</span></li>
-					<li class="texto-3d-impar room8">8. Cocina <span>Ver Estancia 360º</span></li>
-					<li class="room9">9. Aseo 2 <span >Ver Estancia 360º</span></li>
-				</ul>
-			</aside>
+			   <aside class="mobile-text">
+                <ul class="mobile-text-list">
+                    <li class="room1">1. Salón-Comedor-Cocina <span >Ver Imagen F1</span></li>
+                    <li class="texto-3d-impar room2">2. Dormitorio Principal <span>Ver Imagen F6</span></li> 
+                    <li class="room3">3. Dormitorio Secundario <span >Ver Imagen F7</span></li> 
+                    <li class="texto-3d-impar room4">4. Baño Dormitorio <span>Ver Imagen f12</span></li> 
+                    <li class="room5">5. Aseo 2 <span >Ver Imagen f11</span></li> 
+                </ul>
+            </aside>
 			
         </section>
 		
@@ -330,7 +326,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         stroke: white;
         stroke-width: 4;
         z-index: 9;
-        fill-opacity: 0.4;
+        fill-opacity: 0.2;
     }
     .secondrow {
         fill: #75A93A;
