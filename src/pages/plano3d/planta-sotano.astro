@@ -8,25 +8,35 @@ import Layout from "../../layouts/Layout.astro";
         <div class="tabs">
             <button class="tab-button" onclick="window.location.href='/plano3d/'">Vivienda C</button>
             <button class="tab-button selected">Vivienda F</button>
-            <button class="tab-button" onclick="window.location.href='/plano3d/'">Vivienda G</button>
-            <button class="tab-button" onclick="window.location.href='/plano3d/'">Vivienda H</button>
         </div>
         <section>
 			<div class='imageWrapper3D'>
 				<!-- fill with SVG areas -->
-				<svg viewBox="0 0 720 552" class='image-area image-area--orange-1'>
-					<g class="secondrow room3" ><path d="M 39.659 5.238 L 189.008 4.125 L 189.008 57.674 L 502.295 56.735 L 507.604 134.054 L 684.592 132.324 L 713.794 411.236 L 464.151 412.8 L 469.626 519.19 L 439.703 545.072 L 3.318 548.474 Z" />
-					<g class="toprow room1" ><path d="M 86.847 230.791 L 316.415 227.747 L 319.03 545.726 L 74.044 547.492 Z" />
-					</g>
-					<g class="toprow room2" ><path d="M 213.385 57.892 L 323.819 57.238 L 327.086 174.859 L 189.208 176.166 L 189.861 121.276 L 212.078 119.969 Z" />
-					</g>
-					</g>
-					<text x="250" y="150" class="svg-text">+</text>
-					<text x="180" y="410" class="svg-text">+</text>
-					<text x="250" y="150" class="svg-number">1</text>
-					<text x="180" y="410" class="svg-number">2</text>
+				<svg viewBox="0 0 2000 1419" class='image-area image-area--orange-1'>
+					<g class="" >
+                        <!-- <path d="M 39.659 5.238 L 189.008 4.125 L 189.008 57.674 L 502.295 56.735 L 507.604 134.054 L 684.592 132.324 L 713.794 411.236 L 464.151 412.8 L 469.626 519.19 L 439.703 545.072 L 3.318 548.474 Z" /> -->
+					<g class="toprow room1" ><path d="M 486 652 L 590 653 L 590 638 L 756 638 L 757 1022 L 518 1022 L 518 893 L 487 893 Z" /></g>
+					<g class="toprow room2" ><path d="M 772 1306 L 771 1095 L 808 1095 L 808 1057 L 1000 1058 L 1000 1306 Z" /></g>
+					<g class="toprow room3" ><path d="M 770 904 L 771 1042 L 880 1042 L 1103 1042 L 1103 1056 L 1013 1056 L 1014 1306 L 1521 1307 L 1521 903 Z" /></g>
+					<g class="toprow room4" ><path d="M 1010 548 L 1011 686 L 1010 890 L 1521 890 L 1521 548 Z" /></g>
+					<g class="toprow room5" ><path d="M 771 890 L 908 890 L 996 891 L 997 535 L 1520 534 L 1520 83 L 496 83 L 496 404 L 807 406 L 807 419 L 467 419 L 467 624 L 771 624 Z" /></g>
 					
-					<img src="/sotano.webp"/>
+                    <text x="610" y="850" class="svg-text">+</text>
+					<text x="860" y="1220" class="svg-text">+</text>
+					<text x="1270" y="1120" class="svg-text">+</text>
+					<text x="1250" y="740" class="svg-text">+</text>
+					<text x="1000" y="400" class="svg-text">+</text>
+
+                    <text x="610" y="850" class="svg-number">1</text>
+					<text x="860" y="1220" class="svg-number">2</text>
+					<text x="1270" y="1120" class="svg-number">3</text>
+					<text x="1250" y="740" class="svg-number">4</text>
+					<text x="1000" y="400" class="svg-number">5</text>
+
+					
+                    </g>
+					
+					<img src="/planoF.webp"/>
 					
 			</svg>
 				<!-- -->
@@ -137,7 +147,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
     }
     section {
         background-color: hsl(240, 15%, 17%);
-        height: calc(100vh - 130px);
+        height: calc(100vh - 48px);
         margin: 24px;
         border-radius: 13px;
         background-position: 50% 70%;
@@ -149,15 +159,12 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
     }
     .imageWrapper3D {
         position: relative;
-        height: 100%;
-        max-height: 100%;
-        aspect-ratio: 720 / 552;
+        max-height: calc(100vh - 48px);
     }
     .imageWrapper3D img {
         width: 100%;
         height: 100%;
         border-radius: 12px;
-        aspect-ratio: 720 / 552;
     }
     .image-area {
         position: absolute;
@@ -168,19 +175,17 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         fill: #75A93A;
         cursor: pointer;
         stroke: white;
-        stroke-width: 2.5;
+        stroke-width: 4;
         z-index: 9;
-        fill-opacity: 0;
+        fill-opacity: 0.4;
     }
     .secondrow {
         fill: #75A93A;
-        stroke: white;
-        stroke-width: 3;
-        fill-opacity: 0.4;
+        fill-opacity: 0;
         cursor: pointer;
     }
     .toprow:hover {
-        fill-opacity: 0.4;
+        fill-opacity: 0.6;
     }
     .secondrow:hover {
         fill-opacity: 0.6;
@@ -199,14 +204,14 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
     }
     .svg-text {
         fill: #a93a75;
-        font: bold 3rem "Poppins", sans-serif;
+        font: bold 5rem "Poppins", sans-serif;
         pointer-events: none;
         display: block;
     }
     .svg-number {
         display: none;
         fill: #a93a75;
-        font: bold 3rem "Poppins", sans-serif;
+        font: bold 7rem "Poppins", sans-serif;
         z-index: 9;
     }
     .modal {
@@ -215,6 +220,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         border-radius: 12px;
         overflow: hidden;
         outline: none;
+        background-color: white;
     }
     .modalImage {
         border-radius: 8px;
@@ -228,6 +234,9 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         max-width: 80vw;
     }
     .closeButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: fixed;
         top: 8px;
         right: 8px;
@@ -243,8 +252,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         text-align: center;
     }
     main {
-        height: calc(100dvh - 18px);
-        overflow: hidden;
+        height: calc(100dvh - 80px);
     }
     ul {
         list-style-type: none;
@@ -296,10 +304,11 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         .modal {
             padding: 0;
             max-height: calc(100vh - 80px);
-            background-color: transparent;
         }
         .modalImage {
             margin: 0;
+            border: 15px solid white;
+            
         }
         .mobile-text-list {
             display: flex;
@@ -316,5 +325,10 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
             height: calc(100dvh - 80px);
             overflow: scroll;
         }
+        .closeButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     }
 </style>
