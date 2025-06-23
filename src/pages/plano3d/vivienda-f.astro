@@ -46,11 +46,11 @@ import Layout from "../../layouts/Layout.astro";
 
 			  <aside class="mobile-text">
                 <ul class="mobile-text-list">
-                    <li class="room1">1. Salón-Comedor-Cocina <span >Ver Imagen</span></li>
-                    <li class="texto-3d-impar room2">2. Dormitorio Principal <span>Ver Imagen</span></li> 
-                    <li class="room3">3. Dormitorio Secundario <span >Ver Imagen</span></li> 
-                    <li class="texto-3d-impar room4">4. Baño Dormitorio <span>Ver Imagen</span></li> 
-                    <li class="room5">5. Aseo 2 <span >Ver Imagen</span></li> 
+                    <li class="room5">1. Salón-Comedor-Cocina <span >Ver Imagen</span></li>
+                    <li class="texto-3d-impar room3">2. Dormitorio Principal <span>Ver Imagen</span></li> 
+                    <li class="room4">3. Dormitorio Secundario <span >Ver Imagen</span></li> 
+                    <li class="texto-3d-impar room2">4. Baño Dormitorio <span>Ver Imagen</span></li> 
+                    <li class="room1">5. Aseo 2 <span >Ver Imagen</span></li> 
                 </ul>
             </aside>
 			
@@ -59,12 +59,24 @@ import Layout from "../../layouts/Layout.astro";
 		<div>
 			<dialog id="modalSotano1" class="modal">
 				<button class="closeButton"> &#9587;</button>
-				<img src="/bodega-2.webp" alt="ficha comercial" class="modalImage">
+				<img src="/f-aseo1.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
 			<dialog id="modalSotano2" class="modal">
 				<button class="closeButton"> &#9587;</button>
-				<img src="/lavanderia.webp" alt="ficha comercial" class="modalImage">
+				<img src="/f-aseo2.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
+            <dialog id="modalSotano3" class="modal">
+                <button class="closeButton"> &#9587;</button>
+                <img src="/f-dorm1.webp" alt="ficha comercial" class="modalImage">
+            </dialog>
+            <dialog id="modalSotano4" class="modal">
+                <button class="closeButton"> &#9587;</button>
+                <img src="/f-dorm2.webp" alt="ficha comercial" class="modalImage">
+            </dialog>
+            <dialog id="modalSotano5" class="modal">
+                <button class="closeButton"> &#9587;</button>
+                <img src="/f-salon.webp" alt="ficha comercial" class="modalImage">
+            </dialog>
 			
 			
 		  </div>
@@ -80,6 +92,15 @@ import Layout from "../../layouts/Layout.astro";
 }))
 document.querySelectorAll(".room2").forEach(room=>room.addEventListener("click",()=>{
 	document.getElementById("modalSotano2").showModal()
+}))
+document.querySelectorAll(".room3").forEach(room=>room.addEventListener("click",()=>{
+    document.getElementById("modalSotano3").showModal()
+}))
+document.querySelectorAll(".room4").forEach(room=>room.addEventListener("click",()=>{
+    document.getElementById("modalSotano4").showModal()
+}))
+document.querySelectorAll(".room5").forEach(room=>room.addEventListener("click",()=>{
+    document.getElementById("modalSotano5").showModal()
 }))
 
 
@@ -111,6 +132,30 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 			document.getElementById("modalSotano2").close();
 		  }
 	});
+    document.getElementById("modalSotano3").addEventListener('click', (event)=> {
+          let rectC = document.getElementById("modalSotano3").getBoundingClientRect();
+          let isInDialogC = (rectC.top <= event.clientY && event.clientY <= rectC.top + rectC.height &&
+        rectC.left <= event.clientX && event.clientX <= rectC.left + rectC.width);
+          if (!isInDialogC) {
+            document.getElementById("modalSotano3").close();
+          }
+    });
+    document.getElementById("modalSotano4").addEventListener('click', (event)=> {
+          let rectD = document.getElementById("modalSotano4").getBoundingClientRect();
+          let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
+        rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
+          if (!isInDialogD) {
+            document.getElementById("modalSotano4").close();
+          }
+    });
+    document.getElementById("modalSotano5").addEventListener('click', (event)=> {
+          let rectE = document.getElementById("modalSotano5").getBoundingClientRect();
+          let isInDialogE = (rectE.top <= event.clientY && event.clientY <= rectE.top + rectE.height &&
+        rectE.left <= event.clientX && event.clientX <= rectE.left + rectE.width);
+          if (!isInDialogE) {
+            document.getElementById("modalSotano5").close();
+          }
+    });
 	</script>
 
 
