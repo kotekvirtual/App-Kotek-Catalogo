@@ -5,6 +5,13 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Visita Virtual C">
     <main>
+		<div class="tabs">
+            <button class="tab-button selected">Tipo C</button>
+            <button class="tab-button" onclick="window.location.href='/visitavirtual-f'">Tipo F</button>
+            <button class="tab-button" onclick="window.location.href='/visitavirtual-g'">Tipo G</button>
+            <button class="tab-button" onclick="window.location.href='/visitavirtual-h'">Tipo H</button>
+
+        </div>
         <section>
             <iframe allow="xr-spatial-tracking"  src="https://3d.kotekvirtual.es/riosar-tipoc/" height="100%" width="100%" frameborder="0"></iframe>
         </section>
@@ -31,9 +38,31 @@ import Layout from "../layouts/Layout.astro";
 		margin: 0;
 		padding: 0;
 	}
+	.tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    .tab-button {
+        padding: 12px 24px;
+        border: none;
+        background-color: hsl(240, 15%, 27%);
+        color: hsl(240, 15%, 97%);
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 4px;
+        margin: 4px 1px;
+        transition: background-color 0.3s;
+    }
+    .tab-button.selected {
+        background-color: hsl(230, 100%, 69%);
+    }
+    .tab-button:hover {
+        background-color: hsl(230, 100%, 75%);
+    }
 	section{
 		background-color: #F2F2F2;
-		height: calc(100vh - 48px);
+		height: calc(100vh - 88px);
 		margin: 24px;
 		border-radius: 12px;
 		background-position: 50% 70%;
