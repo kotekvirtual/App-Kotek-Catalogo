@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 
-<Layout title="Plano 3D F">
+<Layout title="Plano 3D G">
     <main>
         <div class="tabs">
             <button class="tab-button" onclick="window.location.href='/plano3d/'">Tipo C</button>
@@ -24,17 +24,19 @@ import Layout from "../../layouts/Layout.astro";
 					<g class="toprow room5" ><path d="M 1649.086 795.114 L 1804.653 795.447 L 1804.847 1289.988 L 1392.172 1289.697 L 1391.365 888.453 L 1649.233 888.062 Z" /></g>
 					
 					
-                    <text x="610" y="850" class="svg-text">+</text>
-					<text x="860" y="1220" class="svg-text">+</text>
-					<text x="1270" y="1120" class="svg-text">+</text>
-					<text x="1250" y="740" class="svg-text">+</text>
-					<text x="1000" y="400" class="svg-text">+</text>
+                    <text x="500" y="870" class="svg-text">+</text>
+                    <text x="450" y="450" class="svg-text">+</text>
+                    <text x="1580" y="420" class="svg-text">+</text>
+                    <text x="2120" y="370" class="svg-text">+</text>
+                    <text x="1580" y="1100" class="svg-text">+</text>
 
-                    <text x="610" y="850" class="svg-number">5</text>
-					<text x="860" y="1220" class="svg-number">4</text>
-					<text x="1270" y="1120" class="svg-number">2</text>
-					<text x="1250" y="740" class="svg-number">3</text>
-					<text x="1000" y="400" class="svg-number">1</text>
+					<text x="500" y="870" class="svg-number">4</text>
+                    <text x="450" y="450" class="svg-number">1</text>
+                    <text x="1580" y="420" class="svg-number">2</text>
+                    <text x="2120" y="370" class="svg-number">5</text>
+                    <text x="1580" y="1100" class="svg-number">3</text>
+
+                   
 
 					
                     </g>
@@ -49,36 +51,36 @@ import Layout from "../../layouts/Layout.astro";
 
 			  <aside class="mobile-text">
                 <ul class="mobile-text-list">
-                    <li class="room5">1. Salón-Comedor-Cocina <span >Ver Imagen</span></li>
+                    <li class="room1">1. Salón-Comedor-Cocina <span >Ver Imagen</span></li>
                     <li class="texto-3d-impar room3">2. Dormitorio Principal <span>Ver Imagen</span></li> 
-                    <li class="room4">3. Dormitorio Secundario <span >Ver Imagen</span></li> 
-                    <li class="texto-3d-impar room2">4. Baño Dormitorio <span>Ver Imagen</span></li> 
-                    <li class="room1">5. Aseo 2 <span >Ver Imagen</span></li> 
+                    <li class="room5">3. Dormitorio Secundario <span >Ver Imagen</span></li> 
+                    <li class="texto-3d-impar room2">4. Baño Planta Baja <span>Ver Imagen</span></li> 
+                    <li class="room4">5. Aseo Planta Superior <span >Ver Imagen</span></li> 
                 </ul>
             </aside>
 			
         </section>
 		
 		<div>
-			<dialog id="modalSotano1" class="modal">
+			<dialog id="modalG1" class="modal">
 				<button class="closeButton"> &#9587;</button>
-				<img src="/f-aseo1.webp" alt="ficha comercial" class="modalImage">
+				<img src="/g-salon.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
-			<dialog id="modalSotano2" class="modal">
+			<dialog id="modalG2" class="modal">
 				<button class="closeButton"> &#9587;</button>
-				<img src="/f-aseo2.webp" alt="ficha comercial" class="modalImage">
+				<img src="/g-aseo1.webp" alt="ficha comercial" class="modalImage">
 			</dialog>
-            <dialog id="modalSotano3" class="modal">
+            <dialog id="modalG3" class="modal">
                 <button class="closeButton"> &#9587;</button>
-                <img src="/f-dorm1.webp" alt="ficha comercial" class="modalImage">
+                <img src="/g-dorm1.webp" alt="ficha comercial" class="modalImage">
             </dialog>
-            <dialog id="modalSotano4" class="modal">
+            <dialog id="modalG4" class="modal">
                 <button class="closeButton"> &#9587;</button>
-                <img src="/f-dorm2.webp" alt="ficha comercial" class="modalImage">
+                <img src="/g-aseo2.webp" alt="ficha comercial" class="modalImage">
             </dialog>
-            <dialog id="modalSotano5" class="modal">
+            <dialog id="modalG5" class="modal">
                 <button class="closeButton"> &#9587;</button>
-                <img src="/f-salon.webp" alt="ficha comercial" class="modalImage">
+                <img src="/g-dorm2.webp" alt="ficha comercial" class="modalImage">
             </dialog>
 			
 			
@@ -91,19 +93,19 @@ import Layout from "../../layouts/Layout.astro";
 	//Make all modal open with their corresponding button
 
 	document.querySelectorAll(".room1").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modalSotano1").showModal()
+	document.getElementById("modalG1").showModal()
 }))
 document.querySelectorAll(".room2").forEach(room=>room.addEventListener("click",()=>{
-	document.getElementById("modalSotano2").showModal()
+	document.getElementById("modalG2").showModal()
 }))
 document.querySelectorAll(".room3").forEach(room=>room.addEventListener("click",()=>{
-    document.getElementById("modalSotano3").showModal()
+    document.getElementById("modalG3").showModal()
 }))
 document.querySelectorAll(".room4").forEach(room=>room.addEventListener("click",()=>{
-    document.getElementById("modalSotano4").showModal()
+    document.getElementById("modalG4").showModal()
 }))
 document.querySelectorAll(".room5").forEach(room=>room.addEventListener("click",()=>{
-    document.getElementById("modalSotano5").showModal()
+    document.getElementById("modalG5").showModal()
 }))
 
 
@@ -119,44 +121,44 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
 //Close Modal when you click anywhere on the backdrop
 
 
-	document.getElementById("modalSotano1").addEventListener('click', (event)=> {
-		  let rect = document.getElementById("modalSotano1").getBoundingClientRect();
+	document.getElementById("modalG1").addEventListener('click', (event)=> {
+		  let rect = document.getElementById("modalG1").getBoundingClientRect();
 		  let isInDialogA = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
 		rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
 		  if (!isInDialogA) {
-			document.getElementById("modalSotano1").close();
+			document.getElementById("modalG1").close();
 		  }
 	});
-	document.getElementById("modalSotano2").addEventListener('click', (event)=> {
-		  let rectB = document.getElementById("modalSotano2").getBoundingClientRect();
+	document.getElementById("modalG2").addEventListener('click', (event)=> {
+		  let rectB = document.getElementById("modalG2").getBoundingClientRect();
 		  let isInDialogB = (rectB.top <= event.clientY && event.clientY <= rectB.top + rectB.height &&
 		rectB.left <= event.clientX && event.clientX <= rectB.left + rectB.width);
 		  if (!isInDialogB) {
-			document.getElementById("modalSotano2").close();
+			document.getElementById("modalG2").close();
 		  }
 	});
-    document.getElementById("modalSotano3").addEventListener('click', (event)=> {
-          let rectC = document.getElementById("modalSotano3").getBoundingClientRect();
+    document.getElementById("modalG3").addEventListener('click', (event)=> {
+          let rectC = document.getElementById("modalG3").getBoundingClientRect();
           let isInDialogC = (rectC.top <= event.clientY && event.clientY <= rectC.top + rectC.height &&
         rectC.left <= event.clientX && event.clientX <= rectC.left + rectC.width);
           if (!isInDialogC) {
-            document.getElementById("modalSotano3").close();
+            document.getElementById("modalG3").close();
           }
     });
-    document.getElementById("modalSotano4").addEventListener('click', (event)=> {
-          let rectD = document.getElementById("modalSotano4").getBoundingClientRect();
+    document.getElementById("modalG4").addEventListener('click', (event)=> {
+          let rectD = document.getElementById("modalG4").getBoundingClientRect();
           let isInDialogD = (rectD.top <= event.clientY && event.clientY <= rectD.top + rectD.height &&
         rectD.left <= event.clientX && event.clientX <= rectD.left + rectD.width);
           if (!isInDialogD) {
-            document.getElementById("modalSotano4").close();
+            document.getElementById("modalG4").close();
           }
     });
-    document.getElementById("modalSotano5").addEventListener('click', (event)=> {
-          let rectE = document.getElementById("modalSotano5").getBoundingClientRect();
+    document.getElementById("modalG5").addEventListener('click', (event)=> {
+          let rectE = document.getElementById("modalG5").getBoundingClientRect();
           let isInDialogE = (rectE.top <= event.clientY && event.clientY <= rectE.top + rectE.height &&
         rectE.left <= event.clientX && event.clientX <= rectE.left + rectE.width);
           if (!isInDialogE) {
-            document.getElementById("modalSotano5").close();
+            document.getElementById("modalG5").close();
           }
     });
 	</script>
@@ -205,12 +207,15 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: flex-start;
+        align-items: flex-start;
+
     }
     .imageWrapper3D {
         position: relative;
         max-height: calc(100vh - 48px);
+        aspect-ratio: 685 / 403;
+
     }
     .imageWrapper3D img {
         width: 100%;
