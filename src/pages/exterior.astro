@@ -22,10 +22,10 @@ import Layout from "../layouts/Layout.astro";
             <text class="svg-text" x="160" y="480">Vendido</text>
             <rect id="ventanaF" x="478" y="407" class="toprow" width="505" height="131" />
             <text class="svg-text" x="650" y="480">Disponible</text>
-            <rect id="ventanaG" x="1011" y="408" class="secondrow" width="305" height="132" />
-            <text class="svg-text" x="1095" y="480">Vendido</text>
-            <rect id="ventanaH" x="1346" y="410" class="secondrow" width="346" height="133" />
-            <text class="svg-text" x="1450" y="480">Vendido</text>
+            <rect id="ventanaG" x="1011" y="408" class="toprow" width="305" height="132" />
+            <text class="svg-text" x="1095" y="480">Disponible</text>
+            <rect id="ventanaH" x="1346" y="410" class="toprow" width="346" height="133" />
+            <text class="svg-text" x="1450" y="480">Disponible</text>
             <rect id="ventanaI" x="1726" y="412" class="secondrow" width="136" height="133" />
             <text class="svg-text" x="1730" y="490">Vendido</text>
             
@@ -106,12 +106,12 @@ import Layout from "../layouts/Layout.astro";
 					<text class="svg-number" x="160" y="520">5</text>
 					<rect id="ventanaMovilF" x="478" y="407" class="ventanaMovilF toprow" width="505" height="131" />
 					<text class="svg-number" x="650" y="520">6</text>
-					<rect id="ventanaMovilG" x="1011" y="408" class="ventanaMovilG secondrow" width="305" height="132" />
+					<rect id="ventanaMovilG" x="1011" y="408" class="ventanaMovilG toprow" width="305" height="132" />
 					<text class="svg-number" x="1095" y="520">7</text>
-					<rect id="ventanaMovilH" x="1346" y="410" class="ventanaMovilH secondrow" width="346" height="133" />
+					<rect id="ventanaMovilH" x="1346" y="410" class="ventanaMovilH toprow" width="346" height="133" />
 					<text class="svg-number" x="1450" y="520">8</text>
 					<rect id="ventanaMovilI" x="1726" y="412" class="ventanaMovilI secondrow" width="136" height="133" />
-					<text class="svg-number" x="1730" y="520">9</text>
+					<text class="svg-number" x="1760" y="520">9</text>
 					
 					<rect id="ventanaMovilJ" x="52" y="217" class="ventanaMovilJ secondrow" width="359" height="135" />
 					<text class="svg-number" x="160" y="320">10</text>
@@ -232,7 +232,11 @@ import Layout from "../layouts/Layout.astro";
 		document.getElementById("fichaVentanaK").showModal()
 	})
 
-
+document.querySelectorAll(".closeButton").forEach((button)=>{
+	button.addEventListener('click',()=>{
+		document.querySelectorAll(".fichaMovil").forEach((m)=>m.close())}
+	)
+})
 
 	
 		document.getElementById("fichaVentanaA").addEventListener('click', (event)=> {
@@ -593,12 +597,14 @@ import Layout from "../layouts/Layout.astro";
 	.svg-text{
 		fill: white;
 		font: 400 1.5rem "Poppins", sans-serif;
+		pointer-events: none;
 	}
 	.svg-number {
 		fill: black;
 		stroke: white;
 		stroke-width: 2px;
 		font: bold 3rem "Poppins", sans-serif;
+		pointer-events: none;
 	}
 	.mobile-text li span {
 		
