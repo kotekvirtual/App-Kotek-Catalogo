@@ -5,18 +5,45 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Visita Virtual C">
     <main>
-		<div class="tabs">
+		<div class="tipos">
 			<button class="tab-button" onclick="window.location.href='/visitavirtual-f'">2º F</button>
             <button class="tab-button" onclick="window.location.href='/visitavirtual-g'">2º G</button>
             <button class="tab-button selected">1º C</button>
             <button class="tab-button" onclick="window.location.href='/visitavirtual-h'">2º H</button>
 
         </div>
+		<div class="tabs">
+			<button class="tab-button" onclick="window.location.href='/plano3d/'">Plano Interactivo</button>
+            <button class="tab-button selected">Tour Virtual</button>
+            <button class="tab-button icono-plano" id="boton-plano">
+				<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="90%"
+				height="90%"
+				viewBox="0 0 24 24"
+				fill="#FFF"
+				stroke="#000"
+				stroke-width="1"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				>
+				<path d="M14 3v4a1 1 0 0 0 1 1h4" />
+				<path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+				<path d="M9 17h6" />
+				<path d="M9 13h6" />
+				</svg>
+			</button>
+        </div>
         <section>
             <iframe allow="xr-spatial-tracking"  src="https://3d.kotekvirtual.es/riosar-tipoc/" height="100%" width="100%" frameborder="0"></iframe>
         </section>
+		<dialog id="fichaModal">
+				<button class="closeButton"> &#9587;</button>
+				<img src="/viviendaC.webp" alt="ficha comercial" class="modalImage">
+			</dialog>
     </main>
 </Layout>
+
 
 
 
@@ -28,6 +55,7 @@ import Layout from "../layouts/Layout.astro";
 		margin: 0;
 		padding: 0;
 		width: 100%;
+		overflow: hidden;
 	}
 	
 	h1 {
@@ -38,10 +66,16 @@ import Layout from "../layouts/Layout.astro";
 		margin: 0;
 		padding: 0;
 	}
+	
+	.tipos {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
 	.tabs {
         display: flex;
         justify-content: center;
-        margin-bottom: 16px;
+        margin-bottom: 8px;
     }
     .tab-button {
         padding: 12px 24px;
@@ -60,16 +94,64 @@ import Layout from "../layouts/Layout.astro";
     .tab-button:hover {
         background-color: hsl(230, 100%, 75%);
     }
+	.icono-plano{
+		border-radius: 50%;
+		width: 15vw;
+		height: 15vw;
+		max-width: 120px;
+		max-height: 120px;
+		padding: 03px 0px 0px 02px;
+		position: absolute;
+		right: 24px;
+		top: 120px;
+		z-index: 10;
+	}
 	section{
 		background-color: #F2F2F2;
-		height: calc(100vh - 88px);
-		margin: 24px;
+		height: calc(100dvh - 120px);
+		margin-inline: 24px;
+		margin-top: 0;
 		border-radius: 12px;
 		background-position: 50% 70%;
+		overflow: hidden;
 	}
 	iframe{
 		border-radius: 12px;
 	}
+	dialog {
+        max-height: 90vh;
+		max-width: 90vw;
+		aspect-ratio: 1;
+		overflow: hidden;
+        border: none;
+		padding: 0;
+		background-color: transparent;
+    }
+    dialog::backdrop {
+        background-color: #26263399;
+    }
+    .modalImage {
+        height: 100%;
+		width: 100%;
+        margin: 0px;
+        border: none;
+    }
+    .closeButton {
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        height: 48px;
+        width: 48px;
+        outline: none;
+        background-color: hsl(240, 15%, 27%);
+        color: hsl(240, 15%, 97%);
+        cursor: pointer;
+        font-size: 16pt;
+        border: 2px hsl(240, 15%, 27%) solid;
+        border-radius: 250px;
+        text-align: center;
+        padding: 0;
+    }
 	@media (orientation: portrait) {
 		main{
 			height: calc(100dvh - 80px);
@@ -78,8 +160,46 @@ import Layout from "../layouts/Layout.astro";
 		}
 		section{
 			height: 100%;
-			margin: 0;
-
+			margin: 0;		
+		}
+		.icono-plano{
+			right: 8px;
+		}
+		dialog {
+            width: 90dvw;
+        }
+        .modalImage {
+			max-width: 100%;
+			height: auto;
+        }
+		.icono-plano{
+			top: 208px;
 		}
 	}
 </style>
+<script>
+	const botonPlano = document.getElementById('boton-plano');
+	const fichaModal = document.getElementById('fichaModal') as HTMLDialogElement;
+	const closeButton = fichaModal.querySelector('.closeButton');
+
+	botonPlano.addEventListener('click', () => {
+		fichaModal.showModal();
+	});
+
+	closeButton.addEventListener('click', () => {
+		fichaModal.close();
+	});
+
+	// Cerrar el modal al hacer clic fuera de la imagen
+	fichaModal.addEventListener('click', (e) => {
+		const dialogDimensions = fichaModal.getBoundingClientRect();
+		if (
+			e.clientX < dialogDimensions.left ||
+			e.clientX > dialogDimensions.right ||
+			e.clientY < dialogDimensions.top ||
+			e.clientY > dialogDimensions.bottom
+		) {
+			fichaModal.close();
+		}
+	});
+</script>

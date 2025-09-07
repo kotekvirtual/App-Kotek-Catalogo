@@ -92,7 +92,7 @@ import Layout from "../layouts/Layout.astro";
         margin: 24px;
         border-radius: 12px;
         background-position: 50% 70%;
-        overflow: visible;
+        overflow: auto;
         overflow-x: hidden;
     }
     .grid-fichas {
@@ -105,19 +105,25 @@ import Layout from "../layouts/Layout.astro";
     }
     .boton-ficha {
         width: 300px;
-        border: 1px solid hsl(240, 15%, 97%);
+        border: 0px solid hsl(240, 15%, 97%);
         border-radius: 12px;
         cursor: pointer;
     }
     dialog {
-        height: 90vh;
+        max-height: 90vh;
+		max-width: 90vw;
+		aspect-ratio: 1;
+		overflow: hidden;
         border: none;
+		padding: 0;
+		background-color: transparent;
     }
     dialog::backdrop {
         background-color: #26263399;
     }
     .modalImage {
-        height: 99%;
+        height: 100%;
+		width: 100%;
         margin: 0px;
         border: none;
     }
@@ -145,13 +151,11 @@ import Layout from "../layouts/Layout.astro";
             height: calc(100dvh - 80px);
         }
         dialog {
-            width: fit-content;
-            height: fit-content;
+            width: 90dvw;
         }
         .modalImage {
-            height: 90dvh;
-            aspect-ratio: 2481 / 3509;
-            width: auto;
+			max-width: 100%;
+			height: auto;
         }
         section {
             padding: 0;

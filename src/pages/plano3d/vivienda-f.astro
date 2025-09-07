@@ -5,11 +5,33 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout title="Plano 3D F">
     <main>
-        <div class="tabs">
+        <div class="tipos">
             <button class="tab-button selected">2º F</button>
             <button class="tab-button" onclick="window.location.href='/plano3d/vivienda-g/'">2º G</button>
             <button class="tab-button" onclick="window.location.href='/plano3d/'">1º C</button>
             <button class="tab-button" onclick="window.location.href='/plano3d/vivienda-h/'">2º H</button>
+        </div>
+        <div class="tabs">
+            <button class="tab-button selected">Plano Interactivo</button>
+            <button class="tab-button" onclick="window.location.href='/visitavirtual-f/'">Tour Virtual</button>
+            <button class="tab-button icono-plano" id="boton-plano">
+				<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="90%"
+				height="90%"
+				viewBox="0 0 24 24"
+				fill="#FFF"
+				stroke="#000"
+				stroke-width="1"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				>
+				<path d="M14 3v4a1 1 0 0 0 1 1h4" />
+				<path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+				<path d="M9 17h6" />
+				<path d="M9 13h6" />
+				</svg>
+			</button>
         </div>
         <section>
 			<div class='imageWrapper3D'>
@@ -21,19 +43,27 @@ import Layout from "../../layouts/Layout.astro";
 					<g class="toprow room2" ><path d="M 772 1306 L 771 1095 L 808 1095 L 808 1057 L 1000 1058 L 1000 1306 Z" /></g>
 					<g class="toprow room3" ><path d="M 770 904 L 771 1042 L 880 1042 L 1103 1042 L 1103 1056 L 1013 1056 L 1014 1306 L 1521 1307 L 1521 903 Z" /></g>
 					<g class="toprow room4" ><path d="M 1010 548 L 1011 686 L 1010 890 L 1521 890 L 1521 548 Z" /></g>
-					<g class="toprow room5" ><path d="M 771 890 L 908 890 L 996 891 L 997 535 L 1520 534 L 1520 83 L 496 83 L 496 404 L 807 406 L 807 419 L 467 419 L 467 624 L 771 624 Z" /></g>
+					<g class="toprow room5" ><path d="M 467 625 L 771 624 L 771 891 L 908 890 L 907 685 L 1003 685 L 1003 535 L 1075 535 L 1075 80 L 822 81 L 823 418 L 466 419 Z" /></g>
+					<g class="toprow room6" ><path d="M 813 80 L 494 80 L 495 404 L 813 404 Z" /></g>
+					<g class="toprow room7" ><path d="M 1085 80 L 1522 81 L 1522 535 L 1085 535 Z" /></g>
+
+                      
 					
                     <text x="610" y="850" class="svg-text">+</text>
 					<text x="860" y="1220" class="svg-text">+</text>
 					<text x="1270" y="1120" class="svg-text">+</text>
 					<text x="1250" y="740" class="svg-text">+</text>
-					<text x="1000" y="400" class="svg-text">+</text>
+					<text x="850" y="550" class="svg-text">+</text>
+					<text x="1260" y="350" class="svg-text">+</text>
+					<text x="650" y="280" class="svg-text">+</text>
 
                     <text x="610" y="850" class="svg-number">5</text>
 					<text x="860" y="1220" class="svg-number">4</text>
 					<text x="1270" y="1120" class="svg-number">2</text>
 					<text x="1250" y="740" class="svg-number">3</text>
-					<text x="1000" y="400" class="svg-number">1</text>
+					<text x="850" y="550" class="svg-number">1</text>
+					<text x="1260" y="350" class="svg-number">1</text>
+					<text x="650" y="280" class="svg-number">1</text>
 
 					
                     </g>
@@ -75,13 +105,26 @@ import Layout from "../../layouts/Layout.astro";
                 <button class="closeButton"> &#9587;</button>
                 <img src="/f-dorm2.webp" alt="ficha comercial" class="modalImage">
             </dialog>
-            <dialog id="modalSotano5" class="modal">
+            <dialog id="modalSotano7" class="modal">
                 <button class="closeButton"> &#9587;</button>
                 <img src="/f-salon.webp" alt="ficha comercial" class="modalImage">
             </dialog>
-			
+            <dialog id="modalSotano5" class="modal">
+                <button class="closeButton"> &#9587;</button>
+                <img src="/render4.webp" alt="ficha comercial" class="modalImage">
+            </dialog>
+            <dialog id="modalSotano6" class="modal">
+                <button class="closeButton"> &#9587;</button>
+                <img src="/render3.webp" alt="ficha comercial" class="modalImage">
+            </dialog>
+				<dialog id="fichaModal">
+				<button class="closeButton"> &#9587;</button>
+				<img src="/viviendaF.webp" alt="ficha comercial" class="modalFicha">
+			</dialog>
+
 			
 		  </div>
+
 		  
     </main>
 </Layout>
@@ -104,6 +147,15 @@ document.querySelectorAll(".room4").forEach(room=>room.addEventListener("click",
 document.querySelectorAll(".room5").forEach(room=>room.addEventListener("click",()=>{
     document.getElementById("modalSotano5").showModal()
 }))
+document.querySelectorAll(".room6").forEach(room=>room.addEventListener("click",()=>{
+    document.getElementById("modalSotano6").showModal()
+}))
+document.querySelectorAll(".room7").forEach(room=>room.addEventListener("click",()=>{
+    document.getElementById("modalSotano7").showModal()
+}))
+document.getElementById("boton-plano").addEventListener("click",()=>{
+    document.getElementById("fichaModal").showModal()
+})
 
 
 
@@ -158,6 +210,30 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
             document.getElementById("modalSotano5").close();
           }
     });
+    document.getElementById("fichaModal").addEventListener('click', (event)=> {
+          let rectF = document.getElementById("fichaModal").getBoundingClientRect();
+          let isInDialogF = (rectF.top <= event.clientY && event.clientY <= rectF.top + rectF.height &&
+        rectF.left <= event.clientX && event.clientX <= rectF.left + rectF.width);
+          if (!isInDialogF) {
+            document.getElementById("fichaModal").close();
+          }
+    });
+    document.getElementById("modalSotano6").addEventListener('click', (event)=> {
+          let rectG = document.getElementById("modalSotano6").getBoundingClientRect();
+          let isInDialogG = (rectG.top <= event.clientY && event.clientY <= rectG.top + rectG.height &&
+        rectG.left <= event.clientX && event.clientX <= rectG.left + rectG.width);
+          if (!isInDialogG) {
+            document.getElementById("modalSotano6").close();
+          }
+    });
+    document.getElementById("modalSotano7").addEventListener('click', (event)=> {
+          let rectH = document.getElementById("modalSotano7").getBoundingClientRect();
+          let isInDialogH = (rectH.top <= event.clientY && event.clientY <= rectH.top + rectH.height &&
+        rectH.left <= event.clientX && event.clientX <= rectH.left + rectH.width);
+          if (!isInDialogH) {
+            document.getElementById("modalSotano7").close();
+          }
+    });
 	</script>
 
 
@@ -173,10 +249,15 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         margin: 0;
         padding: 0;
     }
+    .tipos {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
     .tabs {
         display: flex;
         justify-content: center;
-        margin-bottom: 16px;
+        margin-bottom: 8px;
     }
     .tab-button {
         padding: 12px 24px;
@@ -195,10 +276,35 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
     .tab-button:hover {
         background-color: hsl(230, 100%, 75%);
     }
+    .icono-plano{
+		border-radius: 50%;
+		width: 15vw;
+		height: 15vw;
+		max-width: 120px;
+		max-height: 120px;
+		padding: 03px 0px 0px 02px;
+		position: absolute;
+		right: 24px;
+		top: 120px;
+        z-index: 10;
+	}
+    .modalFicha{
+        border-radius: 12px;
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+    #fichaModal{
+        max-width: 90vw;
+        max-height: 90vh;
+        height: fit-content;
+        width: fit-content;
+        padding: 0;
+        background-color: transparent;
+    }
     section {
         background-color: hsl(240, 15%, 17%);
         height: calc(100vh - 48px);
-        margin: 24px;
+        margin-inline: 24px;
         border-radius: 13px;
         background-position: 50% 70%;
         overflow: hidden;
@@ -209,7 +315,7 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
     }
     .imageWrapper3D {
         position: relative;
-        max-height: calc(100vh - 48px);
+        max-height: calc(100vh - 88px);
     }
     .imageWrapper3D img {
         width: 100%;
@@ -331,6 +437,10 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         background-color: hsl(240, 15%, 37%);
     }
     @media (orientation: portrait) {
+        .icono-plano{
+            right: 8px;
+            top: 208px;
+        }
         .svg-number {
             display: block;
             pointer-events: none;

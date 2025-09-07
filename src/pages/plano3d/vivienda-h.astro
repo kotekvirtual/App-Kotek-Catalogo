@@ -11,6 +11,28 @@ import Layout from "../../layouts/Layout.astro";
             <button class="tab-button" onclick="window.location.href='/plano3d/'">1º C</button>
             <button class="tab-button selected">2º H</button>
         </div>
+        <div class="tabs">
+            <button class="tab-button selected">Plano Interactivo</button>
+            <button class="tab-button" onclick="window.location.href='/visitavirtual-h/'">Tour Virtual</button>
+            <button class="tab-button icono-plano" id="boton-plano">
+				<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="90%"
+				height="90%"
+				viewBox="0 0 24 24"
+				fill="#FFF"
+				stroke="#000"
+				stroke-width="1"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				>
+				<path d="M14 3v4a1 1 0 0 0 1 1h4" />
+				<path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+				<path d="M9 17h6" />
+				<path d="M9 13h6" />
+				</svg>
+			</button>
+        </div>
         <section>
 			<div class='imageWrapper3D'>
 				<!-- fill with SVG areas -->
@@ -89,7 +111,10 @@ import Layout from "../../layouts/Layout.astro";
                 <button class="closeButton"> &#9587;</button>
                 <img src="/h-dorm1.webp" alt="ficha comercial" class="modalImage">
             </dialog>
-			
+			<dialog id="fichaModal">
+				<button class="closeButton"> &#9587;</button>
+				<img src="/viviendaH.webp" alt="ficha comercial" class="modalFicha">
+			</dialog>
 			
 		  </div>
 		  
@@ -117,7 +142,9 @@ document.querySelectorAll(".room5").forEach(room=>room.addEventListener("click",
 document.querySelectorAll(".room6").forEach(room=>room.addEventListener("click",()=>{
     document.getElementById("modalH6").showModal()
 }))
-
+document.getElementById("boton-plano").addEventListener("click",()=>{
+    document.getElementById("fichaModal").showModal()
+})
 
 
 // Close all modals when you click on any X button
@@ -179,7 +206,16 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
             document.getElementById("modalH6").close();
           }
     });
+    document.getElementById("fichaModal").addEventListener('click', (event)=> {
+          let rectF = document.getElementById("fichaModal").getBoundingClientRect();
+          let isInDialogF = (rectF.top <= event.clientY && event.clientY <= rectF.top + rectF.height &&
+        rectF.left <= event.clientX && event.clientX <= rectF.left + rectF.width);
+          if (!isInDialogF) {
+            document.getElementById("fichaModal").close();
+          }
+    });
 	</script>
+
 
 
 <style>
@@ -194,10 +230,15 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         margin: 0;
         padding: 0;
     }
+    .tipos {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
     .tabs {
         display: flex;
         justify-content: center;
-        margin-bottom: 16px;
+        margin-bottom: 8px;
     }
     .tab-button {
         padding: 12px 24px;
@@ -216,23 +257,46 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
     .tab-button:hover {
         background-color: hsl(230, 100%, 75%);
     }
+    .icono-plano{
+		border-radius: 50%;
+		width: 15vw;
+		height: 15vw;
+		max-width: 120px;
+		max-height: 120px;
+		padding: 03px 0px 0px 02px;
+		position: absolute;
+		right: 24px;
+		top: 120px;
+        z-index: 10;
+	}
+    .modalFicha{
+        border-radius: 12px;
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+    #fichaModal{
+        max-width: 90vw;
+        max-height: 90vh;
+        height: fit-content;
+        width: fit-content;
+        padding: 0;
+        background-color: transparent;
+    }
     section {
         background-color: hsl(240, 15%, 17%);
         height: calc(100vh - 48px);
-        margin: 24px;
+        margin-inline: 24px;
         border-radius: 13px;
         background-position: 50% 70%;
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: flex-start;
-        align-items: flex-start;
-
     }
     .imageWrapper3D {
         position: relative;
-        max-height: calc(100vh - 48px);
-        aspect-ratio: 109 / 55;
+        max-height: calc(100vh - 88px);
     }
     .imageWrapper3D img {
         width: 100%;
@@ -354,6 +418,10 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         background-color: hsl(240, 15%, 37%);
     }
     @media (orientation: portrait) {
+        .icono-plano{
+            right: 8px;
+            top: 208px;
+        }
         .svg-number {
             display: block;
             pointer-events: none;
