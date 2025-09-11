@@ -15,7 +15,8 @@ import Layout from "../layouts/Layout.astro";
 		<div class="tabs">
 			<button class="tab-button" onclick="window.location.href='/plano3d/vivienda-f/'">Plano Interactivo</button>
             <button class="tab-button selected">Tour Virtual</button>
-			<button class="tab-button icono-plano" id="boton-plano">
+			<button class="tab-button show-desktop boton-plano">Ficha Comercial</button>
+			<button class="tab-button icono-plano show-mobile boton-plano">
 				<svg
 				xmlns="http://www.w3.org/2000/svg"
 				height="90%"
@@ -151,6 +152,12 @@ import Layout from "../layouts/Layout.astro";
         text-align: center;
         padding: 0;
     }
+	.show-desktop{
+        display: inline-block;
+    }
+    .show-mobile{
+        display: none;
+    }
 	@media (orientation: portrait) {
 		main{
 			height: calc(100dvh - 80px);
@@ -174,16 +181,21 @@ import Layout from "../layouts/Layout.astro";
 		.icono-plano{
 			top: 208px;
 		}
+        .show-mobile{
+            display: inline-block;
+        }
+        .show-desktop{
+            display: none;
+        }		
 	}
 </style>
 <script>
-	const botonPlano = document.getElementById('boton-plano');
 	const fichaModal = document.getElementById('fichaModal') as HTMLDialogElement;
 	const closeButton = fichaModal.querySelector('.closeButton');
 
-	botonPlano.addEventListener('click', () => {
-		fichaModal.showModal();
-	});
+	document.querySelectorAll(".boton-plano").forEach(room=>room.addEventListener("click",()=>{
+    	fichaModal.showModal();
+	}))
 
 	closeButton.addEventListener('click', () => {
 		fichaModal.close();

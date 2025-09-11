@@ -14,7 +14,8 @@ import Layout from "../../layouts/Layout.astro";
         <div class="tabs">
             <button class="tab-button selected">Plano Interactivo</button>
             <button class="tab-button" onclick="window.location.href='/visitavirtual-f/'">Tour Virtual</button>
-            <button class="tab-button icono-plano" id="boton-plano">
+            <button class="tab-button show-desktop boton-plano">Ficha Comercial</button>
+            <button class="tab-button icono-plano show-mobile boton-plano">
 				<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="90%"
@@ -153,9 +154,9 @@ document.querySelectorAll(".room6").forEach(room=>room.addEventListener("click",
 document.querySelectorAll(".room7").forEach(room=>room.addEventListener("click",()=>{
     document.getElementById("modalSotano7").showModal()
 }))
-document.getElementById("boton-plano").addEventListener("click",()=>{
+document.querySelectorAll(".boton-plano").forEach(room=>room.addEventListener("click",()=>{
     document.getElementById("fichaModal").showModal()
-})
+}))
 
 
 
@@ -436,6 +437,12 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
     .texto-3d-impar {
         background-color: hsl(240, 15%, 37%);
     }
+    .show-desktop{
+        display: inline-block;
+    }
+    .show-mobile{
+        display: none;
+    }
     @media (orientation: portrait) {
         .icono-plano{
             right: 8px;
@@ -489,6 +496,12 @@ document.querySelectorAll(".closeButton").forEach((button)=>{
         display: flex;
         align-items: center;
         justify-content: center;
-    }
+        }
+        .show-mobile{
+            display: inline-block;
+        }
+        .show-desktop{
+            display: none;
+        }
     }
 </style>
