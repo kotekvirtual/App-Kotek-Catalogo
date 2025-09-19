@@ -10,13 +10,13 @@ import Layout from "../layouts/Layout.astro";
             <button class="tipo-button selected" data-facade="norte">Fachada Norte</button>
             <button class="tipo-button" data-facade="sur">Fachada Sur</button>
             <div class="tabs">
-            <button class="tab-button selected" id="onButton">ON</button>
-            <button class="tab-button" id="offButton">OFF</button>
+            <button class="tab-button" id="onButton">ON</button>
+            <button class="tab-button selected" id="offButton">OFF</button>
         </div>
 
         </div>
         
-			<svg id="vistaDelantera" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+			<svg id="vistaDelantera" class="svg-overlay-off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
         <image class="heroImage" width="1920" height="1080" href="frontalNuevo.webp"></image>
 
             <rect class="ventanaA secondrow" x="260" y="685" width="435" height="130"/>
@@ -83,7 +83,7 @@ import Layout from "../layouts/Layout.astro";
             <text class="svg-text" x="1400" y="320">2 Dormitorios</text>
 
     </svg>
-			<svg id="vistaTrasera" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+			<svg id="vistaTrasera" class="svg-overlay-off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
         <image class="heroImage" width="1920" height="1080" href="traseroNuevo.webp"></image>
 
             <rect class="ventanaA secondrow" x="1170" y="655" width="550" height="130"/>
@@ -441,6 +441,12 @@ const vistaDelanterad = document.getElementById('vistaDelantera');
 const vistaTraserad = document.getElementById('vistaTrasera');
 
 function toggleOverlayMode(isOff) {
+    // Resetear todos los textos primero
+    const allTexts = document.querySelectorAll('.svg-text');
+    allTexts.forEach(text => {
+        text.style.fillOpacity = '';  // Remover el estilo inline
+    });
+    
     if (isOff) {
         vistaDelanterad.classList.add('svg-overlay-off');
         vistaTraserad.classList.add('svg-overlay-off');
@@ -463,6 +469,63 @@ offButton.addEventListener('click', (e) => {
     e.preventDefault();
     toggleOverlayMode(true);
 });
+
+// Función para controlar el texto en hover cuando está en modo OFF
+function setupTextHoverControl() {
+    const allRects = document.querySelectorAll('.toprow, .secondrow');
+    
+    allRects.forEach(rect => {
+        rect.addEventListener('mouseenter', () => {
+            // Solo aplicar si estamos en modo OFF
+            const parentSvg = rect.closest('svg');
+            if (parentSvg.classList.contains('svg-overlay-off')) {
+                // Obtener las coordenadas del rectángulo
+                const rectX = parseFloat(rect.getAttribute('x'));
+                const rectY = parseFloat(rect.getAttribute('y'));
+                const rectWidth = parseFloat(rect.getAttribute('width'));
+                const rectHeight = parseFloat(rect.getAttribute('height'));
+                
+                // Buscar textos que estén dentro del área del rectángulo
+                const texts = parentSvg.querySelectorAll('.svg-text');
+                texts.forEach(text => {
+                    const textX = parseFloat(text.getAttribute('x'));
+                    const textY = parseFloat(text.getAttribute('y'));
+                    
+                    // Si el texto está dentro del área del rectángulo (con un pequeño margen)
+                    if (textX >= rectX - 20 && textX <= rectX + rectWidth + 20 &&
+                        textY >= rectY - 20 && textY <= rectY + rectHeight + 20) {
+                        text.style.fillOpacity = '1';
+                    }
+                });
+            }
+        });
+        
+        rect.addEventListener('mouseleave', () => {
+            const parentSvg = rect.closest('svg');
+            if (parentSvg.classList.contains('svg-overlay-off')) {
+                // Ocultar los textos relacionados cuando se quita el hover
+                const rectX = parseFloat(rect.getAttribute('x'));
+                const rectY = parseFloat(rect.getAttribute('y'));
+                const rectWidth = parseFloat(rect.getAttribute('width'));
+                const rectHeight = parseFloat(rect.getAttribute('height'));
+                
+                const texts = parentSvg.querySelectorAll('.svg-text');
+                texts.forEach(text => {
+                    const textX = parseFloat(text.getAttribute('x'));
+                    const textY = parseFloat(text.getAttribute('y'));
+                    
+                    if (textX >= rectX - 20 && textX <= rectX + rectWidth + 20 &&
+                        textY >= rectY - 20 && textY <= rectY + rectHeight + 20) {
+                        text.style.fillOpacity = '0';
+                    }
+                });
+            }
+        });
+    });
+}
+
+// Ejecutar la función cuando se carga la página
+setupTextHoverControl();
 		</script>
 
 
@@ -605,18 +668,26 @@ svg {
 /* Estilos para modo OFF */
 .svg-overlay-off .toprow {
     fill-opacity: 0;
+    stroke-opacity: 0;
 }
 
 .svg-overlay-off .secondrow {
+    fill-opacity: 0;
+    stroke-opacity: 0;
+}
+
+.svg-overlay-off .svg-text {
     fill-opacity: 0;
 }
 
 .svg-overlay-off .toprow:hover {
     fill-opacity: 0.8;
+    stroke-opacity: 1;
 }
 
 .svg-overlay-off .secondrow:hover {
     fill-opacity: 0.8;
+    stroke-opacity: 1;
 }
 
 .svg-text {
