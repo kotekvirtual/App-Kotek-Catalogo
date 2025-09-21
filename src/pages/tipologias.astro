@@ -5,18 +5,26 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Fichas Comerciales">
     <main>
+		<header class="page-header">
+			<h1 class="header-title">Tipologías</h1>
+			<div class="filter-tabs">
+				<button class="filter-tab active" data-filter="todas">Todas</button>
+				<button class="filter-tab" data-filter="2-dormitorios">2 dormitorios</button>
+				<button class="filter-tab" data-filter="3-dormitorios">3 dormitorios</button>
+			</div>
+		</header>		
 		<section class="grid-fichas">
-			<img src="/viviendaA.webp" id="botonA" class="boton-ficha" alt="ficha comercial A">
-			<img src="/viviendaB.webp" id="botonB" class="boton-ficha" alt="ficha comercial B">
-			<img src="/viviendaC.webp" id="botonC" class="boton-ficha" alt="ficha comercial C">
-			<img src="/viviendaD.webp" id="botonD" class="boton-ficha" alt="ficha comercial D">
-			<img src="/viviendaE.webp" id="botonE" class="boton-ficha" alt="ficha comercial E">
-			<img src="/viviendaF.webp" id="botonF" class="boton-ficha" alt="ficha comercial F">
-			<img src="/viviendaG.webp" id="botonG" class="boton-ficha" alt="ficha comercial G">
-			<img src="/viviendaH.webp" id="botonH" class="boton-ficha" alt="ficha comercial H">
-			<img src="/viviendaI.webp" id="botonI" class="boton-ficha" alt="ficha comercial I">
-			<img src="/viviendaJ.webp" id="botonJ" class="boton-ficha" alt="ficha comercial J">
-			<img src="/viviendaK.webp" id="botonK" class="boton-ficha" alt="ficha comercial K">	
+			<img src="/viviendaA.webp" id="botonA" class="boton-ficha" alt="ficha comercial A" data-category="3-dormitorios">
+			<img src="/viviendaB.webp" id="botonB" class="boton-ficha" alt="ficha comercial B" data-category="2-dormitorios">
+			<img src="/viviendaC.webp" id="botonC" class="boton-ficha" alt="ficha comercial C" data-category="2-dormitorios">
+			<img src="/viviendaD.webp" id="botonD" class="boton-ficha" alt="ficha comercial D" data-category="3-dormitorios">
+			<img src="/viviendaE.webp" id="botonE" class="boton-ficha" alt="ficha comercial E" data-category="2-dormitorios">
+			<img src="/viviendaF.webp" id="botonF" class="boton-ficha" alt="ficha comercial F" data-category="2-dormitorios">
+			<img src="/viviendaG.webp" id="botonG" class="boton-ficha" alt="ficha comercial G" data-category="2-dormitorios">
+			<img src="/viviendaH.webp" id="botonH" class="boton-ficha" alt="ficha comercial H" data-category="3-dormitorios">
+			<img src="/viviendaI.webp" id="botonI" class="boton-ficha" alt="ficha comercial I" data-category="3-dormitorios">
+			<img src="/viviendaJ.webp" id="botonJ" class="boton-ficha" alt="ficha comercial J" data-category="3-dormitorios">
+			<img src="/viviendaK.webp" id="botonK" class="boton-ficha" alt="ficha comercial K" data-category="2-dormitorios">
 		</section>
 		<div>
 			<dialog id="fichaModalA">
@@ -73,20 +81,23 @@ import Layout from "../layouts/Layout.astro";
 <style>
     body {
         overflow: hidden;
+    	padding: 20px;
+    	width: 100%;
+    	margin: 0 auto;		
     }
     main {
         margin: 0;
         padding: 0;
         width: 100%;
     }
-    h1 {
+    /*h1 {
         font-size: 3rem;
         font-weight: 700;
         line-height: 1;
         text-align: center;
         margin: 0;
         padding: 0;
-    }
+    }*/
     section {
         height: calc(100vh - 48px);
         margin: 24px;
@@ -95,19 +106,25 @@ import Layout from "../layouts/Layout.astro";
         overflow: auto;
         overflow-x: hidden;
     }
-    .grid-fichas {
-        padding-top: 24px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        grid-row-gap: 24px;
-        justify-items: center;
-        justify-content: center;
-    }
     .boton-ficha {
         width: 300px;
         border: 0px solid hsl(240, 15%, 97%);
         border-radius: 12px;
         cursor: pointer;
+        transition: opacity 0.3s ease;
+    }
+
+    .boton-ficha.hidden {
+        display: none;
+    }
+
+    .grid-fichas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+        justify-items: center;
+        padding: 24px;
+        align-content: start;
     }
     dialog {
         max-height: 90vh;
@@ -146,10 +163,57 @@ import Layout from "../layouts/Layout.astro";
         text-align: center;
         padding: 0;
     }
+
+	.header-title{
+	    font-size: 3rem;
+	    font-weight: 600;
+	    color: white;
+	    margin: 0 0 0px 0;
+	    padding: 0;
+	    text-align: center;        
+	}	
+
+	.page-header {
+	    margin-bottom: 20px;
+	    text-align: center;
+	    max-width: 1400px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+
+	.filter-tabs {
+	    display: flex;
+	    gap: 8px;
+	    justify-content: center;
+	}
+
+	.filter-tab {
+	    padding: 12px 24px;
+	    border: none;
+	    border-radius: 8px;
+	    background-color: hsl(240, 15%, 30%);
+	    color: white;
+	    font-size: 0.95rem;
+	    font-weight: 500;
+	    cursor: pointer;
+	    transition: all 0.3s ease;
+	}
+
+	.filter-tab:hover {
+	    background-color: hsl(240, 15%, 35%);
+	}
+
+	.filter-tab.active {
+	    background-color: hsl(230, 100%, 69%);
+	    color: white;
+	}	
+
     @media (orientation: portrait) {
-        main {
-            height: calc(100dvh - 80px);
-        }
+    	main {
+    	    height: calc(100dvh - 80px);
+    	    overflow: auto;
+    	    padding: 0;
+    	}
         dialog {
             width: 90dvw;
         }
@@ -164,11 +228,69 @@ import Layout from "../layouts/Layout.astro";
         section :last-child {
             margin-bottom: 280px;
         }
+    	.header-title{
+    	    display: none;     
+		}
+    	.page-header {
+    	    padding: 16px;
+    	    margin-bottom: 0;
+    	    max-width: none;
+    	    margin-left: 0;
+    	    margin-right: 0;
+    	}
+
+    	.filter-tabs {
+    	    justify-content: center;
+    	    overflow-x: auto;
+    	    padding-bottom: 8px;
+    	    gap: 8px;
+    	}
+
+    	.filter-tab {
+    	    padding: 8px 16px;
+    	    font-size: 0.9rem;
+    	    white-space: nowrap;
+    	    flex-shrink: 0;
+    	}	
     }
 </style>
 
 <script type="module">
-	
+	// Filter functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const filterTabs = document.querySelectorAll('.filter-tab');
+		const fichaItems = document.querySelectorAll('.boton-ficha');
+
+		function filterFichas(category) {
+			fichaItems.forEach(item => {
+				if (category === 'todas' || item.dataset.category === category) {
+					item.classList.remove('hidden');
+				} else {
+					item.classList.add('hidden');
+				}
+			});
+		}
+
+		function updateActiveTab(activeTab) {
+			filterTabs.forEach(tab => {
+				tab.classList.remove('active');
+			});
+			activeTab.classList.add('active');
+		}
+
+		filterTabs.forEach(tab => {
+			tab.addEventListener('click', function() {
+				const filter = this.dataset.filter;
+				updateActiveTab(this);
+				filterFichas(filter);
+			});
+		});
+
+		// Initialize with "Todas" selected
+		filterFichas('todas');
+	});
+
+	// Modal functionality
  	document.querySelector("#botonA").addEventListener("click",()=>{
 		document.getElementById("fichaModalA").showModal()
 	})
