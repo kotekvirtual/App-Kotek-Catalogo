@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Documentación Comercial">
     <main>
 		<section>
-            <h2>Documentación Comercial</h2>
+            <h1 class="header-title">Documentación Comercial</h1>
             <div class="grid-fichas">
             <a target="_blank" href="https://www.edificioriosar.es/memoria.pdf">Memoria de calidades</a>
             </div>
@@ -29,6 +29,14 @@ import Layout from "../layouts/Layout.astro";
         margin: 0;
         padding: 0;
     }
+    .header-title{
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        margin: 0 0 0px 0;
+        padding: 0;
+        text-align: center;        
+    }    
     main {
         padding: 0;
         margin: 0;
@@ -71,6 +79,14 @@ import Layout from "../layouts/Layout.astro";
         section {
             height: 80vh;
         }
+        .header-title{
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin: 0 0 0px 0;
+            padding: 0;
+            text-align: center;        
+        }        
     }
 </style>
 
