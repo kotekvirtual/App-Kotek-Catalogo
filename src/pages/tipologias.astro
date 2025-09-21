@@ -87,9 +87,10 @@ import Layout from "../layouts/Layout.astro";
     }
     main {
         margin: 0 auto;
-        padding: 0;
+        padding: 20px;
         width: 100%;
-		padding: 20px;
+        overflow-y: auto;
+        height: 100vh;
     }
     /*h1 {
         font-size: 3rem;
@@ -100,12 +101,11 @@ import Layout from "../layouts/Layout.astro";
         padding: 0;
     }*/
     section {
-        height: calc(100vh - 48px);
         margin: 24px;
         border-radius: 12px;
         background-position: 50% 70%;
-        overflow: auto;
-        overflow-x: hidden;
+        overflow: visible;
+        padding-bottom: 40px;
     }
     .boton-ficha {
         width: 100%;
@@ -212,7 +212,7 @@ import Layout from "../layouts/Layout.astro";
     @media (orientation: portrait) {
     	main {
     	    height: calc(100dvh - 80px);
-    	    overflow: auto;
+    	    overflow-y: auto;
     	    padding: 0;
     	}
         dialog {
@@ -225,9 +225,7 @@ import Layout from "../layouts/Layout.astro";
         section {
             padding: 0;
             margin: 0;
-        }
-        section :last-child {
-            margin-bottom: 280px;
+            padding-bottom: 100px;
         }
     	.header-title{
     	    display: none;     
