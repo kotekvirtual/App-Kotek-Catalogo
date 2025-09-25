@@ -46,12 +46,12 @@ const { title } = Astro.props;
 	<body>
 		<nav transition:animate="none" class="fixed-navbar">
 			<div class="header-section">
-				<div class="logo-container">
+				<a href="/" class="logo-container">
 					<div class="logo-box">
 						<div class="logo-text poppins-bold">TÚ LOGO</div>
 						<div class="subtitle">Residencial Demo</div>
 					</div>
-				</div>
+				</a>
 			</div>
 			<div class="menu-sections">
 				<!-- Vista general -->
@@ -359,6 +359,8 @@ body {
 .logo-container {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .logo-box {
