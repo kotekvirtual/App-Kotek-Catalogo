@@ -10,9 +10,22 @@ import Layout from "../layouts/Layout.astro";
                 <h1 class="header-title">Acabados</h1>
                 <div class="filter-tabs">
                     <button class="filter-tab active" data-filter="todas">Todas</button>
-                    <button class="filter-tab" data-filter="general">General</button>
+                    <button class="filter-tab" data-filter="pavimento">Pavimento</button>
                     <button class="filter-tab" data-filter="cocina">Cocina</button>
                     <button class="filter-tab" data-filter="baños">Baños</button>
+                </div>
+
+                <!-- Pavimento Sub-buttons -->
+                <div class="pavimento-sub-buttons hidden" id="pavimento-sub-buttons">
+                    <button class="sub-button active" data-pavimento="1">
+                        <img src="/boton-1.webp" alt="Pavimento Option 1" />
+                    </button>
+                    <button class="sub-button" data-pavimento="2">
+                        <img src="/boton-2.webp" alt="Pavimento Option 2" />
+                    </button>
+                    <button class="sub-button" data-pavimento="3">
+                        <img src="/boton-3.webp" alt="Pavimento Option 3" />
+                    </button>
                 </div>
 
                 <!-- Cocina Sub-buttons -->
@@ -30,27 +43,25 @@ import Layout from "../layouts/Layout.astro";
             </header>
 
             <section class="gallery" id="gallery">
-                <div class="gallery-item" data-category="general">
+                <div class="gallery-item" data-category="todas-only">
                     <img src="/General-1.webp"/>
+                </div>                        
+                <div class="gallery-item" data-category="pavimento" data-pavimento="1">
+                    <img src="/pavimento-1.webp"/>
                 </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-2.webp"/>
-                </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-3.webp"/>
-                </div>
-                <div class="gallery-item" data-category="general">
+                <div class="gallery-item" data-category="todas-only">
                     <img src="/General-4.webp"/>
                 </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-5.webp"/>
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/General-3.webp"/>
+                </div>                
+                <div class="gallery-item" data-category="pavimento" data-pavimento="2">
+                    <img src="/pavimento-2.webp"/>
                 </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-6.webp"/>
+                <div class="gallery-item" data-category="pavimento" data-pavimento="3">
+                    <img src="/pavimento-3.webp"/>
                 </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-7.webp"/>
-                </div>                                        
+                                        
 
                 <div class="gallery-item" data-category="cocina" data-cocina="1">
                     <img src="/cocina-1.webp"/>
@@ -67,36 +78,46 @@ import Layout from "../layouts/Layout.astro";
                 </div>
                 <div class="gallery-item" data-category="baños">
                     <img src="/Baño-2.webp"/>
-                </div>                                  
+                </div>
 
-
-
+                <!-- Mixed and reversed order of todas-only images -->
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/Cocina-4.webp"/>
+                </div>
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/General-7.webp"/>
+                </div>
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/General-6.webp"/>
+                </div>
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/General-5.webp"/>
+                </div>
 
             </section>
 
             <section class="mobile-gallery" id="mobile-gallery">
 
-                <div class="gallery-item" data-category="general">
+                <div class="gallery-item" data-category="todas-only">
                     <img src="/General-1.webp"/>
+                </div>                     
+
+                <div class="gallery-item" data-category="pavimento" data-pavimento="1">
+                    <img src="/pavimento-1.webp"/>
                 </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-2.webp"/>
-                </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-3.webp"/>
-                </div>
-                <div class="gallery-item" data-category="general">
+                <div class="gallery-item" data-category="todas-only">
                     <img src="/General-4.webp"/>
                 </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-5.webp"/>
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/General-3.webp"/>
+                </div>                
+                <div class="gallery-item" data-category="pavimento" data-pavimento="2">
+                    <img src="/pavimento-2.webp"/>
                 </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-6.webp"/>
+                <div class="gallery-item" data-category="pavimento" data-pavimento="3">
+                    <img src="/pavimento-3.webp"/>
                 </div>
-                <div class="gallery-item" data-category="general">
-                    <img src="/General-7.webp"/>
-                </div>                                        
+                                        
 
                 <div class="gallery-item" data-category="cocina" data-cocina="1">
                     <img src="/cocina-1.webp"/>
@@ -113,7 +134,21 @@ import Layout from "../layouts/Layout.astro";
                 </div>
                 <div class="gallery-item" data-category="baños">
                     <img src="/Baño-2.webp"/>
-                </div> 
+                </div>
+
+                <!-- Mixed and reversed order of todas-only images -->
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/Cocina-4.webp"/>
+                </div>
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/General-7.webp"/>
+                </div>
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/General-6.webp"/>
+                </div>
+                <div class="gallery-item" data-category="todas-only">
+                    <img src="/General-5.webp"/>
+                </div>
 
             </section>
     </main>
@@ -163,6 +198,17 @@ main {
     display: flex;
     gap: 8px;
     justify-content: center;
+}
+
+.pavimento-sub-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.pavimento-sub-buttons.hidden {
+    display: none;
 }
 
 .cocina-sub-buttons {
@@ -326,19 +372,45 @@ main {
 document.addEventListener('DOMContentLoaded', function() {
     const filterTabs = document.querySelectorAll('.filter-tab');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const pavimentoSubButtons = document.getElementById('pavimento-sub-buttons');
     const cocinaSubButtons = document.getElementById('cocina-sub-buttons');
-    const subButtons = document.querySelectorAll('.sub-button');
+    const pavimentoButtons = document.querySelectorAll('#pavimento-sub-buttons .sub-button');
+    const cocinaButtons = document.querySelectorAll('#cocina-sub-buttons .sub-button');
 
     function filterGallery(category) {
         galleryItems.forEach(item => {
-            if (category === 'todas' || item.dataset.category === category) {
+            if (category === 'todas') {
+                // Show all images including "todas-only" items
                 item.classList.remove('hidden');
                 item.style.display = 'block';
+            } else if (item.dataset.category === category) {
+                // Show items matching the specific category
+                item.classList.remove('hidden');
+                item.style.display = 'block';
+            } else if (item.dataset.category === 'todas-only') {
+                // Hide "todas-only" items when not showing "todas"
+                item.classList.add('hidden');
+                item.style.display = 'none';
             } else {
                 item.classList.add('hidden');
                 item.style.display = 'none';
             }
         });
+    }
+
+    function filterPavimentoImages(pavimentoType) {
+        // Hide all gallery items first
+        galleryItems.forEach(item => {
+            item.classList.add('hidden');
+            item.style.display = 'none';
+        });
+
+        // Show only the specific pavimento image
+        const targetPavimentoItem = document.querySelector(`.gallery-item[data-category="pavimento"][data-pavimento="${pavimentoType}"]`);
+        if (targetPavimentoItem) {
+            targetPavimentoItem.classList.remove('hidden');
+            targetPavimentoItem.style.display = 'block';
+        }
     }
 
     function filterCocinaImages(cocinaType) {
@@ -363,8 +435,15 @@ document.addEventListener('DOMContentLoaded', function() {
         activeTab.classList.add('active');
     }
 
-    function updateActiveSubButton(activeButton) {
-        subButtons.forEach(button => {
+    function updateActivePavimentoButton(activeButton) {
+        pavimentoButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+        activeButton.classList.add('active');
+    }
+
+    function updateActiveCocinaButton(activeButton) {
+        cocinaButtons.forEach(button => {
             button.classList.remove('active');
         });
         activeButton.classList.add('active');
@@ -375,17 +454,29 @@ document.addEventListener('DOMContentLoaded', function() {
             const filter = this.dataset.filter;
             updateActiveTab(this);
 
-            if (filter === 'cocina') {
-                // Show cocina sub-buttons
+            if (filter === 'pavimento') {
+                // Hide cocina sub-buttons and show pavimento sub-buttons
+                cocinaSubButtons.classList.add('hidden');
+                pavimentoSubButtons.classList.remove('hidden');
+                // Show only first pavimento image by default
+                filterPavimentoImages('1');
+                // Activate first pavimento sub-button
+                if (pavimentoButtons.length > 0) {
+                    updateActivePavimentoButton(pavimentoButtons[0]);
+                }
+            } else if (filter === 'cocina') {
+                // Hide pavimento sub-buttons and show cocina sub-buttons
+                pavimentoSubButtons.classList.add('hidden');
                 cocinaSubButtons.classList.remove('hidden');
                 // Show only first cocina image by default
                 filterCocinaImages('1');
-                // Activate first sub-button
-                if (subButtons.length > 0) {
-                    updateActiveSubButton(subButtons[0]);
+                // Activate first cocina sub-button
+                if (cocinaButtons.length > 0) {
+                    updateActiveCocinaButton(cocinaButtons[0]);
                 }
             } else {
-                // Hide cocina sub-buttons
+                // Hide both sub-buttons
+                pavimentoSubButtons.classList.add('hidden');
                 cocinaSubButtons.classList.add('hidden');
                 // Show regular filter
                 filterGallery(filter);
@@ -393,11 +484,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Handle pavimento sub-buttons
+    pavimentoButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const pavimentoType = this.dataset.pavimento;
+            updateActivePavimentoButton(this);
+            filterPavimentoImages(pavimentoType);
+        });
+    });
+
     // Handle cocina sub-buttons
-    subButtons.forEach(button => {
+    cocinaButtons.forEach(button => {
         button.addEventListener('click', function() {
             const cocinaType = this.dataset.cocina;
-            updateActiveSubButton(this);
+            updateActiveCocinaButton(this);
             filterCocinaImages(cocinaType);
         });
     });
