@@ -5,149 +5,62 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Residencial Demo">
     <main>
         <section class="section-pc">
-          <div class="titulo">Residencial Demo <span class="select">Select</span></div>
+          <div class="titulo">Residencial Demo</div>
           <div class="tipos">
-            <button class="tipo-button selected" data-facade="norte">Fachada Norte</button>
-            <button class="tipo-button" data-facade="sur">Fachada Sur</button>
-            <div class="tabs">
-            <button class="tab-button" id="onButton">ON</button>
-            <button class="tab-button selected" id="offButton">OFF</button>
-        </div>
+            <button class="tipo-button" id="onButton">Select ON</button>
+            <button class="tipo-button selected" id="offButton">Select OFF</button>
 
         </div>
         
 			<svg id="vistaDelantera" class="svg-overlay-off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
-        <image class="heroImage" width="1920" height="1080" href="frontalNuevo.webp"></image>
+        <image class="heroImage" width="1920" height="1080" href="frontal.webp"></image>
 
-            <rect class="ventanaA secondrow" x="260" y="685" width="435" height="130"/>
-            <text class="svg-text negrita" x="400" y="740">1ºA</text>
-            <text class="svg-text" x="450" y="740">- Vendido</text>
-            <text class="svg-text" x="410" y="790">3 Dormitorios</text>
+            <rect id="ventanaA" x="44" y="590" class="secondrow ventanaA" width="365" height="146"/>
+            <text class="svg-text negrita" x="170" y="660">1ºA</text>
+            <text class="svg-text" x="210" y="660">- Vendido</text>
+            <text class="svg-text" x="160" y="690">3 Dormitorios</text>
+            <rect id="ventanaB" x="480" y="593" class="secondrow ventanaB" width="498" height="146" />
+            <text class="svg-text negrita" x="660" y="660">1ºB</text>
+            <text class="svg-text" x="700" y="660">- Vendido</text>
+            <text class="svg-text" x="660" y="690">2 Dormitorios</text>
+            <rect id="ventanaC" x="1010" y="596" class="toprow ventanaC" width="503" height="146" />
+            <text class="svg-text negrita" x="1200" y="660">1ºC</text>
+            <text class="svg-text" x="1240" y="660">- Disponible</text>
+            <text class="svg-text" x="1200" y="690">2 Dormitorios</text>
+            <rect id="ventanaD" x="1573" y="600" class="secondrow ventanaD" width="285" height="142" />
+            <text class="svg-text negrita" x="1650" y="670">1ºD</text>
+            <text class="svg-text" x="1690" y="670">- Vendido</text>
+            <text class="svg-text" x="1650" y="700">3 Dormitorios</text>
 
-            <rect class="ventanaB secondrow" x="700" y="685" width="545" height="130" />
-            <text class="svg-text negrita" x="840" y="740">1ºB</text>
-            <text class="svg-text" x="890" y="740">- Vendido</text>
-            <text class="svg-text" x="850" y="790">2 Dormitorios</text>
+            <rect id="ventanaE" x="51" y="401" class="secondrow ventanaE" width="355" height="137" />
+            <text class="svg-text negrita" x="160" y="470">2ºE</text>
+            <text class="svg-text" x="200" y="470">- Vendido</text>
+            <text class="svg-text" x="160" y="500">2 Dormitorios</text>
+            <rect id="ventanaF" x="478" y="407" class="toprow ventanaF" width="505" height="131" />
+            <text class="svg-text negrita" x="650" y="470">2ºF</text>
+            <text class="svg-text" x="690" y="470">- Disponible</text>
+            <text class="svg-text" x="650" y="500">2 Dormitorios</text>
+            <rect id="ventanaG" x="1011" y="408" class="toprow ventanaG" width="305" height="132" />
+            <text class="svg-text negrita" x="1095" y="470">2ºG</text>
+            <text class="svg-text" x="1139" y="470">- Disponible</text>
+            <text class="svg-text" x="1095" y="500">2 Dormitorios</text>
+            <rect id="ventanaH" x="1346" y="410" class="toprow ventanaH" width="346" height="133" />
+            <text class="svg-text negrita" x="1450" y="470">2ºH</text>
+            <text class="svg-text" x="1499" y="470">- Disponible</text>
+            <text class="svg-text" x="1450" y="500">3 Dormitorios</text>
+            <rect id="ventanaI" x="1726" y="412" class="secondrow ventanaI" width="136" height="133" />
+            <text class="svg-text negrita" x="1730" y="470">2ºI</text>
+            <text class="svg-text" x="1770" y="470">- Vend</text>
+            <text class="svg-text" x="1740" y="500">3 Dorm</text>
 
-            <rect class="ventanaC secondrow" x="1250" y="685" width="500" height="130" />
-            <text class="svg-text negrita" x="1390" y="740">1ºC</text>
-            <text class="svg-text" x="1440" y="740">- Vendido</text>
-            <text class="svg-text" x="1400" y="790">2 Dormitorios</text>
-
-
-            <rect class="ventanaD toprow" x="260" y="520" width="435" height="130" />
-            <text class="svg-text negrita" x="400" y="575">2ºA</text>
-            <text class="svg-text" x="450" y="575">- Disponible</text>
-            <text class="svg-text" x="410" y="625">2 Dormitorios</text>
-
-            <rect class="ventanaE secondrow" x="700" y="520" width="545" height="130" />
-            <text class="svg-text negrita" x="840" y="575">2ºB</text>
-            <text class="svg-text" x="890" y="575">- Vendido</text>
-            <text class="svg-text" x="850" y="625">3 Dormitorios</text>
-
-            <rect class="ventanaF secondrow" x="1250" y="520" width="500" height="130" />
-            <text class="svg-text negrita" x="1390" y="575">2ºC</text>
-            <text class="svg-text" x="1440" y="575">- Vendido</text>
-            <text class="svg-text" x="1400" y="625">2 Dormitorios</text>
-
-
-            <rect class="ventanaG toprow" x="260" y="360" width="435" height="130" />
-            <text class="svg-text negrita" x="400" y="415">3ºA</text>
-            <text class="svg-text" x="450" y="415">- Disponible</text>
-            <text class="svg-text" x="410" y="465">2 Dormitorios</text>
-
-            <rect class="ventanaH toprow" x="700" y="360" width="545" height="130" />
-            <text class="svg-text negrita" x="840" y="415">3ºB</text>
-            <text class="svg-text" x="890" y="415">- Disponible</text>
-            <text class="svg-text" x="850" y="465">2 Dormitorios</text>
-
-            <rect class="ventanaI toprow" x="1250" y="360" width="500" height="130" />
-            <text class="svg-text negrita" x="1390" y="415">3ºC</text>
-            <text class="svg-text" x="1440" y="415">- Disponible</text>
-            <text class="svg-text" x="1400" y="465">3 Dormitorios</text>
-
-
-            <rect class="ventanaJ secondrow" x="260" y="220" width="435" height="110" />
-            <text class="svg-text negrita" x="400" y="270">4ºA</text>
-            <text class="svg-text" x="450" y="270">- Vendido</text>
-            <text class="svg-text" x="410" y="320">3 Dormitorios</text>
-
-            <rect class="ventanaK secondrow" x="700" y="220" width="545" height="110" />
-            <text class="svg-text negrita" x="840" y="270">4ºB</text>
-            <text class="svg-text" x="890" y="270">- Vendido</text>
-            <text class="svg-text" x="850" y="320">4 Dormitorios</text>
-
-            <rect class="ventanaL secondrow" x="1250" y="220" width="500" height="110" />
-            <text class="svg-text negrita" x="1390" y="270">4ºC</text>
-            <text class="svg-text" x="1440" y="270">- Vendido</text>
-            <text class="svg-text" x="1400" y="320">2 Dormitorios</text>
-
-    </svg>
-			<svg id="vistaTrasera" class="svg-overlay-off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
-        <image class="heroImage" width="1920" height="1080" href="traseroNuevo.webp"></image>
-
-            <rect class="ventanaA secondrow" x="1170" y="655" width="550" height="130"/>
-            <text class="svg-text negrita" x="1350" y="710">1ºA</text>
-            <text class="svg-text" x="1400" y="710">- Vendido</text>
-            <text class="svg-text" x="1360" y="750">3 Dormitorios</text>
-
-            <rect class="ventanaB secondrow" x="620" y="655" width="545" height="130" />
-            <text class="svg-text negrita" x="800" y="710">1ºB</text>
-            <text class="svg-text" x="850" y="710">- Vendido</text>
-            <text class="svg-text" x="810" y="750">2 Dormitorios</text>
-
-            <rect class="ventanaC secondrow" x="180" y="655" width="435" height="130" />
-            <text class="svg-text negrita" x="320" y="710">1ºC</text>
-            <text class="svg-text" x="370" y="710">- Vendido</text>
-            <text class="svg-text" x="330" y="750">2 Dormitorios</text>
-
-
-            <rect class="ventanaD toprow" x="1170" y="500" width="550" height="130" />
-            <text class="svg-text negrita" x="1350" y="555">2ºA</text>
-            <text class="svg-text" x="1400" y="555">- Disponible</text>
-            <text class="svg-text" x="1360" y="595">2 Dormitorios</text>
-
-            <rect class="ventanaE secondrow" x="620" y="500" width="545" height="130" />
-            <text class="svg-text negrita" x="800" y="555">2ºB</text>
-            <text class="svg-text" x="850" y="555">- Vendido</text>
-            <text class="svg-text" x="810" y="595">2 Dormitorios</text>
-
-            <rect class="ventanaF secondrow" x="180" y="500" width="435" height="130" />
-            <text class="svg-text negrita" x="320" y="555">2ºC</text>
-            <text class="svg-text" x="370" y="555">- Vendido</text>
-            <text class="svg-text" x="330" y="595">2 Dormitorios</text>
-
-
-            <rect class="ventanaG toprow" x="1170" y="350" width="550" height="130" />
-            <text class="svg-text negrita" x="1350" y="410">3ºA</text>
-            <text class="svg-text" x="1400" y="410">- Disponible</text>
-            <text class="svg-text" x="1360" y="450">2 Dormitorios</text>
-
-            <rect class="ventanaH toprow" x="620" y="350" width="545" height="130" />
-            <text class="svg-text negrita" x="800" y="410">3ºB</text>
-            <text class="svg-text" x="850" y="410">- Disponible</text>
-            <text class="svg-text" x="810" y="450">2 Dormitorios</text>
-
-            <rect class="ventanaI toprow" x="180" y="350" width="435" height="130" />
-            <text class="svg-text negrita" x="320" y="410">3ºC</text>
-            <text class="svg-text" x="370" y="410">- Disponible</text>
-            <text class="svg-text" x="330" y="450">3 Dormitorios</text>
-
-
-            <rect class="ventanaJ secondrow" x="1170" y="215" width="550" height="110" />
-            <text class="svg-text negrita" x="1350" y="270">4ºA</text>
-            <text class="svg-text" x="1400" y="270">- Vendido</text>
-            <text class="svg-text" x="1360" y="310">3 Dormitorios</text>
-
-            <rect class="ventanaK secondrow" x="620" y="215" width="545" height="110" />
-            <text class="svg-text negrita" x="800" y="270">4ºB</text>
-            <text class="svg-text" x="850" y="270">- Vendido</text>
-            <text class="svg-text" x="810" y="310">4 Dormitorios</text>
-
-            <rect class="ventanaL secondrow" x="180" y="215" width="435" height="110" />
-            <text class="svg-text negrita" x="320" y="270">4ºC</text>
-            <text class="svg-text" x="370" y="270">- Vendido</text>
-            <text class="svg-text" x="330" y="310">2 Dormitorios</text>
+            <rect id="ventanaJ" x="52" y="217" class="secondrow ventanaJ" width="359" height="135" />
+            <text class="svg-text negrita" x="160" y="287">3ºJ</text>
+            <text class="svg-text" x="200" y="287">- Vendido</text>
+            <text class="svg-text" x="160" y="317">4 Dormitorios</text>
+            <rect id="ventanaK" x="474" y="220" class="secondrow ventanaK" width="302" height="142" />
+            <text class="svg-text negrita" x="570" y="297">3ºK</text>
+            <text class="svg-text" x="610" y="297">- Vendido</text>
+            <text class="svg-text" x="570" y="327">2 Dormitorios</text>
 
     </svg>
 			
@@ -404,41 +317,10 @@ clickAqui.addEventListener("click",()=>{
 	}
 })
 
-// Funcionalidad para alternar entre fachadas
-const fachadeNorteBtn = document.querySelector('[data-facade="norte"]');
-const fachadeSurBtn = document.querySelector('[data-facade="sur"]');
-const vistaDelantera = document.getElementById('vistaDelantera');
-const vistaTrasera = document.getElementById('vistaTrasera');
-
-function showFachadeNorte() {
-    vistaDelantera.style.display = 'block';
-    vistaTrasera.style.display = 'none';
-    fachadeNorteBtn.classList.add('selected');
-    fachadeSurBtn.classList.remove('selected');
-}
-
-function showFachadeSur() {
-    vistaDelantera.style.display = 'none';
-    vistaTrasera.style.display = 'block';
-    fachadeNorteBtn.classList.remove('selected');
-    fachadeSurBtn.classList.add('selected');
-}
-
-fachadeNorteBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    showFachadeNorte();
-});
-
-fachadeSurBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    showFachadeSur();
-});
 
 // Funcionalidad para botones ON/OFF
 const onButton = document.getElementById('onButton');
 const offButton = document.getElementById('offButton');
-const vistaDelanterad = document.getElementById('vistaDelantera');
-const vistaTraserad = document.getElementById('vistaTrasera');
 
 function toggleOverlayMode(isOff) {
     // Resetear todos los textos primero
@@ -447,14 +329,17 @@ function toggleOverlayMode(isOff) {
         text.style.fillOpacity = '';  // Remover el estilo inline
     });
     
+    // Obtener el SVG actual
+    const currentSvg = document.getElementById('vistaDelantera');
+    
     if (isOff) {
-        vistaDelanterad.classList.add('svg-overlay-off');
-        vistaTraserad.classList.add('svg-overlay-off');
+        // Modo OFF: agregar clase de opacidad
+        currentSvg.classList.add('svg-overlay-off');
         onButton.classList.remove('selected');
         offButton.classList.add('selected');
     } else {
-        vistaDelanterad.classList.remove('svg-overlay-off');
-        vistaTraserad.classList.remove('svg-overlay-off');
+        // Modo ON: quitar clase de opacidad
+        currentSvg.classList.remove('svg-overlay-off');
         onButton.classList.add('selected');
         offButton.classList.remove('selected');
     }
@@ -788,14 +673,6 @@ main {
         font-weight: 700;
     }
 
-/* Control de visibilidad de las vistas */
-#vistaDelantera {
-    display: block;
-}
-
-#vistaTrasera {
-    display: none;
-}
 
 /* CSS Móvil */
 @media (orientation: portrait) {
