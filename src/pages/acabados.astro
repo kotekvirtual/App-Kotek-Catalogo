@@ -14,6 +14,19 @@ import Layout from "../layouts/Layout.astro";
                     <button class="filter-tab" data-filter="cocina">Cocina</button>
                     <button class="filter-tab" data-filter="baños">Baños</button>
                 </div>
+
+                <!-- Cocina Sub-buttons -->
+                <div class="cocina-sub-buttons hidden" id="cocina-sub-buttons">
+                    <button class="sub-button active" data-cocina="1">
+                        <img src="/boton-1.webp" alt="Cocina Option 1" />
+                    </button>
+                    <button class="sub-button" data-cocina="2">
+                        <img src="/boton-2.webp" alt="Cocina Option 2" />
+                    </button>
+                    <button class="sub-button" data-cocina="3">
+                        <img src="/boton-3.webp" alt="Cocina Option 3" />
+                    </button>
+                </div>
             </header>
 
             <section class="gallery" id="gallery">
@@ -39,17 +52,14 @@ import Layout from "../layouts/Layout.astro";
                     <img src="/General-7.webp"/>
                 </div>                                        
 
-                <div class="gallery-item" data-category="cocina">
-                    <img src="/Cocina-1.webp"/>
+                <div class="gallery-item" data-category="cocina" data-cocina="1">
+                    <img src="/cocina-1.webp"/>
                 </div>
-                <div class="gallery-item" data-category="cocina">
-                    <img src="/Cocina-2.webp"/>
+                <div class="gallery-item" data-category="cocina" data-cocina="2">
+                    <img src="/cocina-2.webp"/>
                 </div>
-                <div class="gallery-item" data-category="cocina">
-                    <img src="/Cocina-3.webp"/>
-                </div>
-                <div class="gallery-item" data-category="cocina">
-                    <img src="/Cocina-4.webp"/>
+                <div class="gallery-item" data-category="cocina" data-cocina="3">
+                    <img src="/cocina-3.webp"/>
                 </div>
                 
                 <div class="gallery-item" data-category="baños">
@@ -88,17 +98,14 @@ import Layout from "../layouts/Layout.astro";
                     <img src="/General-7.webp"/>
                 </div>                                        
 
-                <div class="gallery-item" data-category="cocina">
-                    <img src="/Cocina-1.webp"/>
+                <div class="gallery-item" data-category="cocina" data-cocina="1">
+                    <img src="/cocina-1.webp"/>
                 </div>
-                <div class="gallery-item" data-category="cocina">
-                    <img src="/Cocina-2.webp"/>
+                <div class="gallery-item" data-category="cocina" data-cocina="2">
+                    <img src="/cocina-2.webp"/>
                 </div>
-                <div class="gallery-item" data-category="cocina">
-                    <img src="/Cocina-3.webp"/>
-                </div>
-                <div class="gallery-item" data-category="cocina">
-                    <img src="/Cocina-4.webp"/>
+                <div class="gallery-item" data-category="cocina" data-cocina="3">
+                    <img src="/cocina-3.webp"/>
                 </div>
                 
                 <div class="gallery-item" data-category="baños">
@@ -156,6 +163,45 @@ main {
     display: flex;
     gap: 8px;
     justify-content: center;
+}
+
+.cocina-sub-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.cocina-sub-buttons.hidden {
+    display: none;
+}
+
+.sub-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sub-button.active {
+    border-color: hsl(230, 100%, 69%);
+}
+
+.sub-button:hover {
+    border-color: hsl(230, 100%, 75%);
+    transform: scale(1.05);
+}
+
+.sub-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .filter-tab {
@@ -280,6 +326,8 @@ main {
 document.addEventListener('DOMContentLoaded', function() {
     const filterTabs = document.querySelectorAll('.filter-tab');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const cocinaSubButtons = document.getElementById('cocina-sub-buttons');
+    const subButtons = document.querySelectorAll('.sub-button');
 
     function filterGallery(category) {
         galleryItems.forEach(item => {
@@ -293,6 +341,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function filterCocinaImages(cocinaType) {
+        // Hide all gallery items first
+        galleryItems.forEach(item => {
+            item.classList.add('hidden');
+            item.style.display = 'none';
+        });
+
+        // Show only the specific cocina image
+        const targetCocinaItem = document.querySelector(`.gallery-item[data-category="cocina"][data-cocina="${cocinaType}"]`);
+        if (targetCocinaItem) {
+            targetCocinaItem.classList.remove('hidden');
+            targetCocinaItem.style.display = 'block';
+        }
+    }
+
     function updateActiveTab(activeTab) {
         filterTabs.forEach(tab => {
             tab.classList.remove('active');
@@ -300,11 +363,42 @@ document.addEventListener('DOMContentLoaded', function() {
         activeTab.classList.add('active');
     }
 
+    function updateActiveSubButton(activeButton) {
+        subButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+        activeButton.classList.add('active');
+    }
+
     filterTabs.forEach(tab => {
         tab.addEventListener('click', function() {
             const filter = this.dataset.filter;
             updateActiveTab(this);
-            filterGallery(filter);
+
+            if (filter === 'cocina') {
+                // Show cocina sub-buttons
+                cocinaSubButtons.classList.remove('hidden');
+                // Show only first cocina image by default
+                filterCocinaImages('1');
+                // Activate first sub-button
+                if (subButtons.length > 0) {
+                    updateActiveSubButton(subButtons[0]);
+                }
+            } else {
+                // Hide cocina sub-buttons
+                cocinaSubButtons.classList.add('hidden');
+                // Show regular filter
+                filterGallery(filter);
+            }
+        });
+    });
+
+    // Handle cocina sub-buttons
+    subButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const cocinaType = this.dataset.cocina;
+            updateActiveSubButton(this);
+            filterCocinaImages(cocinaType);
         });
     });
 
