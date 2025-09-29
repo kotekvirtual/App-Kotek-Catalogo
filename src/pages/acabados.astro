@@ -9,7 +9,6 @@ import Layout from "../layouts/Layout.astro";
             <header class="page-header">
                 <h1 class="header-title">Acabados</h1>
                 <div class="filter-tabs">
-                    <button class="filter-tab active" data-filter="todas">Todas</button>
                     <button class="filter-tab" data-filter="pavimento">Pavimento</button>
                     <button class="filter-tab" data-filter="cocina">Cocina</button>
                     <button class="filter-tab" data-filter="baños">Baños</button>
@@ -43,21 +42,9 @@ import Layout from "../layouts/Layout.astro";
             </header>
 
             <section class="gallery" id="gallery">
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-6.webp"/>
-                </div>                
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-1.webp"/>
-                </div>                        
                 <div class="gallery-item" data-category="pavimento" data-pavimento="1">
                     <img src="/pavimento-1.webp"/>
                 </div>
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-4.webp"/>
-                </div>
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-3.webp"/>
-                </div>                
                 <div class="gallery-item" data-category="pavimento" data-pavimento="2">
                     <img src="/pavimento-2.webp"/>
                 </div>
@@ -83,38 +70,15 @@ import Layout from "../layouts/Layout.astro";
                     <img src="/Baño-2.webp"/>
                 </div>
 
-                <!-- Mixed and reversed order of todas-only images -->
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/Cocina-4.webp"/>
-                </div>
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-7.webp"/>
-                </div>
 
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-5.webp"/>
-                </div>
 
             </section>
 
             <section class="mobile-gallery" id="mobile-gallery">
 
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-6.webp"/>
-                </div>                
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-1.webp"/>
-                </div>                     
-
                 <div class="gallery-item" data-category="pavimento" data-pavimento="1">
                     <img src="/pavimento-1.webp"/>
                 </div>
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-4.webp"/>
-                </div>
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-3.webp"/>
-                </div>                
                 <div class="gallery-item" data-category="pavimento" data-pavimento="2">
                     <img src="/pavimento-2.webp"/>
                 </div>
@@ -138,17 +102,6 @@ import Layout from "../layouts/Layout.astro";
                 </div>
                 <div class="gallery-item" data-category="baños">
                     <img src="/Baño-2.webp"/>
-                </div>
-
-                <!-- Mixed and reversed order of todas-only images -->
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/Cocina-4.webp"/>
-                </div>
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-7.webp"/>
-                </div>
-                <div class="gallery-item" data-category="todas-only">
-                    <img src="/General-5.webp"/>
                 </div>
 
             </section>
@@ -380,18 +333,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function filterGallery(category) {
         galleryItems.forEach(item => {
-            if (category === 'todas') {
-                // Show all images including "todas-only" items
+            if (item.dataset.category === category) {
                 item.classList.remove('hidden');
                 item.style.display = 'block';
-            } else if (item.dataset.category === category) {
-                // Show items matching the specific category
-                item.classList.remove('hidden');
-                item.style.display = 'block';
-            } else if (item.dataset.category === 'todas-only') {
-                // Hide "todas-only" items when not showing "todas"
-                item.classList.add('hidden');
-                item.style.display = 'none';
             } else {
                 item.classList.add('hidden');
                 item.style.display = 'none';
@@ -503,7 +447,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize with "Todas" selected
-    filterGallery('todas');
+    // Initialize with "Pavimento" selected
+    const pavimentoTab = document.querySelector('[data-filter="pavimento"]');
+    if (pavimentoTab) {
+        pavimentoTab.classList.add('active');
+        pavimentoTab.click();
+    }
 });
 </script>
