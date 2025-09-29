@@ -116,12 +116,14 @@ body {
 }
 
 main {
-    overflow: auto;
-    flex: 1;
+    position: fixed;
+    top: 0;
+    left: 280px;
+    width: calc(100vw - 280px);
+    height: 100vh;
+    overflow: hidden;
     background-color: hsl(240, 15%, 17%);
-    padding: 20px;
-    width: 100%;
-    margin: 0 auto;
+    padding: 0;
 }
 
 .header-title{
@@ -141,11 +143,18 @@ main {
 }
 
 .page-header {
-    margin-bottom: 10px;
+    position: fixed;
+    /*top: 20px;*/
+    left: 280px;
+    right: 0;
+    z-index: 10;
     text-align: center;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 20px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .filter-tabs {
@@ -226,16 +235,24 @@ main {
 }
 
 .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 1080px;
-    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .gallery-item {
-    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
     overflow: hidden;
 }
 
@@ -247,8 +264,9 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     display: block;
-    border-radius: 12px;
+    border-radius: 0;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -272,17 +290,22 @@ main {
     }
     
     main {
-        height: calc(100dvh - 80px);
-        overflow: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
         padding: 0;
-    }    
+    }
 
     .page-header {
         padding: 16px;
-        margin-bottom: 0;
-        max-width: none;
-        margin-left: 0;
-        margin-right: 0;
+        background: transparent;
+        /*top: 16px;*/
+        left: 0;
+        right: 0;
+        position: fixed;
     }
 
     .filter-tabs {
@@ -299,21 +322,15 @@ main {
         flex-shrink: 0;
     }
 
-    .gallery {
-        max-width: none;
-        margin: 0;
-        gap: 16px;
-        padding: 0 0 2em 0;
+    .pavimento-sub-buttons,
+    .cocina-sub-buttons {
+        margin-top: 12px;
+        gap: 12px;
     }
 
-    .gallery-item {
-        height: 50vh;
-        border-radius: 0;
-        margin: 0 16px;
-    }
-
-    .gallery-item img {
-        border-radius: 12px;
+    .sub-button {
+        width: 50px;
+        height: 50px;
     }
 
     .mobile-gallery {
