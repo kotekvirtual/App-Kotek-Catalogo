@@ -176,24 +176,29 @@ main {
     }
     
     main {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding: 0;
-        scroll-snap-type: y mandatory;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100vw !important;
+        height: calc(100dvh - 80px) !important;
+        overflow: auto !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
     }    
 
     .page-header {
-        padding: 16px;
-        background: transparent;
-        /*top: 16px;*/
-        left: 0;
-        right: 0;
-        position: fixed;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        z-index: auto !important;
+        padding: 16px !important;
+        margin-bottom: 0 !important;
+        flex-shrink: 0 !important;
+        background-color: hsl(240, 15%, 17%) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .filter-tabs {
@@ -211,23 +216,43 @@ main {
     }
 
     .gallery {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        min-height: 100%;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        padding: 16px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
     }
 
     .gallery-item {
-        width: 100%;
-        height: 100vh;
-        border-radius: 0;
-        margin: 0;
-        scroll-snap-align: start;
-        flex-shrink: 0;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: 50vh !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: none !important;
+        box-sizing: border-box !important;
     }
 
     .gallery-item img {
-        border-radius: 0;
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        border-radius: 12px !important;
+        display: block !important;
     }
 
     .mobile-gallery {
