@@ -523,8 +523,9 @@ document.addEventListener('DOMContentLoaded', function() {
             updateActiveTab(this);
 
             if (filter === 'pavimento') {
-                // Hide cocina sub-buttons and show pavimento sub-buttons
+                // Hide cocina and baños sub-buttons, show pavimento sub-buttons
                 cocinaSubButtons.classList.add('hidden');
+                banosSubButtons.classList.add('hidden');
                 pavimentoSubButtons.classList.remove('hidden');
                 // Show only first pavimento image by default
                 filterPavimentoImages('1');
@@ -533,8 +534,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     updateActivePavimentoButton(pavimentoButtons[0]);
                 }
             } else if (filter === 'cocina') {
-                // Hide pavimento sub-buttons and show cocina sub-buttons
+                // Hide pavimento and baños sub-buttons, show cocina sub-buttons
                 pavimentoSubButtons.classList.add('hidden');
+                banosSubButtons.classList.add('hidden');
                 cocinaSubButtons.classList.remove('hidden');
                 // Show only first cocina image by default
                 filterCocinaImages('1');
