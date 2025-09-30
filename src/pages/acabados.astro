@@ -39,6 +39,16 @@ import Layout from "../layouts/Layout.astro";
                         <img src="/boton-3.webp" alt="Cocina Option 3" />
                     </button>
                 </div>
+
+                <!-- Baños Sub-buttons -->
+                <div class="banos-sub-buttons hidden" id="banos-sub-buttons">
+                    <button class="sub-button active" data-banos="1">
+                        <img src="/boton-1.webp" alt="Baños Option 1" />
+                    </button>
+                    <button class="sub-button" data-banos="3">
+                        <img src="/boton-3.webp" alt="Baños Option 3" />
+                    </button>
+                </div>
             </header>
 
             <section class="gallery" id="gallery">
@@ -63,11 +73,11 @@ import Layout from "../layouts/Layout.astro";
                     <img src="/cocina-3.webp"/>
                 </div>
                 
-                <div class="gallery-item" data-category="baños">
-                    <img src="/Baño-1.webp"/>
+                <div class="gallery-item" data-category="baños" data-banos="1">
+                    <img src="/baños-1-1.webp"/>
                 </div>
-                <div class="gallery-item" data-category="baños">
-                    <img src="/Baño-2.webp"/>
+                <div class="gallery-item" data-category="baños" data-banos="3">
+                    <img src="/baños-3-1.webp"/>
                 </div>
 
 
@@ -97,11 +107,11 @@ import Layout from "../layouts/Layout.astro";
                     <img src="/cocina-3.webp"/>
                 </div>
                 
-                <div class="gallery-item" data-category="baños">
-                    <img src="/Baño-1.webp"/>
+                <div class="gallery-item" data-category="baños" data-banos="1">
+                    <img src="/baños-1-1.webp"/>
                 </div>
-                <div class="gallery-item" data-category="baños">
-                    <img src="/Baño-2.webp"/>
+                <div class="gallery-item" data-category="baños" data-banos="3">
+                    <img src="/baños-3-1.webp"/>
                 </div>
 
             </section>
@@ -182,6 +192,17 @@ main {
 }
 
 .cocina-sub-buttons.hidden {
+    display: none;
+}
+
+.banos-sub-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.banos-sub-buttons.hidden {
     display: none;
 }
 
@@ -330,7 +351,8 @@ main {
     }
 
     .pavimento-sub-buttons,
-    .cocina-sub-buttons {
+    .cocina-sub-buttons,
+    .banos-sub-buttons {
         margin-top: 12px;
         gap: 12px;
     }
@@ -405,8 +427,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const pavimentoSubButtons = document.getElementById('pavimento-sub-buttons');
     const cocinaSubButtons = document.getElementById('cocina-sub-buttons');
+    const banosSubButtons = document.getElementById('banos-sub-buttons');
     const pavimentoButtons = document.querySelectorAll('#pavimento-sub-buttons .sub-button');
     const cocinaButtons = document.querySelectorAll('#cocina-sub-buttons .sub-button');
+    const banosButtons = document.querySelectorAll('#banos-sub-buttons .sub-button');
 
     function filterGallery(category) {
         galleryItems.forEach(item => {
@@ -450,6 +474,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function filterBanosImages(banosType) {
+        // Hide all gallery items first
+        galleryItems.forEach(item => {
+            item.classList.add('hidden');
+            item.style.display = 'none';
+        });
+
+        // Show only the specific baños image
+        const targetBanosItem = document.querySelector(`.gallery-item[data-category="baños"][data-banos="${banosType}"]`);
+        if (targetBanosItem) {
+            targetBanosItem.classList.remove('hidden');
+            targetBanosItem.style.display = 'block';
+        }
+    }
+
     function updateActiveTab(activeTab) {
         filterTabs.forEach(tab => {
             tab.classList.remove('active');
@@ -466,6 +505,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateActiveCocinaButton(activeButton) {
         cocinaButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+        activeButton.classList.add('active');
+    }
+
+    function updateActiveBanosButton(activeButton) {
+        banosButtons.forEach(button => {
             button.classList.remove('active');
         });
         activeButton.classList.add('active');
@@ -497,18 +543,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     updateActiveCocinaButton(cocinaButtons[0]);
                 }
             } else if (filter === 'baños') {
-                // Hide both sub-buttons
+                // Hide pavimento and cocina sub-buttons, show baños sub-buttons
                 pavimentoSubButtons.classList.add('hidden');
                 cocinaSubButtons.classList.add('hidden');
-                // Add special class for baños mobile layout
+                banosSubButtons.classList.remove('hidden');
+                // Remove special class for mobile layout since we now use sub-buttons
                 const gallery = document.getElementById('gallery');
-                gallery.classList.add('banos-mobile');
-                // Show regular filter
-                filterGallery(filter);
+                gallery.classList.remove('banos-mobile');
+                // Show only first baños image by default
+                filterBanosImages('1');
+                // Activate first baños sub-button
+                if (banosButtons.length > 0) {
+                    updateActiveBanosButton(banosButtons[0]);
+                }
             } else {
-                // Hide both sub-buttons
+                // Hide all sub-buttons
                 pavimentoSubButtons.classList.add('hidden');
                 cocinaSubButtons.classList.add('hidden');
+                banosSubButtons.classList.add('hidden');
                 // Remove special class
                 const gallery = document.getElementById('gallery');
                 gallery.classList.remove('banos-mobile');
@@ -533,6 +585,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const cocinaType = this.dataset.cocina;
             updateActiveCocinaButton(this);
             filterCocinaImages(cocinaType);
+        });
+    });
+
+    // Handle baños sub-buttons
+    banosButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const banosType = this.dataset.banos;
+            updateActiveBanosButton(this);
+            filterBanosImages(banosType);
         });
     });
 
